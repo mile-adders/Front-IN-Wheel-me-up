@@ -7,7 +7,7 @@ function Main() {
     <>
       <App />
     </>
-  )
+  );
 }
 
 const entryPoint = document.getElementById('root');

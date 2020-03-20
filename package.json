@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/mile-adders/Front-IN-Wheel-me-up#readme",
   "dependencies": {
+    "eslint": "^6.8.0",
     "jsonwebtoken": "^8.5.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
