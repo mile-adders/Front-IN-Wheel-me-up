@@ -1,11 +1,16 @@
 {
   "name": "Front-IN-Wheel-me-up",
   "version": "1.0.0",
-  "description": "--------------------------------- # Wheel Me Up   --------------------------------- ## This application is currently deployment on a development server",
+  "description": "Wheel Me Up",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "lint": "eslint '**/*.js'",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -19,6 +24,8 @@
   },
   "homepage": "https://github.com/mile-adders/Front-IN-Wheel-me-up#readme",
   "dependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
     "jsonwebtoken": "^8.5.1",
     "node-sass": "^4.13.1",
@@ -31,5 +38,17 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "superagent": "^5.2.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
