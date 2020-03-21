@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/mile-adders/Front-IN-Wheel-me-up/issues"
   },
-  "homepage": "https://github.com/mile-adders/Front-IN-Wheel-me-up#readme",
+  "homepage": "https://github.com/mile-adders/Front-IN-Wheel-me-up",
   "dependencies": {
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
