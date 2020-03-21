@@ -1,7 +1,7 @@
 {
   "name": "Front-End-Wheel-me-up",
   "version": "1.0.0",
-  "description": "Wheel Me Up",
+  "description": "--------------------------------- # Wheel Me Up   --------------------------------- ## This application is currently deployment on a development server",
   "main": "src/index.js",
   "scripts": {
     "start": "react-scripts start",
