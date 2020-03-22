@@ -11,4 +11,5 @@ function Main() {
   );
 }
 
-ReactDOM.render(<Main />, document.getElementById('root'));
+let entryPoint = document.getElementById('root');
+ReactDOM.render(<Main />, entryPoint);
