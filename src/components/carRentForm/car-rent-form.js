@@ -23,7 +23,7 @@ class CarRentForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     console.log('state', this.state);
-    axios.post('https://wheel-me-up-m.herokuapp.com/api/v1/car-company', this.state)
+    axios.post('https://wheel-me-up-m.herokuapp.com/api/v1/user-car', this.state)
       .then(response => {
         console.log('response', response);
         this.setState({posts: response.data});
