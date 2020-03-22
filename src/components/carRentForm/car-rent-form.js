@@ -1,47 +1,59 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 
-class CarRentForm extends React.component{
+class CarRentForm extends Component {
   constructor(props){
     super(props);
+
     this.state = {
-      url: 'the backend url',
+      user: '',
+      email: '',
+      car: '',
+      dailyRentTime: '',
+      dateOut: '',
+      payment: '',
     };
   }
 
- handleClick = async e => {
-   e.preventDefault();
-   let raw = await fetch(this.state.url);
-   let APIData = await raw.json();
-   this.props.apiList(this.state.url);
-   this.props.update(APIData);
- };
+  handleChange = e => {
+    this.setState({[e.target.name]: e.target.value });
+  }
 
- APICall = e => {
-   let user = e.target.value;
-   let email = e.target.value;
-   let car = e.target.value;
-   let dailyRentTime = e.target.value;
-   let dateOut = e.target.value;
-   let payment = e.target.value;
-            
-   this.setState({user, email, car, dailyRentTime, dateOut, payment});
- };
- render(){
-   return(
-     <form onsubmit={this.handleClick}>
-       <input type='text' className='useInput' name='user' placeholder='please enter your name' onChange={this.APICall} />
-       <input type='text' className='useInput' name='email' placeholder='please enter your email' onChange={this.APICall} /> 
-       <input type='text' className='useInput' name='car' placeholder='please choose your car' onChange={this.APICall} /> 
-       <input type='text' className='useInput' name='dailyRentTime' placeholder='please enter when you want to rent' onChange={this.APICall} /> 
-       <input type='text' className='useInput' name='dateOut' placeholder='please enter when you want to return the car' onChange={this.APICall} />
-       <input type='text' className='useInput' name='payment' placeholder='please enter your payment method' onChange={this.APICall} />
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log('state', this.state);
+    axios.post('https://wheel-me-up-m.herokuapp.com/api/v1/car-company', this.state)
+      .then(response => {
+        console.log('response', response);
+        this.setState({posts: response.data});
+      })
+      .catch(error => {
+        console.error();
+        this.setState({errMsg: 'Error retrieving data'});
+      });
+  }
 
-       <button className='submit' type='submit'>Go Rent!!</button>
-     </form>
-   );
- }
+  render() {
+    const {user, email, car, dailyRentTime, dateOut, payment} = this.state;
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <input type='text' className='useInput' name='user' value={user} placeholder='please enter your name' onChange={this.handleChange} />
+          <input type='text' className='useInput' name='email' value={email} placeholder='please enter your email' onChange={this.handleChange} /> 
+          <input type='text' className='useInput' name='car' value={car} placeholder='please choose your car' onChange={this.handleChange} /> 
+          <input type='text' className='useInput' name='dailyRentTime' value={dailyRentTime} placeholder='please enter when you want to rent' onChange={this.handleChange} /> 
+          <input type='text' className='useInput' name='dateOut' value={dateOut} placeholder='please enter when you want to return the car' onChange={this.handleChange} />
+          <input type='text' className='useInput' name='payment' value={payment} placeholder='please enter your payment method' onChange={this.handleChange} />
+
+          <button className='submit' type='submit'>Go Rent!!</button>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default CarRentForm;
+
+
+
