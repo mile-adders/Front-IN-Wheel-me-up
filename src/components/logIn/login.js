@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import React, { useContext } from 'react';
-import { loggerContext } from './context.js';
+import { loggerContext } from '../auth/context.js';
 
 
 const SignIn = () => {
