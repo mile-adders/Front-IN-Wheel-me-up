@@ -4,6 +4,7 @@ import React from 'react';
 import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
 import CarRentForm from '../carRentForm/car-rent-form.js';
+import CarCompanyForm from '../carCompanyForm/car-company-form.js';
 import './app.scss';
 
 export default function App (){
@@ -11,6 +12,7 @@ export default function App (){
     <>
       <Header />
       <CarRentForm />
+      <CarCompanyForm />
       <Footer />
     </>
   );
