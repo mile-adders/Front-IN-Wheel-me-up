@@ -54,6 +54,7 @@ function LoggerProvider(props) {
         headers: new Headers({
           'Authorization': `Basic ${btoa(`${username}:${password}`)}`,
         }),
+
       });
       // .then(res => res.text())
       // .then(token => validatorForToken(token))
