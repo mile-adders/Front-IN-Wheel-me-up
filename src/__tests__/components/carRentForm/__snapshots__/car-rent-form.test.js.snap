@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> renders correctly 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="useInput"
+      name="user"
+      onChange={[Function]}
+      placeholder="please enter your name"
+      type="text"
+      value=""
+    />
+    <input
+      className="useInput"
+      name="email"
+      onChange={[Function]}
+      placeholder="please enter your email"
+      type="text"
+      value=""
+    />
+    <input
+      className="useInput"
+      name="car"
+      onChange={[Function]}
+      placeholder="please choose your car"
+      type="text"
+      value=""
+    />
+    <input
+      className="useInput"
+      name="dailyRentTime"
+      onChange={[Function]}
+      placeholder="please enter when you want to rent"
+      type="text"
+      value=""
+    />
+    <input
+      className="useInput"
+      name="dateOut"
+      onChange={[Function]}
+      placeholder="please enter when you want to return the car"
+      type="text"
+      value=""
+    />
+    <input
+      className="useInput"
+      name="payment"
+      onChange={[Function]}
+      placeholder="please enter your payment method"
+      type="text"
+      value=""
+    />
+    <button
+      className="submit"
+      type="submit"
+    >
+      Go Rent!!
+    </button>
+  </form>
+</div>
+`;
