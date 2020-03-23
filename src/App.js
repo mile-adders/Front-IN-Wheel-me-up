@@ -5,7 +5,7 @@ import './App.css';
 import Facebook from './components/Facebook.js';
 import Google from './components/Google.js';
 
-class App extends Component {
+class oAuthApp extends Component {
   render() {
     return (
       <div className="App">
@@ -21,4 +21,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default oAuthApp;

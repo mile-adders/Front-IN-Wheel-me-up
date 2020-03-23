@@ -1,14 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import registerServiceWorker from './registerServiceWorker';
-import App from './App.js';
+import App from './components/app/app.js';
+import OAuthApp from './App.js';
 
 function Main() {
   return (
     <>
-      <App />
+      <OAuthApp />
+      <App /> 
     </>
   );
 }
