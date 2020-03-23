@@ -17,18 +17,33 @@
   "bugs": {
     "url": "https://github.com/mile-adders/Front-IN-Wheel-me-up/issues"
   },
-  "homepage": "https://github.com/mile-adders/Front-IN-Wheel-me-up#readme",
+  "homepage": "/",
   "dependencies": {
     "jsonwebtoken": "^8.5.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-cookies": "^0.1.1",
     "react-dom": "^16.13.0",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.1.2",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
+    "redux-form": "^8.3.1",
     "superagent": "^5.2.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

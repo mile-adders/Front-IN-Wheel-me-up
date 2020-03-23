@@ -1,14 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app/app.js';
+import './index.css';
+import App from './App.js';
 
-function Main() {
-  return (
-    <>
-      <App />
-    </>
-  )
-}
+import registerServiceWorker from './registerServiceWorker';
 
-const entryPoint = document.getElementById('root');
-ReactDOM.render(<Main />, entryPoint);
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
