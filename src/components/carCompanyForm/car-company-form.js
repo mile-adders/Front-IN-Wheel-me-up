@@ -14,8 +14,9 @@ const CarCompanyForm= (props) => {
 
   let handleSubmit = e => {
     e.preventDefault();
-    console.log('State:', {'carName': carName, 'brand': brand, 'type': type, 'year': year, 'dateAvailable': dateAvailable, 'priceForRent': priceForRent});
-    Axios.post('https://wheel-me-up-m.herokuapp.com/api/v1/car-company')
+    let state= {'carName': carName, 'brand': brand, 'type': type, 'year': year, 'dateAvailable': dateAvailable, 'priceForRent': priceForRent};
+    console.log('State:', state);
+    Axios.post('https://wheel-me-up-m.herokuapp.com/api/v1/car-company', state)
       .then(response => {
         console.log('response:', response);
         this.setState({posts: response.data});
