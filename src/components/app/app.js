@@ -7,7 +7,10 @@ import CarRentForm from '../carRentForm/car-rent-form.js';
 import CarCompanyForm from '../carCompanyForm/car-company-form.js';
 import LoggerHelp from '../auth/context.js';
 import SignIn from '../logIn/login.js';
+import SignUp from '../signUp/signup.js'
+
 import './app.scss';
+
 
 const App => (){
   return (
@@ -15,6 +18,7 @@ const App => (){
       <Header />
         < LoggerHelp>
         <h1> hi</h1>
+        <SignUp />
         <SignIn />
       </LoggerHelp>
       <CarRentForm />
