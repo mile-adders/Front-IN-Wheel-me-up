@@ -1,11 +1,13 @@
 {
-  "name": "Front-IN-Wheel-me-up",
+  "name": "Front-End-Wheel-me-up",
   "version": "1.0.0",
   "description": "--------------------------------- # Wheel Me Up   --------------------------------- ## This application is currently deployment on a development server",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "lint": "eslint '**/*.js'",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom"
   },
   "repository": {
     "type": "git",
@@ -19,16 +21,24 @@
   },
   "homepage": "https://github.com/mile-adders/Front-IN-Wheel-me-up",
   "dependencies": {
+    "axios": "^0.19.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
     "jsonwebtoken": "^8.5.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-cookies": "^0.1.1",
     "react-dom": "^16.13.0",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.1.2",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.0",
+    "react-test-renderer": "^16.13.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
+    "redux-form": "^8.3.1",
     "superagent": "^5.2.2"
   },
   "browserslist": {

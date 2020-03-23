@@ -9,8 +9,6 @@ const SECRET = 'cool mai';
 
 export const loggerContext = React.createContext();
 
-
-
 function LoggerProvider(props) {
 
   const [logState, setLogState] = useState(false);
@@ -49,23 +47,24 @@ function LoggerProvider(props) {
     try {
       // console.log(username, password, "mmmmmmmmmmmm")
 
-     let output = await fetch(`${API}/signin`, {
+      let output = await fetch(`${API}/signin`, {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',
         headers: new Headers({
           'Authorization': `Basic ${btoa(`${username}:${password}`)}`,
         }),
-      })
-        // .then(res => res.text())
-        // .then(token => validatorForToken(token))
-        // .catch(e => console.error(e));
+
+      });
+      // .then(res => res.text())
+      // .then(token => validatorForToken(token))
+      // .catch(e => console.error(e));
       // console.log(output, typeof output, "==========>")
       //   console.log('output.body', output.body);
 
-        let response = await output.text();
-        console.log('dddddddddddddd',response);
-        await validatorForToken(response, username);
+      let response = await output.text();
+      console.log('dddddddddddddd',response);
+      await validatorForToken(response, username);
     } catch{
       console.error('log In!');
     }
@@ -80,7 +79,7 @@ function LoggerProvider(props) {
   useEffect(() => {
 
     let cookiesToken = cookies.load('auth');
-    console.log('cookiesToken',cookiesToken)
+    console.log('cookiesToken',cookiesToken);
     const qs = new URLSearchParams(window.location.search);
 
     let token = qs.get('token') || cookiesToken || null;
