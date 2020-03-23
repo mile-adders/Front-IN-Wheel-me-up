@@ -57,15 +57,15 @@ function LoggerProvider(props) {
           'Authorization': `Basic ${btoa(`${username}:${password}`)}`,
         }),
       })
-        // .then(res => res.text())
-        // .then(token => validatorForToken(token))
-        // .catch(e => console.error(e));
+      // .then(res => res.text())
+      // .then(token => validatorForToken(token))
+      // .catch(e => console.error(e));
       // console.log(output, typeof output, "==========>")
       //   console.log('output.body', output.body);
 
-        let response = await output.text();
-        console.log('dddddddddddddd',response);
-        await validatorForToken(response, username);
+      let response = await output.text();
+      console.log('dddddddddddddd',response);
+      await validatorForToken(response, username);
     } catch{
       console.error('log In!');
     }
