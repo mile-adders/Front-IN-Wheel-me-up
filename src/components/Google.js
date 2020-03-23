@@ -1,26 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-
 import GoogleLogin from 'react-google-login';
 
-
-
-
-
 function Google() {
-
   const [name, setName] = useState('');
-
   const [email, setEmail] = useState('');
-
   const [url, setUrl] = useState('');
-
   const responseGoogle = (response) => {
 
     setName(response.profileObj.name);
     setEmail(response.profileObj.email);
     setUrl(response.profileObj.imageUrl);
-
   };
 
   return (
@@ -36,7 +26,6 @@ function Google() {
         onFailure={responseGoogle}
         cookiePolicy={'single_host_origin'}
       />
-
     </div>
   );
 }
