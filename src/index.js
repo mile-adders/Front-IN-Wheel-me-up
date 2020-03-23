@@ -8,8 +8,8 @@ import OAuthApp from './App.js';
 function Main() {
   return (
     <>
-      <OAuthApp />
       <App /> 
+      <OAuthApp />
     </>
   );
 }

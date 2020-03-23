@@ -10,15 +10,15 @@ const SignUp = () => {
   return (
     <>
       <form >
-        <label> User Name: <input name='userName' /></label>
-        <label> First Name: <input name='firstName' /></label>
-        <label>  Last Name: <input name='lastName' /></label>
-        <label> Email: <input name='email' /></label>
-        <label> Password: <input required type='password' name='password' /></label>
-        <label> Confirm Password: <input required type='password' name='confirmPassword' /></label>
+        <label> User Name: <input name='userName' required/></label>
+        <label> First Name: <input name='firstName' required/></label>
+        <label>  Last Name: <input name='lastName' required/></label>
+        <label> Email: <input name='email' required/></label>
+        <label> Password: <input required type='password' name='password' required/></label>
+        <label> Confirm Password: <input required type='password' name='confirmPassword' required/></label>
         <label> Sign As: 
-          <input type="radio" value="guest" name="role"/> Car user
-          <input type="radio" value="user" name="role"/> Car rental
+          <input type="radio" value="guest" name="role" required/> Car user
+          <input type="radio" value="user" name="role" required/> Car rental
         </label>
         <label>I accept the Terms of Use & Privacy Policy</label>
         <input type="checkbox" required />

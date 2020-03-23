@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import { loggerContext } from '../auth/context.js';
-
+import BookingForm from '../bookingForm/booking-form.js'
 const SignIn = () => {
   let useLogger = useContext(loggerContext);
 
@@ -19,10 +19,11 @@ const SignIn = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label  > UserName: <input name='name' /> </label>
-        <label> Password: <input type='password' name='password' /></label>
+        <label  > UserName: <input name='name' required/> </label>
+        <label> Password: <input type='password' name='password' required/></label>
         <button type='submit' > LogIn </button>
       </form>
+      <BookingForm />
       <button onClick={handleLogout}> LogOut </button>
     </>
   );
