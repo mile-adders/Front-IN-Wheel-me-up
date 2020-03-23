@@ -4,12 +4,16 @@ import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 import App from './components/app/app.js';
 import OAuthApp from './App.js';
+// import { BrowserRouter } from 'react-router-dom'
+
 
 function Main() {
   return (
     <>
-      <OAuthApp />
-      <App /> 
+      {/* <BrowserRouter> */}
+        {/* <OAuthApp /> */}
+        <App /> 
+      {/* </BrowserRouter> */}
     </>
   );
 }

@@ -45,6 +45,7 @@ const SignUp = () => {
 
   return (
     <>
+    
       <form  onSubmit ={handleSubmit}>
 
         <label> User Name: <input required name='username' /></label>
