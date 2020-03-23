@@ -1,11 +1,8 @@
 /* eslint-disable no-unused-vars */
-
 import React, { useContext } from 'react';
 import { loggerContext } from '../auth/context.js';
 
-
 const SignIn = () => {
-
   let useLogger = useContext(loggerContext);
 
   let handleSubmit = (e) => {
@@ -19,20 +16,14 @@ const SignIn = () => {
     useLogger.logOut();
   };
 
-
   return (
     <>
       <form onSubmit={handleSubmit}>
-
         <label  > UserName: <input name='name' /> </label>
         <label> Password: <input type='password' name='password' /></label>
-
         <button type='submit' > LogIn </button>
-
       </form>
-
       <button onClick={handleLogout}> LogOut </button>
-
     </>
   );
 };

@@ -7,16 +7,16 @@ import CarRentForm from '../carRentForm/car-rent-form.js';
 import CarCompanyForm from '../carCompanyForm/car-company-form.js';
 import LoggerHelp from '../auth/context.js';
 import SignIn from '../logIn/login.js';
-import SignUp from '../signUp/signup.js'
+import SignUp from '../signUp/signup.js';
 
 import './app.scss';
 
 
-const App => (){
+const App = () => {
   return (
     <>
       <Header />
-        < LoggerHelp>
+      < LoggerHelp>
         <h1> hi</h1>
         <SignUp />
         <SignIn />
@@ -24,8 +24,8 @@ const App => (){
       <CarRentForm />
       <CarCompanyForm />
       <Footer />
-   </>
-    );
-}
+    </>
+  );
+};
 
 export default App;
