@@ -1,30 +1,20 @@
 /* eslint-disable no-unused-vars */
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 
-class CarCompanyForm extends Component {
-  constructor(props){
-    super(props);
+const CarCompanyForm= (props) => {
+  const [carName, setCarName] = useState('');
+  const [brand, setBrand] = useState('');
+  const [type, setType] = useState('');
+  const [year, setYear] = useState('');
+  const [dateAvailable, setDateAvailable] = useState('');
+  const [priceForRent, setPriceForRent] = useState('');
+  const [posts, setPosts] = useState([]);
+  const [errMsg, setErrMsg] = useState('');
 
-    this.state = {
-      carName: '',
-      brand: '',
-      type: '',
-      year: '',
-      dateAvailable: '',
-      priceForRent: '',
-      posts: [],
-      errMsg: '',
-    };
-  }
-
-  handleChange = e => {
-    this.setState({[e.target.name]: e.target.value });
-  }
-
-  handleSubmit = e => {
+  let handleSubmit = e => {
     e.preventDefault();
-    console.log('State:', this.state);
+    console.log('State:', {'carName': carName, 'brand': brand, 'type': type, 'year': year, 'dateAvailable': dateAvailable, 'priceForRent': priceForRent});
     Axios.post('https://wheel-me-up-m.herokuapp.com/api/v1/car-company')
       .then(response => {
         console.log('response:', response);
@@ -32,48 +22,48 @@ class CarCompanyForm extends Component {
       })
       .catch(error => {
         console.log(error);
-        this.setState({errMsg: 'Error Retrieving Data'});
+        setErrMsg('Error retrieving data');
       });
-  }
+  };
 
-  componentDidMount(){
+  useEffect(() => {
     Axios.get('https://wheel-me-up-m.herokuapp.com/api/v1/car-company')
       .then(response => {
         console.log('response:', response);
-        this.setState({posts: response.data});
+        setPosts(response.data);
       })
       .catch(error => {
         console.log(error);
-        this.setState({errMsg: 'Error Retrieving Data'});
-      });
-  }
-  render() {
-    const {name, brand, type, year, dateAvailable, priceForRent, posts, errMsg} = this.state;
-    return (
-      <div>
+        setErrMsg('Error retrieving Data');
+      });    return () => {
+      console.log('error');
+    };
+  }, []);
+  
+  return (
+    <div>
           Car-Company Schema
-        <form onSubmit={this.handleSubmit}>
-          <input type='text' className='useInput' name='name' value={name} placeholder='Please Enter the Company Name' onChange={this.handleChange} />
-          <input type='text' className='useInput' name='brand' value={brand} placeholder='Please Enter The car brand' onChange={this.handleChange} />
-          <input type='text' className='useInput' name='type' value={type} placeholder='Please Enter the wanted car type' onChange={this.handleChange} />
-          <input type='text' className='useInput' name='year' value={year} placeholder='Please Enter the car manufacture year' onChange={this.handleChange} />
-          <input type= 'date' className='useInput' name='dateAvailable ' value={dateAvailable } placeholder='Please Enter the available dates' onChange={this.handleChange} />
-          <input type='text' className='useInput' name='priceForRent' value={priceForRent} placeholder='Please Enter the price' onChange={this.handleChange} />
+      <form onSubmit={handleSubmit}>
+        <input type='text' className='useInput' name='carName' value={carName} placeholder='car name' onChange={(e)=> setCarName(e.target.value)} />
+        <input type='text' className='useInput' name='brand' value={brand} placeholder='Brand' onChange={(e)=> setBrand(e.target.value)} />
+        <input type='text' className='useInput' name='type' value={type} placeholder='car type' onChange={(e)=> setType(e.target.value)} />
+        <input type='text' className='useInput' name='year' value={year} placeholder='manufacturing year' onChange={(e) => setYear(e.target.value)} />
+        <input type= 'date' className='useInput' name='dateAvailable ' value={dateAvailable } placeholder='Dates Available' onChange={(e) => setDateAvailable(e.target.value)} />
+        <input type='text' className='useInput' name='priceForRent' value={priceForRent} placeholder='price' onChange={(e)=> setPriceForRent(e.target.value)} />
 
-          <button type='submit'>Go!</button>
-        </form>
-        <div>
-          <div className='results'>
+        <button type='submit'>Go!</button>
+      </form>
+      <div>
+        <div className='results'>
         Cars available
-            {
-              posts.length ? posts.map(post => <div key={post.id}>{post.title}</div>) : null
-            }
-            { errMsg ? <div>{errMsg}</div> : null}
-          </div>
+          {
+            posts.length ? posts.map(post => <div key={post.id}>{post.title}</div>) : null
+          }
+          { errMsg ? <div>{errMsg}</div> : null}
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default CarCompanyForm;
