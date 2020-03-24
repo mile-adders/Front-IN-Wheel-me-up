@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import cookies from 'react-cookies';
 import jwt from 'jsonwebtoken';
 
-export const LoggerContext = React.createContext();
-
 const API = process.env.REACT_APP_API;
 const SECRET = 'cool mai';
 
@@ -13,19 +11,7 @@ function LoggerProvider(props) {
 
   const [logState, setLogState] = useState(false);
   const [user, setUser] = useState({});
-  // console.log('user', user)
 
-  //   const validateToken = (token , userName)=>{
-  //     try{
-  //       let user = jwt.verify(token, SECRET);
-  //       cookies.save('auth', token);
-  //       setLogState(user);
-  //       setUser(userName);
-  //     }catch{
-  //       setLogState(false);
-  //       console.error('token Invalid!!!');
-  //     }
-  //   };
   const validatorForToken = (token, username) => {
     try {
       let validUser = jwt.verify(token, SECRET);
@@ -45,8 +31,6 @@ function LoggerProvider(props) {
   let logIn = async (username, password)=> {
 
     try {
-      // console.log(username, password, "mmmmmmmmmmmm")
-
       let output = await fetch(`${API}/signin`, {
         method: 'POST',
         mode: 'cors',
@@ -54,12 +38,8 @@ function LoggerProvider(props) {
         headers: new Headers({
           'Authorization': `Basic ${btoa(`${username}:${password}`)}`,
         }),
+
       });
-      // .then(res => res.text())
-      // .then(token => validatorForToken(token))
-      // .catch(e => console.error(e));
-      // console.log(output, typeof output, "==========>")
-      //   console.log('output.body', output.body);
 
       let response = await output.text();
       console.log('dddddddddddddd',response);
@@ -85,10 +65,6 @@ function LoggerProvider(props) {
 
     validatorForToken(token);
   }, []);
-
-
-
-
 
   let keys = { logIn, logOut, logState , user };
 

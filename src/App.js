@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
-import './App.css';
 
 import Facebook from './components/Facebook.js';
 import Google from './components/Google.js';

@@ -1,22 +1,26 @@
 /* eslint-disable no-unused-vars */
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import { loggerContext } from '../auth/context';
+
+const If = props => {
+  return props.condition ? props.children : null;
+};
 
 export default function BookingForm(props) {
-  const [user, setUser] = useState('');
-  const [email, setEmail] = useState('');
+  const [pickupLocation, setPickupLocation] = useState('');
+  const [pickupDate, setPickupDate] = useState('');
+  const [dropOffDate, setDropOffDate] = useState('');
   const [car, setCar] = useState('');
-  const [dailyRentTime, setDailyRentTime] = useState('');
-  const [dateOut, setDateOut] = useState('');
-  const [payment, setPayment] = useState('');
   const [posts, setPosts] = useState([]);
   const [errMsg, setErrMsg] = useState('');
   
 
   let handleSubmit = e => {
     e.preventDefault();
-    console.log('state', {'user': user, 'email': email, 'car': car, 'dailyRentTime': dailyRentTime, 'dateOut': dateOut, 'payment':payment});
-    axios.post('https://wheel-me-up-m.herokuapp.com/api/v1/user-car')
+    let state = {'pickupLocation': pickupLocation, 'pickupDate': pickupDate, 'dropOffDate': dropOffDate, 'car': car};
+    console.log('state', state);
+    axios.post('https://wheel-me-up-m.herokuapp.com/api/v1/user-car', state)
       .then(response => {
         console.log('response', response);
         setPosts(response.data);
@@ -43,26 +47,28 @@ export default function BookingForm(props) {
 
   return (
     <div>
-        car rent form
-      <form onSubmit={handleSubmit}>
-        <input type='text' className='useInput' name='user' value={user} placeholder='user' onChange={(e) => setUser(e.target.value)} />
-        <input type='text' className='useInput' name='email' value={email} placeholder='email' onChange={(e) => setEmail(e.target.value)} /> 
-        <input type='text' className='useInput' name='car' value={car} placeholder='car' onChange={(e) => setCar(e.target.value)} /> 
-        <input type='text' className='useInput' name='dailyRentTime' value={dailyRentTime} placeholder='please enter when you want to rent' onChange={(e) => setDailyRentTime(e.target.value)} /> 
-        <input type='text' className='useInput' name='dateOut' value={dateOut} placeholder='please enter when you want to return the car' onChange={(e) => setDateOut(e.target.value)} />
-        <input type='text' className='useInput' name='payment' value={payment} placeholder='please enter your payment method' onChange={(e) => setPayment(e.target.value)} />
+      <If condition={loggerContext.loggedIn}>
+      car rent form
+        <form onSubmit={handleSubmit}>
+          <input type='text' className='useInput' name='pickupLocation' value={pickupLocation} placeholder='Pickup Location' onChange={(e) => setPickupLocation(e.target.value)} /> 
+          <input type='date' className='useInput' name='pickupDate' value={pickupDate} placeholder='Pickup Date' onChange={(e) => setPickupDate(e.target.value)} /> 
+          <input type='date' className='useInput' name='dropOffDate' value={dropOffDate} placeholder='Drop off Date' onChange={(e) => setDropOffDate(e.target.value)} />
+          <input type='text' className='useInput' name='car' value={car} placeholder='car' onChange={(e) => setCar(e.target.value)} /> 
 
-        <button className='submit' type='submit'>Go Rent!!</button>
-      </form>
-      <div>
-        <div className='results'>
+          <button className='submit' type='submit'>Go Rent!!</button>
+        </form>
+      </If>
+      <If condition={!loggerContext.loggedIn}>
+        <div>
+          <div className='results'>
         Cars available
-          {
-            posts.length ? posts.map(post => <div key={post.id}>{post.title}</div>) : null
-          }
-          { errMsg ? <div>{errMsg}</div> : null}
+            {
+              posts.length ? posts.map(post => <div key={post.id}>{post.title}</div>) : null
+            }
+            { errMsg ? <div>{errMsg}</div> : null}
+          </div>
         </div>
-      </div>
+      </If>
     </div>
   );
 }

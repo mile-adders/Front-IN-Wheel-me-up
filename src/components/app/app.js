@@ -3,13 +3,11 @@ import React from 'react';
 // import your path to your class;
 import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
-// import CarRentForm from '../carRentForm/car-rent-form.js';
 import BookingForm from '../bookingForm/booking-form.js';
 import CarCompanyForm from '../carCompanyForm/car-company-form.js';
 import LoggerHelp from '../auth/context.js';
 import SignIn from '../logIn/login.js';
 import SignUp from '../signUp/signup.js';
-
 import './app.scss';
 
 
@@ -22,7 +20,6 @@ const App = () => {
         <SignUp />
         <SignIn />
       </LoggerHelp>
-      {/* <CarRentForm /> */}
       <BookingForm />
       <CarCompanyForm />
       <Footer />

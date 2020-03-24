@@ -2,6 +2,11 @@
 import React, { useState, useEffect , useContext} from 'react';
 
 const SignUp = () => {
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordState, setPasswordState] = useState(true);
+
+
   return (
     <>
       <form >
