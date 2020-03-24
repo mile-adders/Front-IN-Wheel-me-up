@@ -1,68 +1,35 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
-import { BrowserRouter as Router, NavLink, Redirect, Prompt } from 'react-router-dom';
-import Route from 'react-router-dom/Route';
+import { BrowserRouter, Router,  Redirect, Route } from 'react-router-dom';
+import Home from './components/Home.js';
+import AboutUs from './components/About-Us.js';
+import ContactUs from './components/Contact-us.js';
+import DashBoard from './components/Dash-board.js';
 import BookingForm from './components/bookingForm/booking-form.js';
-import Facebook from './components/Facebook.js';
-import Google from './components/Google.js';
+import Login from './components/logIn/login.js';
+import Signup from './components/signUp/signup.js';
+import NavBar from './components/NavBar.js';
 
-const User = ({ match }) => {
-  return (<h1>Welcome User {match.params.username} </h1>)
-}
+import './components/app/app.scss';
 
+const oAuthApp = () => {
 
-class oAuthApp extends Component {
- 
+  return (
+    <BrowserRouter>
+      <div className="App">
+      <NavBar />
+        <Route  exact path='/' component={Home}/>
+        <Route path='/aboutus' component={AboutUs} />
+        <Route path='/contactus' component={ContactUs} />
+        <Route path='/dashboard' component={DashBoard} />
+        <Route path='/bookingform' component={BookingForm} />
+        <Route path='/login' component={Login} />
+        <Route path='/signup' component={Signup} />
 
-  render() {
-    return (
+      </div>
 
-      <Router>
-        <div className="App">
-          <h1>Wheel-me-Up</h1>
-          <Facebook />
-          <Google />
-          <NavLink to="/">Home</NavLink>
-
-          <NavLink to="/about">About-Us</NavLink>
-
-          <NavLink to="/user/:username">User</NavLink>
-
-          <NavLink to="/bookingform">Booking-Form</NavLink>
-
-
-
-
-          <Route path="/" exact render={
-
-            () => {
-              return (<h1>Welcome-Home</h1>
-
-              );
-
-            }
-          } />
-          <Route path="/about" exact render={
-            () => {
-              return (<h1>Welcome-About</h1>);
-            }
-          } />
-
-          <Route path="/user/:username" exact component={User}/>
-
-          <Route path="/bookingform" exact render={
-            () => {
-              return (
-                <BookingForm />
-              );
-            }
-          } />
-        </div>
-
-      </Router>
-    );
-
-  }
+    </BrowserRouter>
+  );
 }
 
 export default oAuthApp;

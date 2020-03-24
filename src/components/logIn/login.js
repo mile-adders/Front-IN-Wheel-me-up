@@ -2,6 +2,8 @@
 import React, { useContext } from 'react';
 import { loggerContext } from '../auth/context.js';
 import BookingForm from '../bookingForm/booking-form.js'
+import Facebook from '../Facebook.js';
+import Google from '../Google.js';
 const SignIn = () => {
   let useLogger = useContext(loggerContext);
 
@@ -22,6 +24,9 @@ const SignIn = () => {
         <label  > UserName: <input name='name' required/> </label>
         <label> Password: <input type='password' name='password' required/></label>
         <button type='submit' > LogIn </button>
+        <Facebook />
+        <Google />
+        
       </form>
       <BookingForm />
       <button onClick={handleLogout}> LogOut </button>
