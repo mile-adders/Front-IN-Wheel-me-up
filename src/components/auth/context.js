@@ -28,6 +28,7 @@ function LoggerProvider(props) {
     }
   };
 
+  /////////////////// login function
   let logIn = async (username, password)=> {
 
     try {
@@ -40,14 +41,41 @@ function LoggerProvider(props) {
         }),
 
       });
-
+  
       let response = await output.text();
-      console.log('dddddddddddddd',response);
+      // console.log('dddddddddddddd',response);
       await validatorForToken(response, username);
     } catch{
-      console.error('log In!');
+      console.error('can not log In!!!!!!!!!!!!');
     }
   };
+
+
+  //////////////signup function
+  let handleSignUp = async(data) => {
+
+    let output = await fetch(`${API}/signup` , {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method:'POST',
+      mode: 'cors',
+      cache : 'no-cache',
+      body: JSON.stringify(data),
+    });
+    if (output.status !== 200) {
+      // let result = await  output.json()
+      // console.log('result', result.error )
+      alert('error : username already exist' );
+    } else {
+      // handle successful registration
+      // console.log('output', output);
+      let response = await output.text();
+      // console.log('response', response);
+      await validatorForToken(response, data.username);
+    }
+  };
+  
 
   let logOut = () => {
     cookies.save('auth', null);
@@ -58,7 +86,7 @@ function LoggerProvider(props) {
   useEffect(() => {
 
     let cookiesToken = cookies.load('auth');
-    console.log('cookiesToken',cookiesToken);
+    // console.log('cookiesToken',cookiesToken);
     const qs = new URLSearchParams(window.location.search);
 
     let token = qs.get('token') || cookiesToken || null;
@@ -66,7 +94,7 @@ function LoggerProvider(props) {
     validatorForToken(token);
   }, []);
 
-  let keys = { logIn, logOut, logState , user };
+  let keys = { logIn, logOut, handleSignUp ,logState , user };
 
   return (
 
@@ -79,141 +107,3 @@ function LoggerProvider(props) {
 
 export default LoggerProvider;
 
-
-///////////////////
-
-// function LoggerProvider(props){
-
-//   const [logState , setLogState] = useState(false);
-//   const [user , setUser] = useState({});
-
-
-//   const validateToken = (token , userName)=>{
-//     try{
-//       let user = jwt.verify(token, SECRET);
-//       cookies.save('auth', token);
-//       setLogState(user);
-//       setUser(userName);
-//     }catch{
-//       setLogState(false);
-//       console.error('token Invalid!!!');
-//     }
-//   };
-
-
-//   const logIn = (userName , password) => {
-
-//     console.log('in logIn' , userName , password);
-//     fetch(`${API}/signin`,{
-//       method: 'POST',
-//       mode: 'cors',
-//       cache: 'no-cache',
-//       headers: new Headers({
-//         'Authorization': `Basic ${btoa(`${userName}:${password}`)}`,
-//       }),
-//     })
-//       .then(res => res.text())
-//       .then(token => validateToken(token , userName))
-//       .catch(console.error);
-//     };
-
-
-//     const logOut = ()=>{
-//       setLogState(false);
-//       setUser({});
-//       cookies.save('auth', null);
-//     };
-
-
-//     // to stay login after refresh 
-//     useEffect(()=>{
-//       const cookiesToken = cookies.load('auth');
-//     const qs = new URLSearchParams(window.location.search);
-//     const token = qs.get('token') || cookiesToken || null ;
-//     validateToken(token);
-//   },[]);
-
-//   const keys = {logState , logIn , logOut ,user};
-
-
-//   return(
-//     <LoggerContext.Provider value = {keys}>
-//       {props.children}
-//     </LoggerContext.Provider>
-//   );
-
-// }
-
-
-// export default LoggerProvider ;
-
-// const API = process.env.REACT_APP_API;
-// // const secret = 
-
-// export const LoginContext = React.createContext();
-
-// class LoginProvider extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       loggedIn: false,
-//       login: this.login,
-//       logout: this.logout,
-//       user: {}
-//     }
-//   }
-
-//   login = (username, password) => {
-//     console.log(username , password , 'mmmmmmmmmmmm')
-//     fetch(`${API}/signin`, {
-//       method: 'post',
-//       mode: 'cors',
-//       cache: 'no-cache',
-//       headers: new Headers({
-//         'Authorization': `Basic ${btoa(`${username}:${password}`)}`
-//       })
-//     })
-//     .then((response) =>
-//       // console.log('response', response),
-//        response.text()
-//        )
-//     .then(token => this.validateToken(token))
-//     .catch(console.error);
-//   }
-
-//   validateToken = token => {
-//     try {
-//       let user = jwt.verify(token, 'cool mai');
-//       this.setLoginState(true, token, user);
-//     } catch {
-//       this.setLoginState(false, null, {});
-//       console.error('token invalid');
-//     }
-//   }
-
-//   setLoginState = (loggedIn, token, user) => {
-//     cookies.save('auth', token);
-//     this.setState({ token, loggedIn, user });
-//   }
-
-//   logout = () => {
-//     this.setLoginState(false, null, {});
-//   }
-
-//   componentDidMount() {
-//     const qs = new URLSearchParams(window.location.search);
-//     const cookiesToken = cookies.load('auth');
-//     const token = qs.get('token') || cookiesToken || null;
-//     this.validateToken(token);
-//   }
-
-//   render() {
-//     return (
-//       <LoginContext.Provider value={this.state}>
-//         {this.props.children}
-//       </LoginContext.Provider>
-//     )
-//   }
-// }
-
-// export default LoginProvider;
