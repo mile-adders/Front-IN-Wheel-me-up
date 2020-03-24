@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import GoogleLogin from 'react-google-login';
+import BookingForm from './bookingForm/booking-form';
 
 function Google() {
   const [name, setName] = useState('');
@@ -26,6 +27,7 @@ function Google() {
         onFailure={responseGoogle}
         cookiePolicy={'single_host_origin'}
       />
+      <BookingForm />
     </div>
   );
 }

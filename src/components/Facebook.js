@@ -2,6 +2,7 @@
 // /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
+import BookingForm from './bookingForm/booking-form';
 
 export default class Facebook extends Component {
   state = {
@@ -28,6 +29,7 @@ export default class Facebook extends Component {
   componentClicked = () => console.log('clicked');
 
   render() {
+    
     let fbContent;
 
     if (this.state.isLoggedIn) {
@@ -50,6 +52,10 @@ export default class Facebook extends Component {
       );
     }
 
-    return <div>{fbContent}</div>;
+    return  (<div>
+      
+      {fbContent}
+      <BookingForm />
+    </div>);
   }
 }
