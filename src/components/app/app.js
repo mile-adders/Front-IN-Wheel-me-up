@@ -1,33 +1,31 @@
 import React  from 'react';
 // import LoginContext from '../auth/context.js';
-import LoggerHelp from '../auth/context.js';
+// import LoggerHelp from '../auth/context.js';
 import SignIn from '../logIn/login.js';
+import Home from '../about-us/about-us.js';
+import Header from '../app/header.js';
+import Footer from '../app/footer.js';
 
+import '../app/app.scss';
+import Cards from '../about-us/cards.js';
+// import Blurb from '../about-us/blurb.js';
+
+// import Cards from '../about-us/cards.js';
+// import Blurb from '../about-us/blurb.js';
 // import Auth from '../auth/auth.js';
 
-// const Edit = props => {
-//   return (
-//     <Auth capability="update">
-//       <span>You can edit!</span>
-//     </Auth>
-//   )
-// }
 
-// const Delete = props => {
-//   return (
-//     <Auth capability="delete">
-//       <span>You can delete!</span>
-//     </Auth>
-//   )
-// }
 const App = ()=> {
 
   return(
     <>
-      < LoggerHelp>
-        <h1> hi</h1>
-        <SignIn />
-      </LoggerHelp>
+    < Home/>
+    <Header/>
+    <Footer/>
+     
+    <Cards/>
+  
+   
 
 
     </>
