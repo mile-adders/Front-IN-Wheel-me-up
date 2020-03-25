@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect , useContext} from 'react';
-import Login from '../logIn/login.js'
+// import Login from '../logIn/login.js'
+import {Link} from 'react-router-dom';
+// import Login from '../logIn/login';
+
 const SignUp = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -24,8 +27,8 @@ const SignUp = () => {
         <input type="checkbox" required />
         <button type='submit' name='signUp' > SignUp </button>
       </form>
-      <Login />
-
+      
+      <Link to='/login'>Login</Link>
     </>
   );
 };

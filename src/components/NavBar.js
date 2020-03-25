@@ -12,12 +12,12 @@ const NavBar = (props) => {
       </div>
       <ul className="right" >
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/aboutus">About-Us</Link></li>
-        <li><Link to="/contactus">Contact-US</Link></li>
-        <li><Link to="/dashboard">DashBoard</Link></li>
-        <li><Link to="/bookingform">BookingForm</Link></li>
-        <li><Link to="/login">LogIn</Link></li>
-        <li><Link to="/signup">SignUp</Link></li>
+        <li><Link to="/aboutUs">About-Us</Link></li>
+        <li><Link to="/AskUs">Ask-Us</Link></li>
+        <li><Link to="/carRent">Car-Rent</Link></li>
+        <li><Link to="/bookingForm">Booking-Form</Link></li>
+        <li><Link to="/login">Log-In</Link></li>
+        <li><Link to="/signup">Sign-Up</Link></li>
       </ul>
     </nav>
   );

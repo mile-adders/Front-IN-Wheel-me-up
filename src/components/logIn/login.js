@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import { loggerContext } from '../auth/context.js';
-import BookingForm from '../bookingForm/booking-form.js'
+import { Link, Route, BrowserRouter } from 'react-router-dom';
+import BookingForm from '../bookingForm/booking-form.js';
 import Facebook from '../Facebook.js';
 import Google from '../Google.js';
+
 const SignIn = () => {
   let useLogger = useContext(loggerContext);
 
@@ -20,16 +22,17 @@ const SignIn = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+    <legend>Cool LogIn Form
+        <form onSubmit={handleSubmit}>
         <label  > UserName: <input name='name' required/> </label>
         <label> Password: <input type='password' name='password' required/></label>
-        <button type='submit' > LogIn </button>
-        <Facebook />
-        <Google />
-        
-      </form>
-      <BookingForm />
+        <button type='submit' > LogIn </button><br/> <br /> <br />
+        <Facebook /> <br />  <br  />
+        <Google /> <br /> <br />
       <button onClick={handleLogout}> LogOut </button>
+      
+      </form>
+      </legend>
     </>
   );
 };

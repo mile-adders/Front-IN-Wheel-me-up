@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 
-const CarCompanyForm= (props) => {
+const CarCompanyForm = (props) => {
   const [carName, setCarName] = useState('');
   const [brand, setBrand] = useState('');
   const [type, setType] = useState('');
