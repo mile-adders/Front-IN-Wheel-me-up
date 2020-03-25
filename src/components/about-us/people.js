@@ -5,7 +5,7 @@ const people = {
         name: 'mile adders',
         members:[
           {
-            name:'bayan',
+            name:'Bayan Al-Shaqareen',
             logo: 'js',
             picture:'bayan_mhmd',
             github: '', 
@@ -13,7 +13,7 @@ const people = {
             linkedin: 'https://www.linkedin.com/in/bayan-al-shaqareen-48a81a194/',
           },
           {
-            name:'mai',
+            name:'Mai Al-Shagarin',
             logo: 'js',
             picture:'mai_yusuf',
             github: '', 
@@ -21,7 +21,7 @@ const people = {
             linkedin: 'https://www.linkedin.com/in/mai-yusuf-69a819194/',
           },
           {
-            name:'ahmad',
+            name:'Ahmad Al-Mahasneh',
             logo: 'js',
             picture:'ahmad_ma',
             github: '', 
@@ -29,7 +29,7 @@ const people = {
             linkedin: 'https://www.linkedin.com/in/ahmadkhaleel96/',
           },
           {
-          name:'obada',
+          name:'Obada Al-Matrami',
           logo: 'js',
           picture:'obada_matrami',
           github: '',

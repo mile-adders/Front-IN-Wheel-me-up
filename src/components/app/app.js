@@ -2,7 +2,7 @@ import React  from 'react';
 // import LoginContext from '../auth/context.js';
 // import LoggerHelp from '../auth/context.js';
 import SignIn from '../logIn/login.js';
-import Home from '../about-us/about-us.js';
+// import Home from '../about-us/about-us.js';
 import Header from '../app/header.js';
 import Footer from '../app/footer.js';
 
@@ -19,7 +19,7 @@ const App = ()=> {
 
   return(
     <>
-    < Home/>
+    {/* < Home/> */}
     <Header/>
     <Footer/>
      

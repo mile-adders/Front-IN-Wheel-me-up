@@ -34,9 +34,17 @@
 //     font-family: "markweb-bold";
 //     src: url("../../fonts/modified-MarkWeb-Bold.woff") format('woff');
 //    }
+
+    #hello{
+        align-items: center;
+      text-align: initial;
+      background-color:  #ffffff;
+    }
+ 
   #hash {
     align-items: center;
       text-align: initial;
+      background-color:  #ffffff;
 
   }
    /* ensure good sizing */
@@ -83,6 +91,15 @@
     flex-direction:row;
     justify-content: space-between;
     padding: 5px;
+  }
+  #icona{
+       display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    padding: 5px;
+    width: 25px;
+    height: 25px;
+
   }
   
   

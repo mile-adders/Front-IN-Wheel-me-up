@@ -1,4 +1,4 @@
-import bayan_mhmd from './bayan.png'
+import bayan_mhmd from './bayann1.jpg'
 import mai_yusuf from './mai.jpg'
 import ahmad_ma from './ahmad.png'
 import obada_matrami from './obada.png'
