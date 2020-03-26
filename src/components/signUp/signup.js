@@ -1,5 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect , useContext} from 'react';
+// import Login from '../logIn/login.js'
+import {Link} from 'react-router-dom';
+// import Login from '../logIn/login';
 import { loggerContext } from '../auth/context.js';
 
 
@@ -45,6 +48,7 @@ const SignUp = () => {
 
   return (
     <>
+
       <form  onSubmit ={handleSubmit}>
 
         <label> User Name: <input required name='username' /></label>
@@ -60,8 +64,8 @@ const SignUp = () => {
         <label> Confirm Password: <input required type='password' name='confirmPassword' onChange={e => setConfirmPassword(e.target.value)} /></label>
 
         <label> Sign As: 
-          <input type="radio" value="guest" name="role"/> Car user
-          <input type="radio" value="user" name="role"/> Car rental
+          <input type="radio" value="guest" name="role" required/> Car user
+          <input type="radio" value="user" name="role" required/> Car rental
         </label>
 
         <label>I accept the Terms of Use & Privacy Policy
@@ -71,6 +75,8 @@ const SignUp = () => {
         <button type='submit' name='signUp' disabled={passwordMatch} > SignUp </button>
 
       </form>
+      
+      <Link to='/login'>Login</Link>
     </>
   );
 };

@@ -1,6 +1,11 @@
 /* eslint-disable no-unused-vars */
+// /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
+import {  Redirect, Route } from 'react-router-dom';
+import BookingForm from './bookingForm/booking-form';
+
+
 
 export default class Facebook extends Component {
   state = {
@@ -27,35 +32,53 @@ export default class Facebook extends Component {
   componentClicked = () => console.log('clicked');
 
   render() {
+
     let fbContent;
 
     if (this.state.isLoggedIn) {
       fbContent = (
-        <div
-          style={{
-            width: '400px',
-            margin: 'auto',
-            background: '#f4f4f4',
-            padding: '20px',
-          }}
-        >
+
+        <div>
           <img src={this.state.picture} alt={this.state.name} />
           <h2>Welcome {this.state.name}</h2>
-          Email: {this.state.email}
+        Email: {this.state.email}
         </div>
+
+
       );
+      return <Redirect to='/bookingform' component={BookingForm} ></Redirect>;
+
+
     } else {
       fbContent = (
         <FacebookLogin
           appId="653628268747487"
-          autoLoad={true}
+          autoLoad={false}
           fields="name,email,picture"
           onClick={this.componentClicked}
           callback={this.responseFacebook}
+
         />
+
       );
+
     }
 
-    return <div>{fbContent}</div>;
+    return (
+      <>
+
+        {fbContent}
+
+
+      </>
+    );
   }
 }
+
+
+// rename Dashboard to car rent
+// fix the route after facebook  and google and login
+// add log out button in facebook and google
+
+
+
