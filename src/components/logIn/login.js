@@ -1,9 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import { loggerContext } from '../auth/context.js';
+import { Link, Route, BrowserRouter } from 'react-router-dom';
+import BookingForm from '../bookingForm/booking-form.js';
+import Facebook from '../Facebook.js';
+import Google from '../Google.js';
 
 const SignIn = () => {
   let useLogger = useContext(loggerContext);
+  console.log(useLogger)
 
   let handleSubmit = (e) => {
     e.preventDefault();
@@ -19,12 +24,22 @@ const SignIn = () => {
   return (
     <>
 
-      <form onSubmit={handleSubmit}>
-        <label  > UserName: <input name='name' /> </label>
-        <label> Password: <input type='password' name='password' /></label>
-        <button type='submit' > LogIn </button>
-      </form>
+//       <form onSubmit={handleSubmit}>
+//         <label  > UserName: <input name='name' /> </label>
+//         <label> Password: <input type='password' name='password' /></label>
+//         <button type='submit' > LogIn </button>
+//       </form>
+    {/* <legend>Cool LogIn Form
+        <form onSubmit={handleSubmit}>
+        <label  > UserName: <input name='name' required/> </label>
+        <label> Password: <input type='password' name='password' required/></label>
+        <button type='submit' > LogIn </button><br/> <br /> <br />
+        <Facebook /> <br />  <br  />
+        <Google /> <br /> <br />
       <button onClick={handleLogout}> LogOut </button>
+      
+      </form>
+      </legend> */}
     </>
   );
 };

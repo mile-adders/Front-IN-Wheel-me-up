@@ -1,6 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect , useContext} from 'react';
-import { loggerContext } from '../auth/context.js';
+// import Login from '../logIn/login.js'
+import {Link} from 'react-router-dom';
+// import Login from '../logIn/login';
+import loggerContext  from '../auth/context.js';
+// import { loggerContext } from '../auth/context.js';
+
 
 
 const API = process.env.REACT_APP_API;
@@ -8,6 +13,7 @@ const API = process.env.REACT_APP_API;
 const SignUp = () => {
   
   let useLogger = useContext(loggerContext);
+  console.log(useLogger)
 
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -61,17 +67,20 @@ const SignUp = () => {
         <label> Confirm Password: <input required type='password' name='confirmPassword' onChange={e => setConfirmPassword(e.target.value)} /></label>
 
         <label> Sign As: 
-          <input type="radio" value="guest" name="role"/> Car user
-          <input type="radio" value="user" name="role"/> Car rental
+          <input type="radio" value="guest" name="role" required/> Car user
+          <input type="radio" value="user" name="role" required/> Car rental
         </label>
 
-        <label>I accept the Terms of Use & Privacy Policy
           <input type="checkbox" required />
+        <label>
+          I accept the Terms of Use & Privacy Policy
         </label>
 
         <button type='submit' name='signUp' disabled={passwordMatch} > SignUp </button>
 
       </form>
+      
+      <Link to='/login'>Login</Link>
     </>
   );
 };

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import cookies from 'react-cookies';
 import jwt from 'jsonwebtoken';
 
-export const LoggerContext = React.createContext();
 
 const API = process.env.REACT_APP_API;
 const SECRET = 'cool mai';
@@ -103,7 +102,7 @@ function LoggerProvider(props) {
 
 
 
-  let keys = { logIn, logOut, handleSignUp ,logState , user };
+  let keys = { logIn, logOut, handleSignUp ,logState , user , validatorForToken};
 
   return (
 

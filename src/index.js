@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import registerServiceWorker from './registerServiceWorker';
 import App from './components/app/app.js';
 import OAuthApp from './App.js';
 // import { BrowserRouter } from 'react-router-dom'
@@ -10,14 +9,15 @@ import OAuthApp from './App.js';
 function Main() {
   return (
     <>
-      {/* <BrowserRouter> */}
-        {/* <OAuthApp /> */}
+      {/* <BrowserRouter>
+        <OAuthApp />
         <App /> 
-      {/* </BrowserRouter> */}
+      </BrowserRouter> */}
+      {/* <App /> */}
+      <OAuthApp />
     </>
   );
 }
 
 let entryPoint = document.getElementById('root');
-ReactDOM.render(<Main />, entryPoint);
-registerServiceWorker();
+ReactDOM.render(<Main /> , entryPoint);
