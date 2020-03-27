@@ -1,19 +1,21 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import cookies from 'react-cookies';
 import jwt from 'jsonwebtoken';
 
-export const loggerContext = React.createContext();
+
+
 
 const API = process.env.REACT_APP_API;
 const SECRET = 'cool mai';
 
+export const loggerContext = React.createContext();
 
 function LoggerProvider(props) {
 
   const [logState, setLogState] = useState(false);
   const [user, setUser] = useState({});
 
-  ////////////// validation
   const validatorForToken = (token, username) => {
     try {
       let validUser = jwt.verify(token, SECRET);
@@ -34,7 +36,6 @@ function LoggerProvider(props) {
   let logIn = async (username, password) => {
 
     try {
-
       let output = await fetch(`${API}/signin`, {
         method: 'POST',
         mode: 'cors',
@@ -44,10 +45,7 @@ function LoggerProvider(props) {
         }),
 
       });
-
-
       let response = await output.text();
-      // console.log('dddddddddddddd',response);
       await validatorForToken(response, username);
     } catch{
       console.error('can not log In!!!!!!!!!!!!');
@@ -97,9 +95,8 @@ function LoggerProvider(props) {
 
 
 
-
-
   let keys = { logIn, logOut, handleSignUp, logState, user, validatorForToken };
+
 
   return (
 

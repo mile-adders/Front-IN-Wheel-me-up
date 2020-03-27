@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, {useContext  }  from 'react';
 // import { loggerContext } from '../auth/context.js';
 import { Redirect } from 'react-router-dom';
@@ -39,12 +40,12 @@ const SignIn = () => {
          <button type='submit' > LogIn </button><br/> <br /> <br />
          <Facebook /> <br />  <br  />
          <Google /> <br /> <br />
-       <button onClick={handleLogout}> LogOut </button>
+       {/* <button onClick={handleLogout}> LogOut </button> */}
       
        </form>
        </legend>
 
-      {/* <button onClick={handleLogout}> LogOut </button> */}
+      <button onClick={handleLogout}> LogOut </button>
     </>
   );
 };
