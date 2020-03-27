@@ -1,7 +1,7 @@
 /* eslint-disable new-cap */
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import Rainbow from '../components/hoc/Rainbow';
+import Rainbow from '../../hoc/Rainbow';
 const AboutUs = () => {
   return (
     <div className="container">

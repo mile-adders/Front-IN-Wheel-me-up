@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect , useContext} from 'react';
-// import Login from '../logIn/login.js'
-import {Link} from 'react-router-dom';
-// import Login from '../logIn/login';
-import loggerContext  from '../auth/context.js';
-// import { loggerContext } from '../auth/context.js';
+import {Redirect} from 'react-router-dom';
+
+import { loggerContext } from '../auth/context.js';
+import SignIn from '../logIn/login.js'
+import oAuthApp from '../../App.js';
+
 
 
 
@@ -13,8 +14,9 @@ const API = process.env.REACT_APP_API;
 const SignUp = () => {
   
   let useLogger = useContext(loggerContext);
-  console.log(useLogger)
 
+  // console.log('useLogger', useLogger);
+ 
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordMatch , setPasswordMatch] = useState(true)
@@ -41,6 +43,10 @@ const SignUp = () => {
     };
 
     useLogger.handleSignUp(data);
+  }
+      if (useLogger.logState){
+        console.log('useLogger.logState' , useLogger.logState);
+        return  <Redirect to='/login' component={SignIn} ></Redirect> ;
      
   };
 
@@ -71,16 +77,17 @@ const SignUp = () => {
           <input type="radio" value="user" name="role" required/> Car rental
         </label>
 
-          <input type="checkbox" required />
         <label>
           I accept the Terms of Use & Privacy Policy
+          <input type="checkbox" required />
+
         </label>
 
         <button type='submit' name='signUp' disabled={passwordMatch} > SignUp </button>
 
       </form>
       
-      <Link to='/login'>Login</Link>
+      {/* <Link to='/login'>Login</Link> */}
     </>
   );
 };

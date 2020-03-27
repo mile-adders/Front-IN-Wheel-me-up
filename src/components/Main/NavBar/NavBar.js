@@ -16,8 +16,8 @@ const NavBar = (props) => {
         <li><Link to="/AskUs">Ask-Us</Link></li>
         <li><Link to="/carRent">Car-Rent</Link></li>
         <li><Link to="/bookingForm">Booking-Form</Link></li>
-        <li><Link to="/login">Log-In</Link></li>
-        <li><Link to="/signup">Sign-Up</Link></li>
+        <li><Link to="/logout">LogOut</Link></li>
+        {/* <li><Link to="/signup">Sign-Up</Link></li> */}
       </ul>
     </nav>
   );

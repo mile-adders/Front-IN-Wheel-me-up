@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import {  Redirect, Route } from 'react-router-dom';
-import BookingForm from './bookingForm/booking-form';
+import BookingForm from '../bookingForm/booking-form';
 
 
 

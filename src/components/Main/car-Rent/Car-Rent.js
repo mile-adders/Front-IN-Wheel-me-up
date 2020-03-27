@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import CarCompanyForm from './carCompanyForm/car-company-form.js';
+import CarCompanyForm from '../../carCompanyForm/car-company-form.js';
 const CarRent = () => {
   return (
     <div className="container">

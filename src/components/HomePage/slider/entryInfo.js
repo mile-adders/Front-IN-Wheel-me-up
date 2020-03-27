@@ -1,7 +1,7 @@
 import React from 'react';
 
-import defaultSlides from './defaultSlides';
-import './homepage.css';
+import defaultSlides from './defaultSlides.js';
+// import './slider.scss';
 
 const Slider = ({ slides }) => {
   // Create a curr state indicating what's the current slide's index

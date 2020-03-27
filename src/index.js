@@ -9,12 +9,12 @@ import OAuthApp from './App.js';
 function Main() {
   return (
     <>
-      {/* <BrowserRouter>
-        <OAuthApp />
+       {/* <BrowserRouter> */}
+        {/* <OAuthApp /> */}
         <App /> 
-      </BrowserRouter> */}
-      {/* <App /> */}
-      <OAuthApp />
+      {/* </BrowserRouter>  */}
+      {/* // <App /> */}
+       {/* <OAuthApp /> */}
     </>
   );
 }
