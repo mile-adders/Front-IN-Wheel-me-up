@@ -14,7 +14,6 @@ const App = () => {
       <LoggerHelp>
         <BrowserRouter>
           <div className="App">
-            < HomePage />
             <Route exact path='/' component={HomePage} />
           </div>
 
