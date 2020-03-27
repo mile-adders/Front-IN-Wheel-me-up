@@ -31,7 +31,7 @@ function LoggerProvider(props) {
   };
 
   /////////////////// login function
-  let logIn = async (username, password)=> {
+  let logIn = async (username, password) => {
 
     try {
 
@@ -44,7 +44,7 @@ function LoggerProvider(props) {
         }),
 
       });
-  
+
 
       let response = await output.text();
       // console.log('dddddddddddddd',response);
@@ -56,41 +56,38 @@ function LoggerProvider(props) {
 
 
   //////////////signup function
-  let handleSignUp = async(data) => {
+  let handleSignUp = async (data) => {
 
-    let output = await fetch(`${API}/signup` , {
+    let output = await fetch(`${API}/signup`, {
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      method:'POST',
+      method: 'POST',
       mode: 'cors',
-      cache : 'no-cache',
+      cache: 'no-cache',
       body: JSON.stringify(data),
     });
+
     if (output.status !== 200) {
-      // let result = await  output.json()
-      // console.log('result', result.error )
-      alert('error : username already exist' );
+      alert('error : username already exist');
     } else {
-      // handle successful registration
-      // console.log('output', output);
       let response = await output.text();
-      // console.log('response', response);
       await validatorForToken(response, data.username);
     }
   };
-  
 
+  /////////// logOut function 
   let logOut = () => {
     cookies.save('auth', null);
     setLogState(false);
     setUser({});
   };
 
+  //////////////////// to save data after refresh and don't logout 
   useEffect(() => {
 
     let cookiesToken = cookies.load('auth');
-    // console.log('cookiesToken',cookiesToken);
+
     const qs = new URLSearchParams(window.location.search);
 
     let token = qs.get('token') || cookiesToken || null;
@@ -102,7 +99,7 @@ function LoggerProvider(props) {
 
 
 
-  let keys = { logIn, logOut, handleSignUp , logState , user , validatorForToken};
+  let keys = { logIn, logOut, handleSignUp, logState, user, validatorForToken };
 
   return (
 
