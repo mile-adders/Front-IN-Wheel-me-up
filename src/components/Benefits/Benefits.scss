@@ -1,0 +1,13 @@
+.benefits{
+    width: 90%;
+    margin-left: 10%;
+  .unordered{
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .element{
+      width: 30%;
+      margin-right: 2%;
+  }
+}

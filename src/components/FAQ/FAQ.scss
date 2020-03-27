@@ -1,0 +1,24 @@
+.FAQ__question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .FAQ__question:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .FAQ__answer--hidden {
+    display: none;
+  }
+  .FAQ{
+      text-align: center;
+      border: 1px black solid;
+      width:60%;
+      margin: 0 auto;
+  }
+  

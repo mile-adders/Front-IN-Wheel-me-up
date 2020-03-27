@@ -8,6 +8,13 @@ import CarCompanyForm from '../carCompanyForm/car-company-form.js';
 import LoggerHelp from '../auth/context.js';
 import SignIn from '../logIn/login.js';
 import SignUp from '../signUp/signup.js';
+import Video from '../Video/Video.js';
+import Facebook from '../Facebook.js';
+import Benefits from '../Benefits/Benefits.js';
+import Testimonials from '../Testimonials/Testimonials.js';
+import Google from '../Google.js';
+import FAQ from '../FAQ/FAQ.js';
+import MoreQuestions from '../MoreQuestions/MoreQuestions';
 import './app.scss';
 
 
@@ -15,13 +22,21 @@ const App = () => {
   return (
     <>
       <Header />
-      < LoggerHelp>
+      {/* < LoggerHelp>
         <h1> hi</h1>
         <SignUp />
         <SignIn />
-      </LoggerHelp>
-      <BookingForm />
-      <CarCompanyForm />
+      </LoggerHelp> */}
+      <Video />
+      <Benefits /> 
+      {/* the photo slide show */}
+      <Testimonials />
+      <FAQ />
+      <MoreQuestions />
+      {/* <BookingForm />
+      <CarCompanyForm /> */}
+      {/* <Facebook />
+        <Google /> */}
       <Footer />
     </>
   );

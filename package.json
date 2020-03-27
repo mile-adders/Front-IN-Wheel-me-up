@@ -28,6 +28,7 @@
     "jsonwebtoken": "^8.5.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
+    "react-bootstrap": "^1.0.0",
     "react-cookies": "^0.1.1",
     "react-dom": "^16.13.0",
     "react-facebook-login": "^4.1.1",
