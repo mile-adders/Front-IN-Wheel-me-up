@@ -26,7 +26,6 @@ const oAuthApp = () => {
         <Route path='/carRent' component={CarRent} />
         <Route path='/bookingForm' component={BookingForm} />
         <Route path='/logout' component={LogOut} />
-
       </div>
 
     </BrowserRouter>

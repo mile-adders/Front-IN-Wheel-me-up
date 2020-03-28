@@ -1,13 +1,14 @@
 header{
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 3vw;
       width: 100%;
-      background-color: black;
+      background-color: $grey;
       margin: 0 auto;
-      margin-bottom: 1vw;
+      margin-bottom: 3vw;
       h1{
-          color: white;
-          margin-left: 3vw;
+        font-family: $videoFont;
+        font-weight: lighter;
+        color: $videoFontColor;
+        margin-left: 5%;
       }
     //   ul{
     //       list-style-type: none;
