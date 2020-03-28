@@ -9,7 +9,7 @@ const If = props => {
 
 // static contextType = LoginContext;
 
-const CarCompanyForm= (props) => {
+const CarCompanyForm = (props) => {
   const [carName, setCarName] = useState('');
   const [brand, setBrand] = useState('');
   const [type, setType] = useState('');

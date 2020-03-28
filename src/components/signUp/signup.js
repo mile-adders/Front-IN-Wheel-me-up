@@ -1,6 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect , useContext} from 'react';
+import {Redirect} from 'react-router-dom';
+
 import { loggerContext } from '../auth/context.js';
+import SignIn from '../logIn/login.js'
+import oAuthApp from '../../App.js';
+
+
 
 
 const API = process.env.REACT_APP_API;
@@ -9,6 +15,8 @@ const SignUp = () => {
   
   let useLogger = useContext(loggerContext);
 
+  // console.log('useLogger', useLogger);
+ 
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordMatch , setPasswordMatch] = useState(true)
@@ -35,6 +43,10 @@ const SignUp = () => {
     };
 
     useLogger.handleSignUp(data);
+  }
+      if (useLogger.logState){
+        console.log('useLogger.logState' , useLogger.logState);
+        return  <Redirect to='/login' component={SignIn} ></Redirect> ;
      
   };
 
@@ -45,6 +57,7 @@ const SignUp = () => {
 
   return (
     <>
+    
       <form  onSubmit ={handleSubmit}>
 
         <label> User Name: <input required name='username' /></label>
@@ -60,17 +73,21 @@ const SignUp = () => {
         <label> Confirm Password: <input required type='password' name='confirmPassword' onChange={e => setConfirmPassword(e.target.value)} /></label>
 
         <label> Sign As: 
-          <input type="radio" value="guest" name="role"/> Car user
-          <input type="radio" value="user" name="role"/> Car rental
+          <input type="radio" value="guest" name="role" required/> Car user
+          <input type="radio" value="user" name="role" required/> Car rental
         </label>
 
-        <label>I accept the Terms of Use & Privacy Policy
+        <label>
+          I accept the Terms of Use & Privacy Policy
           <input type="checkbox" required />
+
         </label>
 
         <button type='submit' name='signUp' disabled={passwordMatch} > SignUp </button>
 
       </form>
+      
+      {/* <Link to='/login'>Login</Link> */}
     </>
   );
 };

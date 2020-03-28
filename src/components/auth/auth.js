@@ -2,7 +2,8 @@
 import React, { useContext } from 'react';
 import jwt from 'jsonwebtoken';
 import { If, Then } from '../if/index.js';
-import  LoggerContext  from '../auth/context.js';
+
+import LoggerContext from '../auth/context.js';
 
 const Auth = props => {
   const context = useContext(LoggerContext);
@@ -17,7 +18,7 @@ const Auth = props => {
     okToRender =
       context.login &&
       (props.capability ? user.capabilities.includes(props.capability) : true);
-  } catch {console.warn('not cool');}
+  } catch { console.warn('not cool'); }
 
   return (
     <If condition={okToRender}>
@@ -29,37 +30,3 @@ const Auth = props => {
 };
 
 export default Auth;
-
-
-
-// import React from 'react';
-// import  LoggerContext  from '../auth/context.js';
-
-// const If = props => {
-//   return props.condition ? props.children : null
-// }
-
-// class Auth extends React.Component{
-//   static contextType = LoggerContext;
-
-//   render() {
-//     let okToRender = false;
-
-//     try {
-//       okToRender =
-//         this.context.loggedIn &&
-//           (this.props.capability
-//             ? this.context.user.capabilities.includes(this.props.capability)
-//             : true);
-//     } catch {
-//       console.warn('not authorized to do that');
-//     }
-//     return (
-//       <If condition={okToRender}>
-//         <div>{this.props.children}</div>
-//       </If>
-//     )  
-//   }
-// }
-
-// export default Auth;
