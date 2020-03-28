@@ -20,10 +20,11 @@
         transform: rotate(-90deg);
         font-size: 25px;
         font-family: sans-serif;
-        color: $videoFontColor;
+        font-weight: bold;
+        color: rgb(165, 165, 165);
       }
       .line{
-          background-color: $videoFontColor;
+          background-color:  rgb(165, 165, 165);
           height: 1px;
           width: 7vw;
           margin-top: 6.2vw;
