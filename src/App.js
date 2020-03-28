@@ -9,10 +9,10 @@ class oAuthApp extends Component {
     return (
       <div className="App">
         <h1>Wheel-me-Up</h1>
-        <p> Welcome you can signin with facebook and Google
-        </p>
-        <Facebook />
-        <Google />
+        {/* <p> Welcome you can signin with facebook and Google
+        </p> */}
+        {/* <Facebook />
+        <Google /> */}
       </div>
 
     );
