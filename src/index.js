@@ -4,20 +4,20 @@ import ReactDOM from 'react-dom';
 
 import App from './components/app/app.js';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faFacebookF,
   faLinkedinIn,
-  faGoogle
-} from '@fortawesome/free-brands-svg-icons'
+  faGoogle,
+} from '@fortawesome/free-brands-svg-icons';
 
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components';
 
-import theme from './theme'
-import './styles.css'
-import LoginForm from './components/loginForm/'
+import theme from './theme';
+import './styles.css';
+import LoginForm from './components/loginForm/';
 
-library.add(faFacebookF, faLinkedinIn, faGoogle)
+library.add(faFacebookF, faLinkedinIn, faGoogle);
 
 function Main() {
   return (
@@ -27,9 +27,9 @@ function Main() {
 
       <ThemeProvider theme={theme}>
         <LoginForm />
-      
-    </ThemeProvider>
-      
+
+      </ThemeProvider>
+
 
     </>
   );
