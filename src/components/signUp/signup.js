@@ -3,7 +3,7 @@ import React, { useState, useEffect , useContext} from 'react';
 import {Redirect} from 'react-router-dom';
 
 import { loggerContext } from '../auth/context.js';
-import SignIn from '../logIn/login.js'
+import SignIn from '../logIn/login.js';
 import oAuthApp from '../../App.js';
 
 
@@ -12,15 +12,15 @@ import oAuthApp from '../../App.js';
 const API = process.env.REACT_APP_API;
 
 const SignUp = () => {
-  
+
   let useLogger = useContext(loggerContext);
 
   // console.log('useLogger', useLogger);
- 
+
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [passwordMatch , setPasswordMatch] = useState(true)
- 
+  const [passwordMatch , setPasswordMatch] = useState(true);
+
   useEffect(() => {
 
     if (password === confirmPassword) {
@@ -30,34 +30,34 @@ const SignUp = () => {
     }
   });
 
-  let handleSubmit =(e) => {
+  let handleSubmit = (e) => {
     e.preventDefault();
 
     let data = {
       username:e.target.username.value,
       firstName: e.target.firstName.value ,
       lastName:e.target.lastName.value ,
-      email:e.target.email.value , 
+      email:e.target.email.value ,
       password:e.target.password.value,
       role: e.target.role.value ,
     };
 
     useLogger.handleSignUp(data);
-  }
-      if (useLogger.logState){
-        console.log('useLogger.logState' , useLogger.logState);
-        return  <Redirect to='/login' component={SignIn} ></Redirect> ;
-     
   };
+  if (useLogger.logState){
+    console.log('useLogger.logState' , useLogger.logState);
+    return  <Redirect to='/login' component={SignIn} ></Redirect> ;
+
+  }
 
 
 
- 
+
 
 
   return (
     <>
-    
+
       <form  onSubmit ={handleSubmit}>
 
         <label> User Name: <input required name='username' /></label>
@@ -72,7 +72,7 @@ const SignUp = () => {
 
         <label> Confirm Password: <input required type='password' name='confirmPassword' onChange={e => setConfirmPassword(e.target.value)} /></label>
 
-        <label> Sign As: 
+        <label> Sign As:
           <input type="radio" value="guest" name="role" required/> Car user
           <input type="radio" value="user" name="role" required/> Car rental
         </label>
@@ -83,10 +83,10 @@ const SignUp = () => {
 
         </label>
 
-        <button type='submit' name='signUp' disabled={passwordMatch} > SignUp </button>
+        <button  type='submit' name='signUp' class="ghost" id="signUp" disabled={passwordMatch} > SignUp </button>
 
       </form>
-      
+
       {/* <Link to='/login'>Login</Link> */}
     </>
   );

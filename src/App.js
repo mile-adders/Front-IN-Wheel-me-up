@@ -10,27 +10,26 @@ import NavBar from './components/Main/NavBar/NavBar.js';
 import LoggerHelp from './components/auth/context.js';
 import LogOut from './components/Main/Logout/LogOut.js';
 
-
 const oAuthApp = () => {
 
 
 
   return (
-       <LoggerHelp>
-    <BrowserRouter>
-      <div className="App">
-        <NavBar />
-        <Route  exact path='/m' component={Home}/>
-        <Route path='/aboutUs' component={AboutUs} />
-        <Route path='/AskUs' component={AskUs} />
-        <Route path='/carRent' component={CarRent} />
-        <Route path='/bookingForm' component={BookingForm} />
-        <Route path='/logout' component={LogOut} />
+    <LoggerHelp>
+      <BrowserRouter>
+        <div className="App">
+          <NavBar />
+          <Route  exact path='/m' component={Home}/>
+          <Route path='/aboutUs' component={AboutUs} />
+          <Route path='/AskUs' component={AskUs} />
+          <Route path='/carRent' component={CarRent} />
+          <Route path='/bookingform' component={BookingForm} />
+          <Route path='/logout' component={LogOut} />
 
-      </div>
+        </div>
 
-    </BrowserRouter>
-        </LoggerHelp>
+      </BrowserRouter>
+    </LoggerHelp>
   );
 
 };

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
@@ -5,7 +6,8 @@ import { Link, withRouter } from 'react-router-dom';
 const NavBar = (props) => {
 
   return (
-    <nav className="nav-wrapper red ">
+    
+    <nav className="nav-wrapper">
       <div className="container">
         <a href="/" className="brand-logo"><h4>Wheel-Me-Up</h4></a>
       </div>

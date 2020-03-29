@@ -76,9 +76,6 @@ export default class Facebook extends Component {
 }
 
 
-// rename Dashboard to car rent
-// fix the route after facebook  and google and login
-// add log out button in facebook and google
 
 
 
