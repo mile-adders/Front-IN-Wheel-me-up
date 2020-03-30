@@ -14,9 +14,6 @@ const FormLogin = () => (
         <FontAwesomeIcon icon={['fab', 'facebook-f']} />
       </SocialButton>
       <SocialButton>
-        <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
-      </SocialButton>
-      <SocialButton>
         <FontAwesomeIcon icon={['fab', 'google']} />
       </SocialButton>
     </div>

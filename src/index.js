@@ -7,7 +7,6 @@ import App from './components/app/app.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faFacebookF,
-  faLinkedinIn,
   faGoogle,
 } from '@fortawesome/free-brands-svg-icons';
 
@@ -17,7 +16,7 @@ import theme from './theme';
 import './styles.css';
 import LoginForm from './components/loginForm/';
 
-library.add(faFacebookF, faLinkedinIn, faGoogle);
+library.add(faFacebookF, faGoogle);
 
 function Main() {
   return (
