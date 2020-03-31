@@ -10,7 +10,6 @@ import HomePage from '../HomePage/HomePage/homepage.js';
 const App = () => {
   return (
     <>
-
       <LoggerHelp>
         <BrowserRouter>
           <div className="App">
@@ -19,11 +18,7 @@ const App = () => {
 
         </BrowserRouter>
       </LoggerHelp>
-
-
-
     </>
-
   );
 };
 

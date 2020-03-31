@@ -4,33 +4,42 @@ body {
 
 .slider {
     position: relative;
-    height: 80vh;
+    height: 165vh;
+    width: 164.2vw;
+    margin-bottom: -31.7vw;
 }
 
 .slide {
     margin-left: auto;
     margin-right: auto;
     position: absolute;
-    top: 10px;
-    left: 20px;
-    right: 20px;
+    top: -0.2vw;
     width: 60%;
     height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: .3s ease;
+    transition-duration: 0;
 }
 
 .slide h1, .slide h2 {
-    color: #fff;
-    text-shadow: 2px 2px 1px #000;
+    color: #191919;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+
+}
+.title{
+    height: 10vw;
+    width: 40vw;
+    background-color: rgba($color: #ffffff, $alpha: .9);
 }
 
 .slide.active {
     opacity: 1;
-    transition-duration: .2s;
+    transition-duration: 0;
 }
 
 .image {

@@ -5,7 +5,7 @@ export default function Benefits() {
   return (
     <div className='benefits'>
       <ul className='unordered'>
-        <li className='element'>
+        <li className='element' data-aos='fade-right'>
           <div className='num'>.01</div>
           <div className='line'></div>
           <div className='inside'>
@@ -13,7 +13,7 @@ export default function Benefits() {
           All the hassle of renting a car, now can be done from the comfort of your home, or the hell of airports
           </div>
         </li>
-        <li className='element'>
+        <li className='element' data-aos='fade-up'>
           <div className='num'>.02</div>
           <div className='line'></div>
           <div className='inside'>
@@ -21,7 +21,7 @@ export default function Benefits() {
           help the community to grow Closer
           </div>
         </li>
-        <li className='element'>
+        <li className='element' data-aos='fade-left'>
           <div className='num'>.03</div>
           <div className='line'></div>
           <div className='inside'>

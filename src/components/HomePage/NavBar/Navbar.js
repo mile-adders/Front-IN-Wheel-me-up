@@ -1,22 +1,56 @@
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse, MDBContainer,
+  MDBHamburgerToggler } from 'mdbreact';
+import { BrowserRouter as Router } from 'react-router-dom';
+import HamburgerToggler from 'react-bootstrap';
 
+class NavbarPage extends Component {
+state = {
+  collapse1: false,
+  collapseID: '',
+}
 
-const NavBar = (props) => {
+toggleCollapse = collapseID => () => {
+  this.setState(prevState => ({ collapseID: (prevState.collapseID !== collapseID ? collapseID : '') }));
+}
 
+toggleSingleCollapse = collapseId => {
+  this.setState({
+    ...this.state,
+    [collapseId]: !this.state[collapseId],
+  });
+}
+
+render() {
   return (
-    <nav className="nav-wrapper red ">
-      <div className="container">
-        <a href="/" className="brand-logo"><h4>Wheel-Me-Up</h4></a>
-      </div>
-      <ul className="right" >
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/login">Log-In</Link></li>
-        <li><Link to="/signup">Sign-Up</Link></li>
-      </ul>
-    </nav>
+    <Router>
+      <MDBContainer>
+        <MDBNavbar color="amber lighten-4" style={{ marginTop: '20px' }} light>
+          <MDBContainer>
+            <MDBNavbarBrand>
+              MDBNavbar
+            </MDBNavbarBrand>
+            <MDBHamburgerToggler color="#d3531a" id="hamburger1" onClick={()=> this.toggleSingleCollapse('collapse1')} />
+            <MDBCollapse isOpen={this.state.collapse1} navbar>
+              <MDBNavbarNav left>
+                <MDBNavItem active>
+                  <MDBNavLink to="#!">Home</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="#!">Link</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="#!">Profile</MDBNavLink>
+                </MDBNavItem>
+              </MDBNavbarNav>
+            </MDBCollapse>
+          </MDBContainer>
+        </MDBNavbar>
+      </MDBContainer>
+    </Router>
   );
+}
+}
 
-};
-
-export default withRouter(NavBar);
+export default NavbarPage;

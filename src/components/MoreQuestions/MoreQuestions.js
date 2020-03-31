@@ -11,8 +11,6 @@ import {
 } from 'react-accessible-accordion';
 
 import 'react-accessible-accordion/dist/fancy-example.css';
-
-import 'react-accessible-accordion/dist/fancy-example.css';
  
 export default function Example() {
 
