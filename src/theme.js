@@ -1,6 +1,6 @@
 export default {
-  gradient: 'linear-gradient(to right, #FF4B2B, #FF416C)',
+  gradient: 'linear-gradient(to right, #29E7D6, #0c6b63, #2b2d2d)',
   color: {
-    brand: '#FF4B2B'
-  }
-}
+    brand: '#000000',
+  },
+};

@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SocialButton from './styled/SocialButton';
 import BrandButton from './styled/BrandButton';
 import SlidingForm from './styled/SlidingForm';
-import { Redirect } from 'react-router-dom';
+import Facebook from '../logIn/Facebook';
+import Google from '../logIn/Google';
 
 const FormLogin = () => (
   <SlidingForm>
@@ -12,9 +13,11 @@ const FormLogin = () => (
     <div>
       <SocialButton>
         <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+        <Facebook />
       </SocialButton>
       <SocialButton>
         <FontAwesomeIcon icon={['fab', 'google']} />
+        <Google />
       </SocialButton>
     </div>
     <p>or use your account</p>
@@ -23,7 +26,7 @@ const FormLogin = () => (
       <input placeholder="Password" type="password" />
     </form>
     <p>
-      <a href="#">Forgot your password?</a>
+      <a href="/login">Forgot your password?</a>
     </p>
     <BrandButton>Sign in</BrandButton>
   </SlidingForm>

@@ -3,7 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './components/app/app.js';
-
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faFacebookF,
@@ -15,19 +14,28 @@ import { ThemeProvider } from 'styled-components';
 import theme from './theme';
 import './styles.css';
 import LoginForm from './components/loginForm/';
+import Loading from './components/loadingvideo/loadingvideo.js';
 
 library.add(faFacebookF, faGoogle);
 
+
+
 function Main() {
   return (
+
     <>
-
+      <Loading />
+      
+      
       <App />
-
+      
       <ThemeProvider theme={theme}>
         <LoginForm />
 
       </ThemeProvider>
+
+      
+
 
 
     </>

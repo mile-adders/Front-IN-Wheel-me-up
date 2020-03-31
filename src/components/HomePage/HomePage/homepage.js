@@ -9,7 +9,7 @@ import Footer from '../../Footer/Footer.js';
 import Main from '../slider/entryInfo.js';
 import SignIn from '../../logIn/login';
 import SignUp from '../../signUp/signup';
-
+import Loading from '../../loadingvideo/loadingvideo.js';
 
 
 function HomePage() {

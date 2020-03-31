@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import './About-Us.scss';
-import Cards from '../../about-us/cards.js'
+import Cards from '../../about-us/cards.js';
 const AboutUs = () => {
   return (
     < Cards />
