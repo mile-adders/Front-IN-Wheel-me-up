@@ -1,26 +1,42 @@
 header{
     padding-top: 3vw;
-      width: 100%;
+      width: 90%;
+      margin: 0 auto;
       background-color: $grey;
       margin: 0 auto;
       margin-bottom: 3vw;
-      h1{
-        font-family: $videoFont;
-        font-weight: lighter;
-        color: $videoFontColor;
-        margin-left: 5%;
+      .container{
+        float: left;
       }
-    //   ul{
-    //       list-style-type: none;
-    //   }
-    //   li {
-    //     color: white;
-    //     font-family: $headerFont;
-    //     font-weight: bold;
-    //     float: right;
-    //     margin-left: 2vw;
-    //     margin-right: 2vw;
-    //     margin-top: 1vw;
-    //     text-decoration: none;
-    //   }
+      .brand-logo{
+        text-decoration: none;
+        color: $videoFontColor;
+        font-family: $videoFont;
+      }
+      .appName{
+        margin-top: -2.4vw;
+        margin-left: 2.5vw;
+        letter-spacing: -2px;
+        font-weight: 800;
+        font-family: 'Raleway', sans-serif;
+        font-size: 18px;
+      }
+      .logo{
+        width: 2vw;
+        height: 2vw;
+      }
+      .navImg{
+        padding-top: 1vw;
+        width: 3vw;
+        height: 3vw;
+      }
+      .right{
+        display: inline;
+      }
+      li{
+        list-style-type: none;
+        float: right;
+        margin-left: 3vw;
+        text-decoration: none;
+      }
     }

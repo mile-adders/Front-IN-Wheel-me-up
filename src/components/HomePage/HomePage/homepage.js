@@ -9,6 +9,7 @@ import Footer from '../../Footer/Footer.js';
 import Main from '../slider/entryInfo.js';
 import SignIn from '../../logIn/login';
 import SignUp from '../../signUp/signup';
+import MoreInfo from '../../MoreDetails/MoreDetails.js';
 import Loading from '../../loadingvideo/loadingvideo.js';
 
 
@@ -17,16 +18,15 @@ function HomePage() {
     <>
       <LoggerHelp>
         <BrowserRouter>
-
-          {/* <Header /> */}
+          <Header />
           <div className="Home">
             <NavBar />
             <Route path='/login' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/oAuthApp' component={oAuthApp} />
+          </div> */}
             <Main />
-          </div>
-
+            {/* <MoreInfo/> */}
           <Footer />
 
         </BrowserRouter>

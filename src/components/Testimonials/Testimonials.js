@@ -1,127 +1,50 @@
 /* eslint-disable no-unused-vars */
-import React, { Fragment } from 'react';
-import ReactDom from 'react-dom';
-import {  Card, CardGroup   } from 'react-bootstrap';
-import animal1 from './CoM-Pay-What-You-Want-Learn-to-Code-2017-Bundle.jpg';
-import animal2 from './download.png';
-import animal3 from './FB_IMG_1582585900965.jpg';
-
-
+import React  from 'react';
+import { Card, CardGroup } from 'react-bootstrap'; 
 
 const Testimonials = () => {
   return (
     <div className='testimonials'>
-      Testimonials
-      {/* <Fragment>
-        <Container>
-          <Row className="p-3 justify-content-center align-items-center">
-            <Col md={8} className="text-center">
-              <h1 className="text-black">Main Title</h1>
-              <p className="text-black pt-3">
-                    fermentum iaculis eu non diam phasellus vestibulum lorem sed risus ultricies 
-                    tristique nulla aliquet enim tortor at auctor urna nunc id cursus metus aliquam 
-                    eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci a 
-                    scelerisque purus semper eget duis
-              </p>
-            </Col>
-          </Row>
-          <Row className="h-100 p-3 justify-content-center align-items-start">
-            <Col md={6}>
-              <img 
-                src={animal1}
-                width="100%"
-                    
-              />
-            </Col>
-            <Col md={6} className="text-center">
-              <h3 className="p-1">Subtitle</h3>
-              <p className="p-1">
-                    fermentum iaculis eu non diam phasellus vestibulum lorem sed risus ultricies 
-                    tristique nulla aliquet enim tortor at auctor urna nunc id cursus metus aliquam 
-                    eleifend mi in nulla posuere sollicitudin.
-              </p>
-            </Col>
-          </Row>
-          <Row className="h-100 p-3 justify-content-center align-items-start">
-            <Col md={6}>
-              <img 
-                src={animal2}
-                width="100%"
-                    
-              />
-            </Col>
-            <Col md={6} className="text-center">
-              <h3 className="p-1">Subtitle</h3>
-              <p className="p-1">
-                    fermentum iaculis eu non diam phasellus vestibulum lorem sed risus ultricies 
-                    tristique nulla aliquet enim tortor at auctor urna nunc id cursus metus aliquam 
-                    eleifend mi in nulla posuere sollicitudin.
-              </p>
-            </Col>
-          </Row>
-          <Row className="h-100 p-3 justify-content-center align-items-start">
-            <Col md={6}>
-              <img 
-                src={animal3}
-                width="100%"
-                    
-              />
-            </Col>
-            <Col md={6} className="text-center">
-              <h3 className="p-1">Subtitle</h3>
-              <p className="p-1">
-                    fermentum iaculis eu non diam phasellus vestibulum lorem sed risus ultricies 
-                    tristique nulla aliquet enim tortor at auctor urna nunc id cursus metus aliquam 
-                    eleifend mi in nulla posuere sollicitudin.
-              </p>
-            </Col>
-          </Row>
-        </Container>
-      </Fragment> */}
-
-<CardGroup>
-  <Card>
-    <Card.Img style={{width: "70%"}} variant="top" src={animal1} />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
-      </Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-  <Card>
-    <Card.Img style={{width: "70%"}} variant="top" src={animal2} />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This card has supporting text below as a natural lead-in to additional
-        content.{' '}
-      </Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-  <Card>
-    <Card.Img style={{width: "70%"}}  variant="top" src={animal3}  />
-    
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
-      </Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-</CardGroup>
+      <h2 data-aos='fade-left'>Testimonials</h2>
+      <div className='greyLine' data-aos='fade-right'></div>
+      <CardGroup className='background'>
+        <Card className='card' data-aos='fade-right'>
+          <Card.Img className='image' variant="top" src="https://ca.slack-edge.com/TNGRRLUMA-UNATF9C2V-38c65cfd6be6-512" />
+          <Card.Body>
+            <Card.Title className='cardContent'>Brian Nation</Card.Title>
+            <Card.Text className='cardContent'>
+        This is so cool, This application is fire!!!, in the short amount of time you had, and your level of experience, seriously you did great, continue to work hard!!
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer className='cardContent'>
+            <small className="text-muted">Lead Instructor - Code Fellows</small>
+          </Card.Footer>
+        </Card>
+        <Card className='card' data-aos='fade-down'>
+          <Card.Img className='image' variant="top" src="https://ca.slack-edge.com/TNGRRLUMA-UNATFAFAM-94546c55b79c-512" />
+          <Card.Body className='cardContent'>
+            <Card.Title className='cardContent'>Mahmoud A. al-Khudairi</Card.Title>
+            <Card.Text className='cardContent'>
+        meh. Not Bad.
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer className='cardContent'>
+            <small className="text-muted">Lead Instructor - LTUC</small>
+          </Card.Footer>
+        </Card>
+        <Card className='card' data-aos='fade-left'>
+          <Card.Img className='image' variant="top" src="https://static.arageek.com/wp-content/uploads/2019/05/leonardo-dicaprio11.jpg" />
+          <Card.Body>
+            <Card.Title className='cardContent'>Just a random guy</Card.Title>
+            <Card.Text className='cardContent'>
+              I wish that i'm in jordan to get myself a ride, cause i heard a lot about this application, the amazing deals and service.
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer className='cardContent'>
+            <small className="text-muted">Film Lover</small>
+          </Card.Footer>
+        </Card>
+      </CardGroup>
     </div>
   );
 };

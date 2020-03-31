@@ -14,7 +14,7 @@ const BackgroundVideo = () => {
       <video autoPlay="autoplay" loop muted className='Video' >
         <source src={videoSource} type="video/mp4" />
       </video>
-      <div className='Content'>
+      <div className='Content' data-aos='fade-up'>
           Wheel me up, Jordan's first car renting application, alters the usual circle of evil large cooperations, controlling the market and apply high rental fees. Wheel Me Up alters this circle by cutting the cutting out the evil Corporations, and replace them with ordinary people how love to help others by renting them their cars when in needs, and with much better deals than those provided by car renting companies. 
 
           Wheel Me Up, from and to people.   

@@ -9,7 +9,6 @@ import './app.scss';
 const App = () => {
   return (
     <>
-
       <LoggerHelp>
         <BrowserRouter>
           <div className="App">
@@ -18,11 +17,7 @@ const App = () => {
 
         </BrowserRouter>
       </LoggerHelp>
-
-
-
     </>
-
   );
 };
 

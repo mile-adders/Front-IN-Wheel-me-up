@@ -1,12 +1,29 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse, MDBContainer,
+  MDBHamburgerToggler } from 'mdbreact';
+import { BrowserRouter as Router } from 'react-router-dom';
+import HamburgerToggler from 'react-bootstrap';
 
+class NavbarPage extends Component {
+state = {
+  collapse1: false,
+  collapseID: '',
+}
 
-const NavBar = (props) => {
+toggleCollapse = collapseID => () => {
+  this.setState(prevState => ({ collapseID: (prevState.collapseID !== collapseID ? collapseID : '') }));
+}
 
-  return (
-    
+toggleSingleCollapse = collapseId => {
+  this.setState({
+    ...this.state,
+    [collapseId]: !this.state[collapseId],
+  });
+}
+
+render() {
+  return (   
     <nav className="nav-wrapper">
       <div className="container">
         <a href="/" className="brand-logo"><h4>Wheel-Me-Up</h4></a>
@@ -18,7 +35,7 @@ const NavBar = (props) => {
       </ul>
     </nav>
   );
+}
+}
 
-};
-
-export default withRouter(NavBar);
+export default NavbarPage;

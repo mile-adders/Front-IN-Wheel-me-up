@@ -1,0 +1,90 @@
+.why{
+    background-color: #191919;
+    height: 50vw;
+    text-align: center;
+    .whyWMU{
+        padding-top: 5vw;
+        font-family: 'Raleway', sans-serif;
+        color: rgba(222,222,222,0.8);
+        font-size: 3vw;
+        margin-bottom: 5vw;
+    }
+    .whyUnderLine{
+        height: 1px;
+        width: 39vw;
+        margin-top: 1.5vw;
+        margin-left: 28vw;
+        background-color: rgba(222,222,222,0.8);
+        margin-bottom: 5vw;
+    }
+    .whyParagraph{
+        width:38vw;
+        margin: 0 auto;
+        font-size: 1.6vw;
+        color: rgba(222,222,222,0.8);
+        font-weight: lighter;
+        margin-top: -5vw;
+        margin-bottom: 10vw;
+    }
+    .whyUnderLine1{
+        height: 1px;
+        width: 40vw;
+        margin-top: 2.5vw;
+        margin-left: 30vw;
+        background-color: rgba(222,222,222,0.8);
+        margin-bottom: 4vw;
+    }
+    .whyLeftLine{
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        height: 1px;
+        width: 20vw;
+        margin-left: 18vw;
+        margin-top: 11.5vw;
+        background-color: rgba(222,222,222,0.8);
+    }
+    .whyRightLine{
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        height: 1px;
+        width: 20vw;
+        margin-left: 60vw;
+        margin-top: 2vw;
+        background-color: rgba(222,222,222,0.8);
+    }
+    a.btn.btn-primary{
+        width: 20vw;
+        height: 4vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        font-family: 'Open Sans Condensed', sans-serif;;
+        font-weight: 700;
+        font-size: 1.5vw;
+        background-color: rgba(222,222,222,0.8);
+        text-decoration: none;
+        color: #191919;
+        margin-right: 12vw;
+    }
+    a.btn.btn-secondary{
+        width: 20vw;
+        height: 4vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        font-family: 'Open Sans Condensed', sans-serif;;
+        font-weight: 700;
+        font-size: 1.5vw;
+        background-color: rgba(222,222,222,0.8);
+        text-decoration: none;
+        color: #191919;
+    }
+}

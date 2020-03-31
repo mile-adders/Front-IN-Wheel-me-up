@@ -2,138 +2,87 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 
-function FAQ({
-  children,
-  defaultOpen = [0, 1],
-  open: openFromProps,
-  onToggle: onToggleFromProps = () => {},
-}) {
-  const isControlled = () => (openFromProps ? true : false);
-  const [open, setIsOpen] = useState(defaultOpen);
-  const getOpen = () => (isControlled() ? openFromProps : open);
-  const isOpen = index => {
-    return getOpen().includes(index) ? true : false;
-  };
-  const onToggle = index => {
-    if (isControlled()) {
-      onToggleFromProps(index);
-    } else {
-      if (getOpen().includes(index)) {
-        setIsOpen(getOpen().filter(item => item !== index));
-      } else {
-        setIsOpen([...getOpen(), index]);
-      }
-
-      onToggleFromProps(index);
-    }
-  };
-  return (
-    <dl>
-      {React.Children.map(children, (child, index) => {
-        return React.cloneElement(child, {
-          isOpen: isOpen(index),
-          onToggle: () => onToggle(index),
-        });
-      })}
-    </dl>
-  );
-}
-
-function Question({ children, isOpen, answerId, onToggle }) {
-  return (
-    <dt>
-      <button
-        className="FAQ__question"
-        aria-expanded={isOpen}
-        aria-controls={answerId}
-        onClick={onToggle}
-      >
-        {children(isOpen, onToggle)}
-      </button>
-    </dt>
-  );
-}
-
-function Answer({ children, id, isOpen }) {
-  const mergedClassname = classNames('FAQ__answer', {
-    'FAQ__answer--hidden': !isOpen,
-  });
-  return (
-    <dd>
-      <p className={mergedClassname} id={id}>
-        {children}
-      </p>
-    </dd>
-  );
-}
-
-function QAItem({ children, isOpen, onToggle }) {
-  return React.Children.map(children, (child, index) => {
-    return React.cloneElement(child, {
-      isOpen: isOpen,
-      onToggle: onToggle,
-    });
-  });
-
-
-}
-
-FAQ.QAItem = QAItem;
-FAQ.Question = Question;
-FAQ.Answer = Answer;
-
-
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
 
 export default function FrequentlyAskedQuestions() {
   return (
-    <div>
-      <div className="FAQ">
-        FAQ
-        <FAQ>
-          <FAQ.QAItem>
-            <FAQ.Question answerId="q1">
-              {(isOpen, onToggle) => {
-                return (
-                  <>
-                    {isOpen ? 'Open ' : 'Close '}
-                    <span>What is your question?</span>
-                  </>
-                );
-              }}
-            </FAQ.Question>
-            <FAQ.Answer id="q1"> Knock Knock! </FAQ.Answer>
-          </FAQ.QAItem>
-          <FAQ.QAItem>
-            <FAQ.Question answerId="q2">
-              {(isOpen, onToggle) => {
-                return (
-                  <>
-                    {isOpen ? 'Open ' : 'Close '}
-                    <span>Why do you ask such stupid questions?</span>
-                  </>
-                );
-              }}
-            </FAQ.Question>
-            <FAQ.Answer id="q2"> 42 is the answer. </FAQ.Answer>
-          </FAQ.QAItem>
-          <FAQ.QAItem>
-            <FAQ.Question answerId="q3">
-              {(isOpen, onToggle) => {
-                return (
-                  <>
-                    {isOpen ? 'Open ' : 'Close '}
-                    <span>Any other questions?</span>
-                  </>
-                );
-              }}
-            </FAQ.Question>
-            <FAQ.Answer id="q3"> Seek and you shall find. </FAQ.Answer>
-          </FAQ.QAItem>
-        </FAQ>
-      </div>
+    <div className='FAQDiv'>
+      <Accordion className='accordion' data-aos='fade-up'>
+        <div className='FAQ' data-aos='fade-left'>Frequently Asked Questions</div>
+        <div className='blackLine' data-aos='fade-right'></div>
+        <img className='FAQImage' src={require('./faq.svg')} data-aos='fade-up'/>
+        <AccordionItem className='item'>
+          <AccordionItemHeading className='heading'>
+            <AccordionItemButton>
+              Does Wheel Me Up truly work?
+            </AccordionItemButton>
+          </AccordionItemHeading>
+          <AccordionItemPanel className='panel'>
+            <div className='answer'>
+              Da!!!!
+            </div>
+          </AccordionItemPanel>
+        </AccordionItem>
+        
+        <AccordionItem className='item'>
+          <AccordionItemHeading className='heading'>
+            <AccordionItemButton>
+                Can i pay online for my car?
+            </AccordionItemButton>
+          </AccordionItemHeading>
+          <AccordionItemPanel>
+            <div className='answer'>
+                yes, you can and to insure safety the money will not be withdrawn from the user's bank account, until there is confirmation from both parties that the car is given.
+            </div>
+          </AccordionItemPanel>
+        </AccordionItem>
+        
+        <AccordionItem className='item'>
+          <AccordionItemHeading className='heading'>
+            <AccordionItemButton>
+                What problem does wheel me up solve?
+            </AccordionItemButton>
+          </AccordionItemHeading>
+          <AccordionItemPanel>
+            <div className='answer'>
+                Our Main goal is to connect the community together, and elements the car companies extra expenses. 
+            </div>
+          </AccordionItemPanel>
+        </AccordionItem>
+        
+        <AccordionItem className='item'>
+          <AccordionItemHeading className='heading'>
+            <AccordionItemButton>
+                Is There any other projects like Wheel Me Up?
+            </AccordionItemButton>
+          </AccordionItemHeading>
+          <AccordionItemPanel>
+            <div className='answer'>
+                Actually, we the 'Mile Adders' have a very detailed plan to connect the community, car renting is the first step to do that.
+            </div>
+          </AccordionItemPanel>
+        </AccordionItem>
+        
+        <AccordionItem className='item'>
+          <AccordionItemHeading className='heading'>
+            <AccordionItemButton>
+                I just want to ask... like why the website is... dddddaaaaannnnggggeeeerrrrr!!!!!
+            </AccordionItemButton>
+          </AccordionItemHeading>
+          <AccordionItemPanel>
+            <div className='answer'>
+              aaaaahhhhhh Unagi 
+            </div>
+          </AccordionItemPanel>
+        </AccordionItem>
+      
+      </Accordion>
     </div>
   );
 }
-
-
-// export default FAQ;
