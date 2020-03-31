@@ -2,7 +2,7 @@
 // /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
-import {  Redirect, Route } from 'react-router-dom';
+import {  Redirect, BrowserRouter } from 'react-router-dom';
 import BookingForm from '../bookingForm/booking-form';
 
 
@@ -46,7 +46,7 @@ export default class Facebook extends Component {
 
 
       );
-      return <Redirect to='/bookingform' component={BookingForm} ></Redirect>;
+      return <BrowserRouter><Redirect to='/bookingform' component={BookingForm} ></Redirect> </BrowserRouter>;
 
 
     } else {
@@ -76,9 +76,6 @@ export default class Facebook extends Component {
 }
 
 
-// rename Dashboard to car rent
-// fix the route after facebook  and google and login
-// add log out button in facebook and google
 
 
 

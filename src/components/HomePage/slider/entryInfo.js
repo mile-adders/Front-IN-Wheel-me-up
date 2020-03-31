@@ -49,7 +49,7 @@ const Slider = ({ slides }) => {
             {/* <div>
             <h1>{s.title}</h1>
             {/* <h2>{s.subtitle}</h2> */}
-            {/* </div> */} */}
+            {/* </div> */} 
 
             {i === curr && (
               <img className="image" src={s.image} alt={`Image for ${s.title}`} />

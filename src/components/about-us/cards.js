@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Component } from 'react';
-
 import people from '../about-us/people.js';
 import github from './assets/team-pics/other_logos/github_50x50.png';
 import pictures from '../about-us/assets/team-pics/index.js';
@@ -79,7 +78,8 @@ class Cards extends Component {
 
         </div>
       </div>
+      
     );
   }
 }
-export default Cards
+export default Cards;

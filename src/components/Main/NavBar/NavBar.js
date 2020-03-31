@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
-const NavBar = (props) => {
+const NavBar = () => {
 
   return (
     <nav className="nav-wrapper red ">
@@ -15,8 +15,9 @@ const NavBar = (props) => {
         <li><Link to="/aboutUs">About-Us</Link></li>
         <li><Link to="/AskUs">Ask-Us</Link></li>
         <li><Link to="/carRent">Car-Rent</Link></li>
-        <li><Link to="/bookingForm">Booking-Form</Link></li>
+        <li><Link to="/bookingform">Booking-Form</Link></li>
         <li><Link to="/logout">LogOut</Link></li>
+        
         {/* <li><Link to="/signup">Sign-Up</Link></li> */}
       </ul>
     </nav>
@@ -24,4 +25,4 @@ const NavBar = (props) => {
 
 };
 
-export default withRouter(NavBar);
+export default NavBar;
