@@ -5,22 +5,26 @@ import LoggerHelp from '../auth/context.js';
 
 import './app.scss';
 import HomePage from '../HomePage/HomePage/homepage.js';
+import Payment from '../payment/payment.js';
 
 
 const App = () => {
   return (
     <>
 
-      <LoggerHelp>
+      {/* <LoggerHelp>
         <BrowserRouter>
           <div className="App">
             <Route exact path='/' component={HomePage} />
           </div>
 
         </BrowserRouter>
-      </LoggerHelp>
+      </LoggerHelp> */}
 
+<React.Fragment>
+   <Payment/>
 
+        </React.Fragment>
 
     </>
 
