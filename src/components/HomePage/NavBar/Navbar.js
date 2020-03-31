@@ -23,32 +23,17 @@ toggleSingleCollapse = collapseId => {
 }
 
 render() {
-  return (
-    <Router>
-      <MDBContainer>
-        <MDBNavbar color="amber lighten-4" style={{ marginTop: '20px' }} light>
-          <MDBContainer>
-            <MDBNavbarBrand>
-              MDBNavbar
-            </MDBNavbarBrand>
-            <MDBHamburgerToggler color="#d3531a" id="hamburger1" onClick={()=> this.toggleSingleCollapse('collapse1')} />
-            <MDBCollapse isOpen={this.state.collapse1} navbar>
-              <MDBNavbarNav left>
-                <MDBNavItem active>
-                  <MDBNavLink to="#!">Home</MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink to="#!">Link</MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink to="#!">Profile</MDBNavLink>
-                </MDBNavItem>
-              </MDBNavbarNav>
-            </MDBCollapse>
-          </MDBContainer>
-        </MDBNavbar>
-      </MDBContainer>
-    </Router>
+  return (   
+    <nav className="nav-wrapper">
+      <div className="container">
+        <a href="/" className="brand-logo"><h4>Wheel-Me-Up</h4></a>
+      </div>
+      <ul className="right" >
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/login">Log-In</Link></li>
+        <li><Link to="/signup">Sign-Up</Link></li>
+      </ul>
+    </nav>
   );
 }
 }
