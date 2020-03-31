@@ -6,7 +6,7 @@ const BackgroundVideo = () => {
   return (
     <div className='Container' >
       <div>
-        <div>
+        <div className='head'>
           <h1>Wheel Me Up</h1>
           <h2>Closer to the people, from the people, to the people. No Corporations.</h2>
         </div>

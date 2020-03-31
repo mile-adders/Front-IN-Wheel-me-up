@@ -1,6 +1,8 @@
 .benefits{
     width: 90%;
     margin-left: 10%;
+    margin-bottom: 10vw;
+    margin-top: 10vw;
   .unordered{
       list-style-type: none;
       display: flex;
@@ -9,5 +11,43 @@
   .element{
       width: 30%;
       margin-right: 2%;
+      .num{
+          position: absolute;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(-90deg);
+        font-size: 25px;
+        font-family: sans-serif;
+        font-weight: bold;
+        color: rgb(165, 165, 165);
+      }
+      .line{
+          background-color:  rgb(165, 165, 165);
+          height: 1px;
+          width: 7vw;
+          margin-top: 6.2vw;
+          margin-left: -3vw;
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -o-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          transform: rotate(-90deg);
+      }
+    .inside{
+        margin-left: 3vw;
+        margin-top: -3vw;
+        letter-spacing: -.02em;
+        font-family: $videoFont;
+        font-size: 18px;
+        color: $videoFontColor;
+        line-height: 1.84615;
+        h3{
+            color: #FFFFFF;
+            font-family: $videoFont;
+            font-weight: bold;
+        }
+    }
   }
 }

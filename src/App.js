@@ -21,31 +21,20 @@ const oAuthApp = () => {
 
 
   return (
-
-
-
     <LoggerHelp>
       <BrowserRouter>
-        <div className="App">
-         
-
+        <div className="App">         
           <NavBar />
           <Route exact path='/m' component={Home} />
           <Route path='/aboutUs' component={AboutUs} />
           <Route path='/AskUs' component={AskUs} />
           <Route path='/carRent' component={CarRent} />
           <Route path='/bookingform' component={BookingForm} />
-          <Route path='/logout' component={LogOut} />
-          
-
+          <Route path='/logout' component={LogOut} />         
         </div>
-
       </BrowserRouter>
     </LoggerHelp>
-
-
   );
-
 };
 
 export default oAuthApp;
