@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import GoogleLogin from 'react-google-login';
 import { Redirect, BrowserRouter } from 'react-router-dom';
-import BookingForm from '../bookingForm/booking-form.js';
+import BookingForm from '../bookingCar/bookingCar.js';
 
 
 

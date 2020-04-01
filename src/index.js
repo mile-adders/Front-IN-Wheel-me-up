@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom'
 
 import App from './components/app/app.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -24,18 +25,21 @@ function Main() {
   return (
 
     <>
+      <BrowserRouter>
 
-      <Loading />
-      
-      
-      <App />
-      
-      <ThemeProvider theme={theme}>
-        <LoginForm />
+        <Loading />
+        
+        <App />
 
-      </ThemeProvider>
+        {/* <ThemeProvider theme={theme}>
 
-    
+          <LoginForm />
+
+        </ThemeProvider> */}
+
+
+      </BrowserRouter>
+
     </>
   );
 }

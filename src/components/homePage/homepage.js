@@ -6,8 +6,8 @@ import {
   Link
 } from "react-router-dom";
 import NavBar from '../navBar/navBar.js';
-import Header from '../header/header.js';
-import Footer from '../footer/footer.js';
+import Header from '../Header/Header.js';
+import Footer from '../Footer/Footer.js';
 import SignIn from '../signIn/signIn.js';
 import SignUp from '../signUp/signUp.js';
 import MainPage from '../mainPage/mainPage.js';
@@ -21,11 +21,10 @@ const HomePage = () => {
   return (
     <>
     <Header />
-      <Router>
+      
         
         <NavBar />
         <div>
-          <Switch>
             <Route path="/login">
               <SignIn />
             </Route>
@@ -37,9 +36,7 @@ const HomePage = () => {
               {/* <Route exact path="/">
             <HomePage />
           </Route> */}
-          </Switch>
         </div>
-      </Router>
 
       <Footer />
     </>
