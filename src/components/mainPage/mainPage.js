@@ -49,7 +49,7 @@ function MainPage() {
   return (
     <>
 =        <div>
-          <NavBar />
+          {/* <NavBar /> */}
 
             <Route exact path="/mainPage">
               <MainPage />

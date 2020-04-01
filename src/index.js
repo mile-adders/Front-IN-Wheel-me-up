@@ -27,7 +27,7 @@ function Main() {
     <>
       <BrowserRouter>
 
-        <Loading />
+        {/* <Loading /> */}
         
         <App />
 

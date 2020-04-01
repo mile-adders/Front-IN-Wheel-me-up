@@ -7,10 +7,11 @@ import loggerContext  from '../auth/context.js'
 
 import './app.scss';
 import MainPage from '../mainPage/mainPage.js';
-import HomePage from '../homePage/homepage.js'
-import CarCompanyForm from '../rentCar/rentCar.js'
+import HomePage from '../homePage/homepage.js';
+import CarCompanyForm from '../rentCar/rentCar.js';
+import AllCars from '../allCars/allCars.js';
 import BookingForm from '../bookingCar/bookingCar.js';
-import NavBar from '../navBar/navBar.js'
+import NavBar from '../navBar/navBar.js';
 
 const App = ( props) => {
  
@@ -19,9 +20,10 @@ const App = ( props) => {
 
       <LoggerHelp>
           <div className="App">
-            <h1> hi</h1>
-            <HomePage />
+            {/* <BookingForm /> */}
+            {/* <AllCars /> */}
             {/* <MainPage /> */}
+            < CarCompanyForm />
          </div>
 
       </LoggerHelp>

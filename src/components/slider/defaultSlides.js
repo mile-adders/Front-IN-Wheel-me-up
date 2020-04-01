@@ -1,28 +1,27 @@
-  
 export default [
     {
-        title: "Toyota camey TRD",
-        image: "https://cdn.static-carindigo.com/images/car/Toyota/old_Toyota_Camry_2020_Sedan_5e46663d5fcc0.jpg"
+      title: 'Wheel Me Up',
+      subtitle: 'A place where the old is not forgotten',
+      image: 'https://c.pxhere.com/photos/6a/7b/cars_classic_mini_cooper_pavement_people_road_street_vehicles-1174474.jpg!d',
     },
     {
-        title: 'Nissan Gtr r34',
-        image: 'https://i.pinimg.com/736x/7e/65/25/7e6525194acaa2bfe62df822fe2fe30d.jpg',
+      title: 'Wheel Me Up',
+      subtitle: 'A place where the streets are beautiful',
+      image: 'https://www.wallpaperbetter.com/wallpaper/25/600/953/city-street-cars-trees-black-and-white-720P-wallpaper-middle-size.jpg',
     },
     {
-        title: "Jeep Wrangler",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSY0HyVrIASiJEQYssis_ET7jztZFdicvaz2hRNoVAeFUJsWrrj"
+      title: 'Wheel Me Up',
+      subtitle: 'A place where all weather is amazing.',
+      image: 'http://attemptsat35mm.com/wp-content/uploads/2018/09/img777.jpg',
     },
     {
-        title: "Range Rover",
-        image: "https://media.autoexpress.co.uk/image/private/s--k41ga69y--/v1566585962/autoexpress/2019/08/dsc_9754.jpg"
-    },
-  
-    {
-        title: "cadillac escalade",
-        image: "https://photos.motorcar.com/11856/17224736/17224736_1.jpg"
+      title: 'Wheel Me Up',
+      subtitle: 'A place where you always have a ride',
+      image: 'https://c.pxhere.com/photos/55/43/car_repair_car_workshop_repair_shop_garage_repairs_car_black_and_white_man-1101392.jpg!s',
     },
     {
-        title: "BMW M5",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOTkApFW4K-o9GVs_1f3rQMvteD8LlMmuqY2vI-zAHuWMZZZBM"
+      title: 'Wheel Me Up',
+      subtitle: 'why walk?',
+      image: 'https://c.pxhere.com/photos/2d/f0/city_people_street_night_lights_man_dark_lonely-596539.jpg!d',
     },
-]
+  ];

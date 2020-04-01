@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState , Component } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,31 +12,50 @@ import SignIn from '../signIn/signIn.js';
 import SignUp from '../signUp/signUp.js';
 import MainPage from '../mainPage/mainPage.js';
 import Benefits from '../Benefits/Benefits.js'
+import Video from '../Video/Video.js'
+import MoreDetails from '../MoreDetails/MoreDetails.js'
+import SliderMain from '../slider/slider.js';
+import Testimonials from '../Testimonials/Testimonials.js';
+import FAQ from '../FAQ/FAQ.js';
+import Why from '../Why/Why.js'
 
 
 const HomePage = () => {
 
-
+const [ open , setOpen] = useState(false)
+ 
 
   return (
     <>
-    <Header />
-      
-        
-        <NavBar />
-        <div>
-            <Route path="/login">
-              <SignIn />
-            </Route>
+        <Route path="/login">
+          <SignIn />
+        </Route>
 
-            <Route path="/signup">
-              <SignUp />
-            </Route>
-            
-              {/* <Route exact path="/">
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+
+
+      <Route path='/'>
+      <Header />
+      <Video />
+      <Benefits />
+      <MoreDetails />
+      < SliderMain />
+      <Testimonials />
+      <FAQ />
+      <Why />
+
+          </Route> 
+
+      {/* <NavBar /> */}
+      <div>
+
+
+        {/* <Route exact path="/">
             <HomePage />
           </Route> */}
-        </div>
+      </div>
 
       <Footer />
     </>

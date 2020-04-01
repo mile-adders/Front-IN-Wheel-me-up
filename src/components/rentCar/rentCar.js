@@ -91,7 +91,7 @@ const CarCompanyForm = (props) => {
         <input type='date' className='useInput' name='dateAvailable ' value={dateAvailable} placeholder='Dates Available' onChange={(e) => setDateAvailable(e.target.value)} />
         <input type='text' className='useInput' name='priceForRent' value={priceForRent} placeholder='price' onChange={(e) => setPriceForRent(e.target.value)} />
         <input type='url' className='useInput' name='carImage_URL' value={carImageUrl} placeholder='Car Image URL' onChange={(e) => setCarImageUrl(e.target.value)} />
-        <input type='text' className='useInput' name='location' value={location} placeholder='Location' onChange={(e) => setlocation(e.target.value)} />
+        <input type='text' className='useInput' name='location' value={location} placeholder=' pick up Location' onChange={(e) => setlocation(e.target.value)} />
         <input name='_Id' type='hidden' value = {posts._id} />
 
         <button type='submit'>Rent a car</button>
@@ -101,17 +101,18 @@ const CarCompanyForm = (props) => {
         <div className='results'>
           Cars available
             {
-              results.length > 0 && results.map(post => {
-                return <div key={post.id}>
+              results.length > 0 && results.map(car => {
+                return <div key={car.id}>
                   <ul>
 
-                  <img src={post.carImage_URL} width='300' height='300'/>
-                  <li>{post.carName}</li>
-                  <li>{post.brand}</li>
-                  <li>{post.year}</li>
-                  <li>{post.dateAvailable}</li>
-                  <li>{post.priceForRent}</li>
-                  <li>{post.location}</li>
+                 <li> car {car.carName}</li>
+                <img src={car.carImage_URL} width='300' height='300' />
+                <li> car Brand : {car.brand}</li>
+                <li> car Type : {car.carType} </li>
+                <li> year {car.year}</li>
+                <li> Date Available{car.dateAvailable}</li>
+                <li> Price for day {car.priceForRent}</li>
+                <li> Pick up location{car.location}</li>
                 <button   type='submit'>update car information </button>
                 <button   type='submit'>delete car information </button>
 

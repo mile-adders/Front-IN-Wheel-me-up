@@ -8,6 +8,7 @@ import Facebook from '../logIn/Facebook';
 import Google from '../logIn/Google';
 
 const FormLogin = () => (
+  
   <SlidingForm>
     <h1>Sign in</h1>
     <div>
