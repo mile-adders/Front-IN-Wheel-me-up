@@ -23,7 +23,7 @@ const SignIn = () => {
   };
   if(useLogger.logState){
     console.log(useLogger.logState)
-    return  <Redirect to='/mainPage' component={MainPage} ></Redirect>
+    return  <Redirect to='/mainPage'  ></Redirect>
   }else{
 
   // let handleLogout = () => {

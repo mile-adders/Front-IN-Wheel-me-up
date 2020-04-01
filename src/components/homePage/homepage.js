@@ -20,11 +20,10 @@ const HomePage = () => {
   return (
     <>
     <Header />
-      <Router>
+      
         
         <NavBar />
         <div>
-          <Switch>
             <Route path="/login">
               <SignIn />
             </Route>
@@ -36,9 +35,7 @@ const HomePage = () => {
               {/* <Route exact path="/">
             <HomePage />
           </Route> */}
-          </Switch>
         </div>
-      </Router>
 
       <Footer />
     </>

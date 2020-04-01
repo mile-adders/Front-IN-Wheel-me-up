@@ -18,18 +18,12 @@ const App = ( props) => {
     <>
 
       <LoggerHelp>
-        <BrowserRouter>
           <div className="App">
             <h1> hi</h1>
-        {/* <NavBar /> */}
-            {/* <BookingForm /> */}
-            {/* <CarCompanyForm /> */}
-        
-            < MainPage />
-            {/* <HomePage /> */}
+            <HomePage />
+            <MainPage />
          </div>
 
-        </BrowserRouter>
       </LoggerHelp>
 
 

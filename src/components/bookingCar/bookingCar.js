@@ -15,6 +15,7 @@ export default function BookingForm(props) {
   const [car, setCar] = useState('');
   const [posts, setPosts] = useState([]);
   const [errMsg, setErrMsg] = useState('');
+  const [results , setResults] = useState([]);
 
   let handleSubmit = async e => {
     e.preventDefault();
@@ -71,17 +72,33 @@ export default function BookingForm(props) {
       let data = JSON.parse(await getData.text())
       console.log('data', data)
 
+      ///////////////////
+      // arrayOfAllowed 
+      // (3) [{…}, {…}, {…}]
+      // 0: {pickupLocation: "amman"}
+      // 1: {dateAvailable: "2020-05-07T00:00:00.000Z"}
+      // 2: {carType: "car"}
+
+
+
         // const filtered = Object.entries(data)
         // console.log('filtered', filtered)
-        let results = data.filter(key =>
-          
-         console.log( arrayOfAllowed.includes(key)))
-        console.log ('results', results)
-        
-      // setResults([...results, data])
-      //  console.log ('filtered =>>>>>..' , filtered)
-      // console.log('data', data)
+        let results = data.filter(key =>{
+          console.log('hi')
+          if(
+         arrayOfAllowed[0].pickupLocation === key.pickupLocation && arrayOfAllowed[1].dateAvailable=== key.dateAvailable && arrayOfAllowed[2].carType === key.carType 
+         ){
+          console.log('hi 22222 ')
 
+           return key ;
+         }
+         
+         // setResults([...results, data])
+         //  console.log ('filtered =>>>>>..' , filtered)
+         // console.log('data', data)
+        })
+        setResults(results)
+        console.log ('results', results)
 
     } catch{
       console.error()
@@ -114,15 +131,29 @@ export default function BookingForm(props) {
         <button className='submit' type='submit'>Go Rent!!</button>
       </form>
 
-      <div>
+      
         <div className='results'>
-          {/* Cars available
+          Cars available
             {
-              posts.length ? posts.map(post => <div key={post.id}>{post.title}</div>) : null
-            }
-            { errMsg ? <div>{errMsg}</div> : null} */}
+              results.length > 0 && results.map(post => {
+                return <div key={post.id}>
+                  <ul>
+
+                  <img src={post.carImage_URL} width='300' height='300'/>
+                  <li>{post.carName}</li>
+                  <li>{post.brand}</li>
+                  <li>{post.year}</li>
+                  <li>{post.dateAvailable}</li>
+                  <li>{post.priceForRent}</li>
+                  <li>{post.location}</li>
+                <button   type='submit'> rent car  </button>
+
+                  </ul>
+
+              </div>
+            })
+          }
         </div>
-      </div>
     </div>
   );
 }

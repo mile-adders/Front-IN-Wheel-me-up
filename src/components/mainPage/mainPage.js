@@ -20,8 +20,8 @@ const API = 'https://wheel-me-up-m.herokuapp.com'
 
 function MainPage() {
   const [showCars, setShowCar] = useState([]);
-  
-  let Shows = async()=>{
+
+  let Shows = async () => {
     let getCars = await fetch(`${API}/api/v1/car-company`, {
       headers: {
         'Content-Type': 'application/json',
@@ -32,30 +32,29 @@ function MainPage() {
       body: null,
     });
     let data = JSON.parse(await getCars.text())
-    setShowCar([ data])
+    setShowCar(data)
     console.log('data', data);
     console.log('showcars', showCars);
 
-    useEffect(()=>{
-      setShowCar(data)
-    },[showCars]); 
 
   }
+  useEffect(() => {
+    Shows()
+  }, []);
 
-//     useEffect(() =>{
-//       shows
-// },[])
+
+  //     useEffect(() =>{
+  //       shows
+  // },[])
   return (
     <>
-      {/* <Router>
-        <div>
+=        <div>
           <NavBar />
-          <Switch>
 
             <Route exact path="/mainPage">
               <MainPage />
             </Route>
-
+            
             <Route path="/contactUs">
               <Cards />
             </Route>
@@ -72,17 +71,15 @@ function MainPage() {
               <LogOut />
             </Route>
 
-          </Switch>
-        </div> */}
-      {/* </Router
-      > */}
-        
-    
+        </div> 
+      
+
+
       <div className='show cars'>
         list of  cars
             {
           showCars.length > 0 && showCars.map(car => {
-            return <div key={car.id}>
+            return (<div key={car.id}>
               <ul>
 
                 <li>{car.carName}</li>
@@ -95,10 +92,10 @@ function MainPage() {
                 <button> rent know  </button>
               </ul>
 
-            </div>
+            </div>)
           })
         }
-        </div>
+      </div>
 
     </>
 
