@@ -54,65 +54,63 @@ export default function Example() {
       });
     setVisible(!visible);
   };
-    
-  // let handleNotAnsweredQuestions = (e, answer) => {
-  //   e.preventDefault();
-  //   axios.put(`https://wheel-me-up-m.herokuapp.com/api/v1/question/${id}`, {'answer': answer})
-  //     .then(data => console.log(data._id))
-  //     .catch(error => console.log(error));
-  // };
 
   const answerForm =  visible ? 
-    <form onSubmit = {handleSubmit}>
-      <input type='text' className='Input' name='answer' value={answer} placeholder='answer' onChange={(e) => setAnswer(e.target.value)} />
-      <button type='submit'>answer!</button>
+    <form onSubmit = {handleSubmit} className='answerForm' data-aos='fade-up'>
+      <input type='text' className='answerInput' name='answer' value={answer} placeholder='answer' onChange={(e) => setAnswer(e.target.value)} />
+      <button type='submit' className='answerSubmit'>answer!</button>
     </form>
     : null; 
 
-  const questionForm =    <form onSubmit={handleSubmit}>
-    <input type='text' className='Input' name='question' value={question} placeholder='Question' onChange={(e) => setQuestion(e.target.value)} /> 
-    <button type='submit'>ask</button>
-  </form>;
+  const questionForm =  
+    <form onSubmit={handleSubmit} className='questionForm' data-aos='fade-left'>
+      <input type='text' className='questionInput' name='question' placeholder='Ask your Question' value={question} onChange={(e) => setQuestion(e.target.value)} /> 
+      <button type='submit' className='questionSubmit'>ask</button>
+    </form>;
 
-  const questionAnswers = visible ? <form onSubmit={handleSubmit}>
-    <input type='text' className='Input' name='pastAnswer' value={pastAnswer} placeholder='answer' onChange={ e => setPastAnswer(e.target.value)} />
-    <button type='submit'>answer</button>
+
+  const questionAnswers = visible ? <form onSubmit={handleSubmit} className='answerForm' data-aos='fade-up'>
+    <input type='text' className='answerInput' name='pastAnswer' value={pastAnswer} placeholder='answer' onChange={ e => setPastAnswer(e.target.value)} />
+    <button type='submit' className='answerSubmit'>answer</button>
   </form> : null;
 
   return (
-
-    <Accordion className='accordion'>
-    More Questions? 
-      {questionForm}
-      <AccordionItem>
-        <AccordionItemHeading>
-          <AccordionItemButton>
-            {question}
-          </AccordionItemButton>
-        </AccordionItemHeading>
-        <AccordionItemPanel>
-          <div>
-            {answerForm}
-            {answer}
-          </div>
-        </AccordionItemPanel>
-      </AccordionItem>
-      {posts.map(data => (
-        <AccordionItem key={data._id}>
-          <AccordionItemHeading>
+    <div className='moreQDiv'>
+      <div className='moreQ' data-aos='fade-up'>More Questions?</div>
+      <div className='qUnderLine' data-aos='fade-right'></div>
+      <img className='qImg' src={require('./result.svg')} data-aos='fade-up' />
+      <Accordion className='MoreQAccordion' data-aos='fade-up'>
+        {questionForm}
+        <AccordionItem className='moreAccordionItem'>
+          <AccordionItemHeading className='qAccordion'>
             <AccordionItemButton>
-              {data.question}
+              {question}
             </AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel>
-            <div>
-              {data.answer}
-              {questionAnswers}
-              {pastAnswer}
+            <div className='answer' data-aos='fade-left'>
+              {answerForm}
+              <div className='answer' >{answer}</div>
             </div>
           </AccordionItemPanel>
         </AccordionItem>
-      ))}
-    </Accordion>
+        {posts.map(data => (
+          <AccordionItem key={data._id}>
+            <AccordionItemHeading>
+              <AccordionItemButton>
+                {data.question}
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <div className='answer'>
+                {data.answer}
+                {pastAnswer}
+                {questionAnswers}
+              </div>
+            </AccordionItemPanel>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </div>
   );
 }
