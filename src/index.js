@@ -24,15 +24,15 @@ function Main() {
   return (
 
     <>
-      <Loading />
+      {/* <Loading /> */}
       
       
       <App />
       
-      <ThemeProvider theme={theme}>
+{/*     <ThemeProvider theme={theme}>
         <LoginForm />
 
-      </ThemeProvider>
+      </ThemeProvider> */}
 
       
 

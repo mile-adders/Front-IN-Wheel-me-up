@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
-import defaultSlides from './defaultSlides.js';
-import Video from '../../Video/Video.js';
-import Benefits from '../../Benefits/Benefits.js';
-import Testimonials from '../../Testimonials/Testimonials.js';
-import FAQ from '../../FAQ/FAQ.js';
-import Why from '../../Why/Why.js';
-// import MoreQuestions from '../../MoreQuestions/MoreQuestions';
-import MoreDetails from '../../MoreDetails/MoreDetails.js';
+// import defaultSlides from './defaultSlides.js';
+// import Video from '../../Video/Video.js';
+// import Benefits from '../../Benefits/Benefits.js';
+// import Testimonials from '../../Testimonials/Testimonials.js';
+// import FAQ from '../../FAQ/FAQ.js';
+// import Why from '../../Why/Why.js';
+import MoreQuestions from '../../MoreQuestions/MoreQuestions';
+// import MoreDetails from '../../MoreDetails/MoreDetails.js';
 
 const Slider = ({ slides }) => {
   const [curr, setCurr] = React.useState(0);
@@ -55,14 +55,14 @@ const Main = () => {
   return (
     // Pretending I'm using dynamic slides as props
     <main>
-      <Video />
+      <MoreQuestions />
+      {/* <Video />
       <Benefits />
       <MoreDetails />
       <Slider slides={defaultSlides} />
       <Testimonials />
       <FAQ />
-      <Why />
-      {/* <MoreQuestions /> */}
+      <Why /> */}
     </main>
   );
 };

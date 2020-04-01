@@ -3,8 +3,8 @@ import React from 'react';
 import { BrowserRouter , Route } from 'react-router-dom';
 import oAuthApp from '../../../App.js';
 import LoggerHelp from '../../auth/context.js';
-import NavBar from '../NavBar/Navbar.js';
-// import Header from '../../Header/Header.js';
+// import NavBar from '../NavBar/Navbar.js';
+import Header from '../../Header/Header.js';
 import Footer from '../../Footer/Footer.js';
 import Main from '../slider/entryInfo.js';
 import SignIn from '../../logIn/login';
@@ -16,21 +16,21 @@ import Loading from '../../loadingvideo/loadingvideo.js';
 function HomePage() {
   return (
     <>
-      <LoggerHelp>
-        <BrowserRouter>
+      {/* <LoggerHelp>
+        <BrowserRouter> */}
           <Header />
-          <div className="Home">
+          {/* <div className="Home">
             <NavBar />
             <Route path='/login' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/oAuthApp' component={oAuthApp} />
-          </div> */}
-            <Main />
-            {/* <MoreInfo/> */}
-          <Footer />
+          </div> */} */}
+          {/* <MoreInfo/> */}
+          {/* <Footer /> */}
 
-        </BrowserRouter>
-      </LoggerHelp>
+        {/* </BrowserRouter>
+      </LoggerHelp> */}
+          <Main />
 
 
     </>
