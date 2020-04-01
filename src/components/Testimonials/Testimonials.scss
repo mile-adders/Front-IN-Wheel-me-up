@@ -1,0 +1,43 @@
+.testimonials{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: -2vw;
+    background-color: #464648;
+    height: 50vw;
+    .greyLine{
+        height: 1px;
+        width: 10vw;
+        margin-left: 13.3vw;
+        margin-top: -0.5vw;
+        background-color: rgba(222, 222, 222, 0.8);
+        margin-bottom: 5vw;
+    }
+    h2{
+        font-family: $videoFont;
+        font-weight: lighter;
+        color: rgba(222,222,222,0.8);
+        padding-top: 3vw;
+        margin-right: 65vw;
+    }
+    .card{
+        width: 25%;
+        margin-left: 6%;
+        float: left;
+        background-color: rgba(222, 222, 222, 0.8);
+    }
+    .cardContent{
+        color: #2b3542;
+        font-family: $videoFont;
+        font-weight: bold;
+        font-size: 1.5vw;
+        padding-bottom: 1vw;
+    }
+    .image{
+        width: 9vw;
+        height: 9vw;
+        border-radius: 100%;
+        position: static;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
+}

@@ -11,6 +11,7 @@ import Footer from '../footer/footer.js';
 import SignIn from '../signIn/signIn.js';
 import SignUp from '../signUp/signUp.js';
 import MainPage from '../mainPage/mainPage.js';
+import Benefits from '../Benefits/Benefits.js'
 
 
 const HomePage = () => {

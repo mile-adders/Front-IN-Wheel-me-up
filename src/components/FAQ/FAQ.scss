@@ -1,0 +1,39 @@
+.FAQDiv{
+ margin-bottom: 8vw;
+.accordion{
+    margin: 0 auto;
+    .FAQ{
+      text-align: center;
+      font-size: 1.5vw;
+      font-weight: 600;
+      padding-top: 3vw;
+      margin-bottom: 3vw;
+      color: #2b3542;
+      font-family: $videoFont;
+    }
+    .heading{
+      width: 95.5%;
+    }
+    .blackLine{
+      height: 1px;
+      width: 15vw;
+      background-color: #2b3542;
+      margin-top: -2vw;
+      margin-left: 22.2vw;
+      margin-bottom: 3vw;
+    }
+    .answer{
+      font-family: $videoFont;
+      color: #2B3542;
+      font-size: 1.5vw;
+      font-weight: 600;
+      margin-left: 1.5vw;
+    }
+    .FAQImage{
+      width: 4vw;
+      height: 3vw;
+      margin-left: 27.8vw;
+      margin-bottom: 3vw;
+    }
+}
+}

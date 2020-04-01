@@ -1,3 +1,5 @@
+
+/* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import jwt from 'jsonwebtoken';
 import { If, Then } from '../if/index.js';
@@ -28,4 +30,8 @@ const Auth = props => {
   );
 };
 
+<<<<<<< HEAD
 export default Auth;
+=======
+export default Auth;
+>>>>>>> 528f0376b85868af679c422abda8a1082019fd68

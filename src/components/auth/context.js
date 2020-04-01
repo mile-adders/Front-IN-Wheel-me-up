@@ -4,9 +4,6 @@ import cookies from 'react-cookies';
 import jwt from 'jsonwebtoken';
 
 
-
-
-// const API = process.env.REACT_APP_API;
 const API ='https://wheel-me-up-m.herokuapp.com'
 const SECRET = 'cool mai';
 
@@ -76,6 +73,7 @@ function LoggerProvider(props) {
     }
   };
 
+
   /////////// logOut function 
   let logOut = () => {
     cookies.save('auth', null);
@@ -109,4 +107,6 @@ function LoggerProvider(props) {
   );
 }
 
+
 export default LoggerProvider;
+
