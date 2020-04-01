@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable semi */
 import React, { useState, useEffect } from 'react';
 import { loggerContext } from '../auth/context';
 
@@ -15,7 +13,7 @@ export default function BookingForm(props) {
   const [dropOffDate, setDropOffDate] = useState('');
   const [car, setCar] = useState('');
   const [posts, setPosts] = useState([]);
-  const [errMsg, setErrMsg] = useState('');
+  // const [errMsg, setErrMsg] = useState('');
 
   let handleSubmit = async e => {
     e.preventDefault();
@@ -50,7 +48,7 @@ export default function BookingForm(props) {
         let objOfAllowed = {};
         let key = allowed[i][0];
         let value = allowed[i][1];
-        Object.assign(objOfAllowed, { [key]: value })
+        Object.assign(objOfAllowed, { [key]:value })
         arrayOfAllowed.push(objOfAllowed)
         // console.log('objof allowed', objOfAllowed)
       }
@@ -69,23 +67,23 @@ export default function BookingForm(props) {
         cache: 'no-cache',
         body: null,
       });
-      let data = JSON.parse(await getData.text());
-      // console.log('data', data);
+      let data = JSON.parse(await getData.text())
+      console.log('data', data)
 
-      // const filtered = Object.entries(data)
-      // console.log('filtered', filtered)
-      let results = data.filter(key =>
-
-        console.log(arrayOfAllowed.includes(key)));
-      // console.log ('results', results)
-
+        // const filtered = Object.entries(data)
+        // console.log('filtered', filtered)
+        let results = data.filter(key =>
+          
+         console.log( arrayOfAllowed.includes(key)))
+        console.log ('results', results)
+        
       // setResults([...results, data])
       //  console.log ('filtered =>>>>>..' , filtered)
       // console.log('data', data)
 
 
     } catch{
-      console.error();
+      console.error()
     }
   }
 
@@ -116,28 +114,30 @@ export default function BookingForm(props) {
       </form>
 
       <div>
-        <div className='showing data '>
-          Cars Available
+        <div className='results'>
+        <div className='results'>
+          Cars Available  
           {
-            posts.length > 0 && posts.map(post => {
+            posts.length > 0 && posts.map(car => {
               return <div key={post.id}>
                 <ul>
+                
+                  <img src={car.carImage_URL} width='300' height='300'/>
+                  <li>{car.carName}</li>
+                  <li>{car.brand}</li>
+                  <li>{car.year}</li>
+                  <li>{car.dateAvailable}</li>
+                  <li>{car.priceForRent}</li>
+                  <li>{car.location}</li>
+                  <button > Rent a car now </button>
 
-                  <img src={post.carImage_URL} width='300' height='300' />
-                  <li>{post.carName}</li>
-                  <li>{post.brand}</li>
-                  <li>{post.year}</li>
-                  <li>{post.dateAvailable}</li>
-                  <li>{post.priceForRent}</li>
-                  <li>{post.location}</li>
-                  <button> Rent a car know  </button>
 
-
-                </ul>
+                </ul> 
 
               </div>;
             })
           }
+        </div>
         </div>
       </div>
     </div>

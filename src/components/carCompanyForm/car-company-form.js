@@ -1,13 +1,13 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import Axios from 'axios';
-import  {loggerContext}  from '../auth/context.js';
+import { loggerContext } from '../auth/context.js';
+
+const API = 'https://wheel-me-up-m.herokuapp.com'
+
 
 const If = props => {
   return props.condition ? props.children : null;
 };
 
-// static contextType = LoginContext;
 
 const CarCompanyForm = (props) => {
   const [carName, setCarName] = useState('');
@@ -16,63 +16,96 @@ const CarCompanyForm = (props) => {
   const [year, setYear] = useState('');
   const [dateAvailable, setDateAvailable] = useState('');
   const [priceForRent, setPriceForRent] = useState('');
-  const [posts, setPosts] = useState([]);
-  const [errMsg, setErrMsg] = useState('');
+  const [carImageUrl, setCarImageUrl] = useState('');
+  const [location, setlocation] = useState('');
+  const [posts, setPosts] = useState({});
+  const [results, setResults] = useState([]);
 
-  let handleSubmit = e => {
+  let handleSubmit = async e => {
     e.preventDefault();
-    let state= {'carName': carName, 'brand': brand, 'type': type, 'year': year, 'dateAvailable': dateAvailable, 'priceForRent': priceForRent};
-    console.log('State:', state);
-    Axios.post('https://wheel-me-up-m.herokuapp.com/api/v1/car-company', state)
-      .then(response => {
-        console.log('response:', response);
-        this.setState({posts: response.data});
-      })
-      .catch(error => {
-        console.log(error);
-        setErrMsg('Error retrieving data');
+    let state = { 'carName': carName, 'brand': brand, 'carType': type, 'year': year, 'dateAvailable': dateAvailable, 'priceForRent': priceForRent, 'pickupLocation': location, 'carImage_URL': carImageUrl };
+    
+    try {
+      let output = await fetch(`${API}/api/v1/car-company`, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        body: JSON.stringify(state),
       });
-  };
+      let info = await output.text();
+      setPosts(info);
+      let parsingInfo = JSON.parse(info);
 
-  useEffect(() => {
-    Axios.get('https://wheel-me-up-m.herokuapp.com/api/v1/car-company')
-      .then(response => {
-        console.log('response:', response);
-        setPosts(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-        setErrMsg('Error retrieving Data');
-      });    return () => {
-      console.log('error');
-    };
-  }, []);
+      let getData = await fetch(`${API}/api/v1/car-company/${parsingInfo._id}`, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'get',
+        mode: 'cors',
+        cache: 'no-cache',
+        body: null,
+      });
+
+      let data = JSON.parse(await getData.text());
+      setResults([...results, data]);
+
+
+    } catch{
+      console.error();
+    }
+
+  };
   
+ 
+
+
   return (
     <div>
-      <If condition={loggerContext.loggedIn}>
-          Car-Company Schema
-        <form onSubmit={handleSubmit}>
-          <input type='text' className='useInput' name='carName' value={carName} placeholder='car name' onChange={(e)=> setCarName(e.target.value)} />
-          <input type='text' className='useInput' name='brand' value={brand} placeholder='Brand' onChange={(e)=> setBrand(e.target.value)} />
-          <input type='text' className='useInput' name='type' value={type} placeholder='car type' onChange={(e)=> setType(e.target.value)} />
-          <input type='text' className='useInput' name='year' value={year} placeholder='manufacturing year' onChange={(e) => setYear(e.target.value)} />
-          <input type= 'date' className='useInput' name='dateAvailable ' value={dateAvailable } placeholder='Dates Available' onChange={(e) => setDateAvailable(e.target.value)} />
-          <input type='text' className='useInput' name='priceForRent' value={priceForRent} placeholder='price' onChange={(e)=> setPriceForRent(e.target.value)} />
+      Car-Company Schema
+      
+     
+      <form onSubmit={handleSubmit}>
+        <input type='text' className='useInput' name='carName' value={carName} placeholder='car name' onChange={(e) => setCarName(e.target.value)} />
+        <input type='text' className='useInput' name='brand' value={brand} placeholder='Brand' onChange={(e) => setBrand(e.target.value)} />
+        <input type='text' className='useInput' name='type' value={type} placeholder='car type' onChange={(e) => setType(e.target.value)} />
+        <input type='text' className='useInput' name='year' value={year} placeholder='manufacturing year' onChange={(e) => setYear(e.target.value)} />
+        <input type='date' className='useInput' name='dateAvailable ' value={dateAvailable} placeholder='Dates Available' onChange={(e) => setDateAvailable(e.target.value)} />
+        <input type='text' className='useInput' name='priceForRent' value={priceForRent} placeholder='price' onChange={(e) => setPriceForRent(e.target.value)} />
+        <input type='url' className='useInput' name='carImage_URL' value={carImageUrl} placeholder='Car Image URL' onChange={(e) => setCarImageUrl(e.target.value)} />
+        <input type='text' className='useInput' name='location' value={location} placeholder='Location' onChange={(e) => setlocation(e.target.value)} />
+        <input name='_Id' type='hidden' value = {posts._id} />
 
-          <button type='submit'>Go!</button>
-        </form>
-      </If>
+        <button type='submit'>Rent a car</button>
+
+      </form>
       <div>
-        <If condition={!loggerContext.loggedIn}>
-          <div className='results'>
-        Cars available
-            {
-              posts.length ? posts.map(post => <div key={post.id}>{post.title}</div>) : null
-            }
-            { errMsg ? <div>{errMsg}</div> : null}
-          </div>
-        </If>
+        <div className='results'>
+          Cars you rented 
+          {
+            results.length > 0 && results.map(post => {
+              return <div key={post.id}>
+                <ul>
+                
+                  <img src={post.carImage_URL} width='300' height='300'/>
+                  <li>{post.carName}</li>
+                  <li>{post.brand}</li>
+                  <li>{post.year}</li>
+                  <li>{post.dateAvailable}</li>
+                  <li>{post.priceForRent}</li>
+                  <li>{post.location}</li>
+                  <button > Update car information </button>
+                  <button > Delete car  </button>
+
+
+                </ul> 
+
+              </div>;
+            })
+          }
+        </div>
       </div>
     </div>
   );
