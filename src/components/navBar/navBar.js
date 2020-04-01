@@ -1,11 +1,17 @@
 import React, { Component , useEffect, useContext} from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter , Redirect} from 'react-router-dom';
 import { loggerContext } from '../auth/context.js'
 import MainPage from '../mainPage/mainPage.js';
 
 const NavBar = (props) => {
     let useLogger = useContext(loggerContext);
- 
+
+    let handleLogout = () => {
+      useLogger.logOut();
+      return  <Redirect to='/'  ></Redirect>
+
+    }
+
     if(!useLogger.logState){
 
         return (
@@ -31,11 +37,11 @@ const NavBar = (props) => {
             <a href="/" className="brand-logo"><h4>Wheel-Me-Up</h4></a>
           </div>
           <ul className="right" >
-            <li><Link to="/mainPage">main</Link></li>
+            <li><Link to="/AllCars">AllCars</Link></li>
             <li><Link to="/contactUs">contact-Us</Link></li>
             <li><Link to="/carRent">Car-Rent</Link></li>
             <li><Link to="/bookingForm">Booking-Form</Link></li>
-            <li><Link to="/logout">LogOut</Link></li>
+            <button onClick={handleLogout}> log out </button>
           </ul>
         </nav>
       );

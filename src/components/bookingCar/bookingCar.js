@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { loggerContext } from '../auth/context';
+import Header from '../Header/Header.js';
 
 const If = props => {
   return props.condition ? props.children : null;
@@ -105,12 +106,15 @@ export default function BookingForm(props) {
     }
   }
   useEffect (()=>{
-    
+
   })
 
 
 
   return (
+    <>
+    <Header />
+
     <div>
       car rent form
       <form onSubmit={handleSubmit}>
@@ -158,5 +162,6 @@ export default function BookingForm(props) {
           }
         </div>
     </div>
+    </>
   );
 }

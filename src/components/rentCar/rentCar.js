@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { loggerContext } from '../auth/context.js';
+import Header from '../Header/Header.js';
+
 
 const API = 'https://wheel-me-up-m.herokuapp.com'
 
@@ -53,7 +55,9 @@ const CarCompanyForm = (props) => {
 
       let data = JSON.parse(await getData.text())
       setResults([...results, data])
+if (results.length){
 
+}
 
     } catch{
       console.error()
@@ -79,6 +83,8 @@ const CarCompanyForm = (props) => {
 
 
   return (
+    <>
+    < Header />
     <div>
       Car-Company Schema
       
@@ -121,10 +127,11 @@ const CarCompanyForm = (props) => {
               </div>
             })
           }
-          {/* // { errMsg ? <div>{errMsg}</div> : null} */}
+           { errMsg ? <div>{errMsg}</div> : null}
         </div>
       </div>
     </div>
+    </>
   );
 };
 

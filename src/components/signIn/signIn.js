@@ -1,4 +1,4 @@
-import React, {useContext  }  from 'react';
+import React, {useContext , component }  from 'react';
 // import { loggerContext } from '../auth/context.js';
 import { Redirect } from 'react-router-dom';
 import {loggerContext} from '../auth/context.js'
@@ -6,6 +6,7 @@ import Facebook from './facebookSignIn.js';
 import Google from './googleSignIn.js';
 import BookingForm from '../bookingCar/bookingCar'
 import MainPage from '../mainPage/mainPage.js'
+import AllCars from '../allCars/allCars.js';
 
 
 const SignIn = () => {
@@ -23,7 +24,7 @@ const SignIn = () => {
   };
   if(useLogger.logState){
     console.log(useLogger.logState)
-    return  <Redirect to='/mainPage'  ></Redirect>
+    return  <Redirect to='/AllCars'  ></Redirect>
   }else{
 
   // let handleLogout = () => {

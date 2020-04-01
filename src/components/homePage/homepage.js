@@ -27,16 +27,9 @@ const [ open , setOpen] = useState(false)
 
   return (
     <>
-        <Route path="/login">
-          <SignIn />
-        </Route>
+    
 
-        <Route path="/signup">
-          <SignUp />
-        </Route>
-
-
-      <Route path='/'>
+      {/* <Route path='/'> */}
       <Header />
       <Video />
       <Benefits />
@@ -46,7 +39,7 @@ const [ open , setOpen] = useState(false)
       <FAQ />
       <Why />
 
-          </Route> 
+          {/* </Route>  */}
 
       {/* <NavBar /> */}
       <div>

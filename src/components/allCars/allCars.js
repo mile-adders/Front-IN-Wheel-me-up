@@ -15,6 +15,8 @@ import CarRent from '../rentCar/rentCar.js';
 import BookingForm from '../bookingCar/bookingCar.js';
 import NavBar from '../navBar/navBar.js';
 import LogOut from '../logout/logout.js';
+import Header from '../Header/Header.js';
+
 
 const API = 'https://wheel-me-up-m.herokuapp.com'
 
@@ -46,6 +48,7 @@ function AllCars() {
   
   return (
     <>
+         <Header />
 
       
 
@@ -64,7 +67,7 @@ function AllCars() {
                  <li> year : {car.year}</li>
                  <li> Date Available :{car.dateAvailable}</li>
                  <li> Price for day : {car.priceForRent}</li>
-                 <li> Pick up location : {car.location}</li>
+                 <li> Pick up location : {car.pickupLocation}</li>
                  <button>Rent a car now :  </button>
               </ul>
 

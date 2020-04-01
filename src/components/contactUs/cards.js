@@ -8,13 +8,17 @@ import gmail from './assets/other_logos/gmail4.png';
 import linkedin from './assets/other_logos/linkedin_50x50.png';
 import js from './assets/other_logos/javaScript.png';
 import c from './assets/other_logos/c.png';
+import Header from '../Header/Header.js';
 
 
 class Cards extends Component {
   render() {
+
     const gmailbase = 'http://google.com/';
     const gitbase = 'http://github.com/';
     return (
+      <>
+      <Header />
       <div>
 
 
@@ -78,6 +82,7 @@ class Cards extends Component {
 
         </div>
       </div>
+      </>
     );
   }
 }
