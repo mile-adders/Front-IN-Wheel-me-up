@@ -103,14 +103,19 @@ const CarCompanyForm = (props) => {
             {
               results.length > 0 && results.map(post => {
                 return <div key={post.id}>
-                <li>{post.carName}</li>
-                <img src={post.carImage_URL} width='300' height='300'/>
+                  <ul>
+
+                  <img src={post.carImage_URL} width='300' height='300'/>
+                  <li>{post.carName}</li>
                   <li>{post.brand}</li>
                   <li>{post.year}</li>
                   <li>{post.dateAvailable}</li>
                   <li>{post.priceForRent}</li>
                   <li>{post.location}</li>
-                {/* <button onClick={handleUpdate}  type='submit'>update car information </button> */}
+                <button   type='submit'>update car information </button>
+                <button   type='submit'>delete car information </button>
+
+                  </ul>
 
               </div>
             })

@@ -21,7 +21,7 @@ const API = 'https://wheel-me-up-m.herokuapp.com'
 function MainPage() {
   const [showCars, setShowCar] = useState([]);
   
-  let shows = async()=>{
+  let Shows = async()=>{
     let getCars = await fetch(`${API}/api/v1/car-company`, {
       headers: {
         'Content-Type': 'application/json',
@@ -32,9 +32,16 @@ function MainPage() {
       body: null,
     });
     let data = JSON.parse(await getCars.text())
-    setShowCar(data)
-    console.log('data', data)
+    setShowCar([ data])
+    console.log('data', data);
+    console.log('showcars', showCars);
+
+    useEffect(()=>{
+      setShowCar(data)
+    },[showCars]); 
+
   }
+
 //     useEffect(() =>{
 //       shows
 // },[])
@@ -85,7 +92,7 @@ function MainPage() {
                 <li>{car.dateAvailable}</li>
                 <li>{car.priceForRent}</li>
                 <li>{car.location}</li>
-                <button>rent know  </button>
+                <button> rent know  </button>
               </ul>
 
             </div>

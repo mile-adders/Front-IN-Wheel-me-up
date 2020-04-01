@@ -22,9 +22,10 @@ const App = ( props) => {
           <div className="App">
             <h1> hi</h1>
         {/* <NavBar /> */}
-            <BookingForm />
+            {/* <BookingForm /> */}
+            {/* <CarCompanyForm /> */}
         
-            {/* < MainPage /> */}
+            < MainPage />
             {/* <HomePage /> */}
          </div>
 
