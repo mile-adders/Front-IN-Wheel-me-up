@@ -13,7 +13,7 @@ const Testimonials = () => {
           <Card.Body>
             <Card.Title className='cardContent'>Brian Nation</Card.Title>
             <Card.Text className='cardContent'>
-        This is so cool, This application is fire!!!, in the short amount of time you had, and your level of experience, seriously you did great, continue to work hard!!
+        This is so cool, This application is fire!!!, in the short amount of time you had, and your level of experience, seriously you did great, continue the work hard!!
             </Card.Text>
           </Card.Body>
           <Card.Footer className='cardContent'>

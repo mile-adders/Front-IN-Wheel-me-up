@@ -26,7 +26,7 @@ export default function Why() {
       <div className='whyUnderLine' data-aos='fade-right'></div>
       <div className='whyLeftLine' ></div>
       <div className='whyRightLine' ></div>
-      <div className='whyParagraph'>Giving Back to the community, connect them together, by creating multiple application that work to create a bond between them all. rewriting.. it later.</div>
+      <div className='whyParagraph'>Giving Back to the community, the community the helped us grow. Wheel Me Up is a solution to a small problem, this problem is high rental fees, solving small problems like this one, helps the community a little bit, Wheel Me Up is just the first piece of the puzzle.</div>
       
       <div className='whyUnderLine1' data-aos='fade-left'></div>
 
@@ -43,7 +43,7 @@ export default function Why() {
 
       <Button 
         variant="secondary"
-        href="/signin"
+        href="/login"
         size="lg"
         disabled={isLoading}
         onClick={!isLoading ? handleClick : null}

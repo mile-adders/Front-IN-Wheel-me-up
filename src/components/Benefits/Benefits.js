@@ -10,7 +10,7 @@ export default function Benefits() {
           <div className='line'></div>
           <div className='inside'>
             <h3>Comfort</h3>
-          All the hassle of renting a car, now can be done from the comfort of your home, or the hell of airports
+          All the hassle of renting a car, now can be done from the comfort of your home, or the hell of airports, Just Sign Up and enjoy Wheel Me Up.
           </div>
         </li>
         <li className='element' data-aos='fade-up'>
@@ -18,7 +18,7 @@ export default function Benefits() {
           <div className='line'></div>
           <div className='inside'>
             <h3>Closer to the people</h3>
-          help the community to grow Closer
+          No evil corporations, all the dealing are with ordinary people, who love to help others.
           </div>
         </li>
         <li className='element' data-aos='fade-left'>
@@ -26,7 +26,7 @@ export default function Benefits() {
           <div className='line'></div>
           <div className='inside'>
             <h3>Better Deals</h3>
-          No More over-charged cars.
+          No More over-charged cars, no more taking advantage of your hard earned cash.
           </div>
         </li>
       </ul>

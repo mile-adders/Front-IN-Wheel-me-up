@@ -1,28 +1,29 @@
+/* eslint-disable no-unused-vars */
 import React, { useState , Component } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
-} from "react-router-dom";
-import NavBar from '../navBar/navBar.js';
+  Link,
+} from 'react-router-dom';
+// import NavBar from '../navBar/navBar.js';
 import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
 // import SignIn from '../signIn/signIn.js';
 // import SignUp from '../signUp/signUp.js';
 import MainPage from '../mainPage/mainPage.js';
-import Benefits from '../Benefits/Benefits.js'
-import Video from '../Video/Video.js'
-import MoreDetails from '../MoreDetails/MoreDetails.js'
+import Benefits from '../Benefits/Benefits.js';
+import Video from '../Video/Video.js';
+import MoreDetails from '../MoreDetails/MoreDetails.js';
 import SliderMain from '../slider/slider.js';
 import Testimonials from '../Testimonials/Testimonials.js';
 import FAQ from '../FAQ/FAQ.js';
-import Why from '../Why/Why.js'
+import Why from '../Why/Why.js';
 
 
 const HomePage = () => {
 
-const [ open , setOpen] = useState(false)
+  const [ open , setOpen] = useState(false);
  
 
   return (
@@ -39,7 +40,7 @@ const [ open , setOpen] = useState(false)
       <FAQ />
       <Why />
 
-          {/* </Route>  */}
+      {/* </Route>  */}
 
       {/* <NavBar /> */}
       <div>
@@ -50,7 +51,7 @@ const [ open , setOpen] = useState(false)
           </Route> */}
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
 
   );

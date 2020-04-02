@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+/* eslint-disable no-unused-vars */
+import React, { Component } from 'react';
 
 export default class Home extends Component {
   render() {
     return (
       <div>
-          <div>
+        <div>
           
           <h1 class='hello'>
                  Who We Are
@@ -26,11 +27,11 @@ export default class Home extends Component {
 
          
          
-      </div>
+        </div>
      
       
       </div>
      
-    )
+    );
   }
-};
+}
