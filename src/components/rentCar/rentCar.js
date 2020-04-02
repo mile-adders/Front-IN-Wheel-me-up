@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { loggerContext } from '../auth/context.js';
+import header from '../Header/Header';
+import Header from '../Header/Header';
 
 const API = 'https://wheel-me-up-m.herokuapp.com';
 
@@ -79,47 +81,98 @@ const CarCompanyForm = (props) => {
 
 
   return (
-    <div className='rentFormDiv'>
-        <h2>Add A Car To Rent</h2>
-      <form onSubmit={handleSubmit} className='rentForm'>
-        <input type='text' className='useInput' name='carName' value={carName} placeholder='car name' onChange={(e) => setCarName(e.target.value)} />
-        <input type='text' className='useInput' name='brand' value={brand} placeholder='Brand' onChange={(e) => setBrand(e.target.value)} />
-        <input type='text' className='useInput' name='type' value={type} placeholder='car type' onChange={(e) => setType(e.target.value)} />
-        <input type='text' className='useInput' name='year' value={year} placeholder='manufacturing year' onChange={(e) => setYear(e.target.value)} />
-        <input type='date' className='useInput' name='dateAvailable ' value={dateAvailable} placeholder='Dates Available' onChange={(e) => setDateAvailable(e.target.value)} />
-        <input type='text' className='useInput' name='priceForRent' value={priceForRent} placeholder='price' onChange={(e) => setPriceForRent(e.target.value)} />
-        <input type='url' className='useInput' name='carImage_URL' value={carImageUrl} placeholder='Car Image URL' onChange={(e) => setCarImageUrl(e.target.value)} />
-        <input type='text' className='useInput' name='location' value={location} placeholder=' pick up Location' onChange={(e) => setlocation(e.target.value)} />
-        <input name='_Id' type='hidden' value = {posts._id} />
+    <div className='bookingDiv'>
+      <Header />
+      <div className='rentDiv'>
+        <h2 className='renting'>Add A Car To Rent</h2>
+        <form onSubmit={handleSubmit} className='bookingForm'>
+          <div className='form'>
+            <input type='text' className='useInput' name='carName' required value={carName} onChange={(e) => setCarName(e.target.value)} />
+            < label for='carName' className='label-name'> <span className='content-name'>Car name</span>
+            </label>
+          </div>
+        
+          <div className='form'>
+            <input type='text' className='useInput' name='brand' required value={brand} onChange={(e) => setBrand(e.target.value)} />
+            < label for='brand' className='label-name'> <span className='content-name'>Brand</span>
+            </label>
+          </div>
 
-        <button type='submit'>Add to My Collections</button>
+          <div className='form'>
+            <input type='text' className='useInput' name='type' required value={type} onChange={(e) => setType(e.target.value)} />
+            < label for='type' className='label-name'> <span className='content-name'>Type</span>
+            </label>
+          </div>
 
-      </form>
-      <div>
-        <div className='results'>
-          Cars available
-          {
-            results.length > 0 && results.map(car => {
-              return <div key={car.id} className='results'>
-                <ul>
+          <div className='form'>
+            <input type='text' className='useInput' name='year' required value={year} onChange={(e) => setYear(e.target.value)} />
+            < label for='year' className='label-name'> <span className='content-name'>Year</span>
+            </label>
+          </div>
 
-                  <li> car {car.carName}</li>
-                  <img src={car.carImage_URL} width='300' height='300' />
-                  <li> car Brand : {car.brand}</li>
-                  <li> car Type : {car.carType} </li>
-                  <li> year {car.year}</li>
-                  <li> Date Available{car.dateAvailable}</li>
-                  <li> Price for day {car.priceForRent}</li>
-                  <li> Pick up location{car.location}</li>
-                  <button   type='submit'>update car information </button>
-                  <button   type='submit'>delete car information </button>
+          <div className='dateInput'>
+            <label>Date available
+              <input type='date' name='dateAvailable' value={dateAvailable} placeholder='Pickup Date' onChange={(e) => setDateAvailable(e.target.value)} />
+            </label>
+          </div>
 
-                </ul>
+          <div className='form'>
+            <input type='text' className='useInput' name='priceForRent' required value={priceForRent} onChange={(e) => setPriceForRent(e.target.value)} />
+            < label for='Price For Rent' className='label-name'> <span className='content-name'>Price For Rent</span>
+            </label>
+          </div>
 
-              </div>;
-            })
-          }
-          {/* // { errMsg ? <div>{errMsg}</div> : null} */}
+          <div className='form'>
+            <input type='url' className='useInput' name='carImage_URL' required value={carImageUrl} onChange={(e) => setCarImageUrl(e.target.value)} />
+            < label for='carImage_URL' className='label-name'> <span className='content-name'>Image URL</span>
+            </label>
+          </div>
+
+          <div className='form'>
+            <input type='text' className='useInput' name='location' required value={location} onChange={(e) => setlocation(e.target.value)} />
+            < label for='location' className='label-name'> <span className='content-name'> Pick Up Location</span>
+            </label>
+          </div>
+
+          <div className='form'>
+            <input type='hidden' className='useInput' name='id' value={posts._id} />
+            {/* < label for='Price For Rent' className='label-name'> <span className='content-name'>Price For Rent</span>
+          </label> */}
+          </div>
+
+          <div className='submitButton'>
+            <button  className='submit' type='submit'>Add Car</button>
+          </div> 
+
+        </form>
+        <div>
+          <div className='showCars'>
+            <h2 className='allCars' >Cars available</h2>
+            {
+              results.length > 0 && results.map(car => {
+                return <div key={car.id} className='results'>
+                
+                  <ul className='cars'>
+                    <div className='eachCar'>
+                      <img className='carImg' src={car.carImage_URL} />
+                      <li className='carInfo'> car {car.carName}</li>
+                      <li className='carInfo'> car Brand : {car.brand}</li>
+                      <li className='carInfo'> car Type : {car.carType} </li>
+                      <li className='carInfo'> year {car.year}</li>
+                      <li className='carInfo'> Date Available{car.dateAvailable}</li>
+                      <li className='carInfo'> Price for day {car.priceForRent}</li>
+                      <li className='carInfo'> Pick up location{car.location}</li>
+                      <button className='updateButton' type='submit'>update car information </button>
+                      <button className='deleteButton' type='submit'>delete car information </button>
+                    </div>
+
+                  </ul>
+
+                </div>;
+              })
+            }
+            {/* // { errMsg ? <div>{errMsg}</div> : null} */}
+          </div>
         </div>
       </div>
     </div>

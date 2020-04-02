@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 
 import App from './components/app/app.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -13,7 +13,7 @@ import {
 import { ThemeProvider } from 'styled-components';
 
 import theme from './theme';
-import './styles.css';
+// import './styles.css';
 import LoginForm from './components/loginForm/';
 import Loading from './components/loadingvideo/loadingvideo.js';
 

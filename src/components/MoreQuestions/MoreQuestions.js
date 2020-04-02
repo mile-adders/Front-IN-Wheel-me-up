@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Header from '../Header/Header.js';
  
 import {
   Accordion,
@@ -56,29 +57,42 @@ export default function Example() {
   };
 
   const answerForm =  visible ? 
-    <form onSubmit = {handleSubmit} className='answerForm' data-aos='fade-up'>
-      <input type='text' className='answerInput' name='answer' value={answer} placeholder='answer' onChange={(e) => setAnswer(e.target.value)} />
-      <button type='submit' className='answerSubmit'>answer!</button>
+    <form onSubmit = {handleSubmit} className='questionForm' data-aos='fade-up'>
+      <input type='text' className='useInput' name='answer' required value={answer} onChange={(e) => setAnswer(e.target.value)} />
+      < label for='answer' className='label-name'> <span className='content-name'>Answer!</span>
+      </label>
+      <button type='submit' className='questionSubmit'>answer</button>
     </form>
     : null; 
 
+   
+
   const questionForm =  
-    <form onSubmit={handleSubmit} className='questionForm' data-aos='fade-left'>
-      <input type='text' className='questionInput' name='question' placeholder='Ask your Question' value={question} onChange={(e) => setQuestion(e.target.value)} /> 
+    <form onSubmit={handleSubmit} className='questionForm' >
+      <input type='text' className='useInput' name='question' required value={question} onChange={(e) => setQuestion(e.target.value)} />
+      < label for='question' className='label-name'> <span className='content-name'>Ask Us</span>
+      </label>
       <button type='submit' className='questionSubmit'>ask</button>
     </form>;
 
+  const questionAnswers = visible ? 
+    <form onSubmit={handleSubmit} className='questionForm' data-aos='fade-up'>
+      <input type='text' className='useInput' name='answerForm' required value={pastAnswer} onChange={(e) => setPastAnswer(e.target.value)} />
+      < label for='answerForm' className='label-name'> <span className='content-name'>Answer!</span>
+      </label>
+      <button type='submit' className='questionSubmit'>answer</button>  
+    </form> : null;
 
-  const questionAnswers = visible ? <form onSubmit={handleSubmit} className='answerForm' data-aos='fade-up'>
-    <input type='text' className='answerInput' name='pastAnswer' value={pastAnswer} placeholder='answer' onChange={ e => setPastAnswer(e.target.value)} />
-    <button type='submit' className='answerSubmit'>answer</button>
-  </form> : null;
+
+
+  
 
   return (
     <div className='moreQDiv'>
+      <Header />
       <div className='moreQ' data-aos='fade-up'>More Questions?</div>
       <div className='qUnderLine' data-aos='fade-right'></div>
-      <img className='qImg' src={require('./result.svg')} data-aos='fade-up' />
+      <img className='qImg' src={require('./teacher-asking-a-student-about-bad-test-result.svg')} data-aos='fade-up' />
       <Accordion className='MoreQAccordion' data-aos='fade-up'>
         {questionForm}
         <AccordionItem className='moreAccordionItem'>
@@ -89,8 +103,8 @@ export default function Example() {
           </AccordionItemHeading>
           <AccordionItemPanel>
             <div className='answer' data-aos='fade-left'>
-              {answerForm}
               <div className='answer' >{answer}</div>
+              {answerForm}
             </div>
           </AccordionItemPanel>
         </AccordionItem>

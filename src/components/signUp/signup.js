@@ -3,7 +3,7 @@ import React, { useState, useEffect , useContext} from 'react';
 import {Redirect} from 'react-router-dom';
 
 import { loggerContext } from '../auth/context.js';
-import SignIn from '../logIn/login.js';
+import SignIn from '../signIn/signIn.js';
 import oAuthApp from '../../App.js';
 
 

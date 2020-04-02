@@ -1,0 +1,46 @@
+.showCars{
+    width: 80%;
+    margin: 0 auto;
+    .allCars{
+        text-align: center;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 4vw;
+        font-weight: lighter;
+        color: #2b3542; 
+    }
+    .carList{
+        // width:80%;
+        margin: 0 auto;
+    }
+    .cars{
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        list-style-type: none;
+    }
+    .eachCar{
+        background-color: #464648;
+        margin-bottom: 3vw;
+    }
+    .carInfo{
+        margin-bottom: 1vw;
+        padding-top: 1vw;
+        font-family: sans-serif;
+        font-size: 1.5vw;
+        color: rgba(222,222,222,0.8);
+    }
+    .carImg{
+        width: 35vw;
+        padding-top: 2vw;
+    }
+    .rentButton{
+        margin-bottom: 2vw;
+        background-color: #191919;
+        border: none;
+        width: 12vw;
+        height: 2vw;
+        color: rgba(222,222,222,0.8);
+        font-size: 1.2vw;
+        font-weight: bold;
+    }
+}

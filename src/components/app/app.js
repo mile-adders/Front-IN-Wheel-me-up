@@ -12,8 +12,9 @@ import CarCompanyForm from '../rentCar/rentCar.js';
 import AllCars from '../allCars/allCars.js';
 import BookingForm from '../bookingCar/bookingCar.js';
 import NavBar from '../navBar/navBar.js';
-import SignIn from '../signIn/signIn.js'
-import SignUp from '../signUp/signUp.js';
+import SignIn from '../signIn/signIn.js';
+import SignUp from '../signUp/signup.js';
+import MoreQuestions from '../MoreQuestions/MoreQuestions.js';
 
 import Cards from '../contactUs/cards.js';
 // import AskUs from './components/Main/Ask-Us/Ask-Us.js';
@@ -36,6 +37,10 @@ const App = (props) => {
             <SignIn />
           </Route>
 
+          <Route exact path='/askUs'>
+            <MoreQuestions />
+          </Route>
+
           <Route exact path='/signup'>
             <SignUp />
           </Route>
@@ -45,36 +50,29 @@ const App = (props) => {
           </Route>
 
           <Route exact path='/AllCars'>
-         <AllCars /> 
-        </Route>
+            <AllCars /> 
+          </Route>
 
-        <Route exact path= '/contactUs'>
-         <Cards /> 
+          <Route exact path= '/contactUs'>
+            <Cards /> 
          
-        </Route>
+          </Route>
 
-        <Route exact path= '/carRent'>
-         <CarRent /> 
+          <Route exact path= '/carRent'>
+            <CarRent /> 
          
-        </Route>
+          </Route>
 
+          <Route exact path='/logout'>
+            <HomePage />
+          </Route>
 
-        <Route  path= '/bookingForm'>
-         <BookingForm /> 
+          <Route  path= '/bookingForm'>
+            <BookingForm /> 
          
-        </Route>
-
-          {/* <BookingForm /> */}
-          {/* <AllCars /> */}
-          {/* <MainPage /> */}
-
-          {/* < CarCompanyForm /> */}
+          </Route>
         </div>
-
       </LoggerHelp>
-
-
-
     </>
   );
 
