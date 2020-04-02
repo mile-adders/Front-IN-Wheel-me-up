@@ -13,7 +13,7 @@ import AllCars from '../allCars/allCars.js';
 import BookingForm from '../bookingCar/bookingCar.js';
 import NavBar from '../navBar/navBar.js';
 import SignIn from '../signIn/signIn.js'
-import SignUp from '../signUp/signUp.js';
+import SignUp from '../signUp/signup.js';
 
 import Cards from '../contactUs/cards.js';
 // import AskUs from './components/Main/Ask-Us/Ask-Us.js';
@@ -32,6 +32,9 @@ const App = (props) => {
       <LoggerHelp>
         <div className="App">
 
+          <Route exact path='/'>
+            <HomePage />
+          </Route>
           <Route exact path='/login'>
             <SignIn />
           </Route>
@@ -40,9 +43,6 @@ const App = (props) => {
             <SignUp />
           </Route>
 
-          <Route exact path='/'>
-            <HomePage />
-          </Route>
 
           <Route exact path='/AllCars'>
          <AllCars /> 

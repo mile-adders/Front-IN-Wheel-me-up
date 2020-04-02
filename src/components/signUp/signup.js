@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect , useContext} from 'react';
-import {Redirect} from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import { loggerContext } from '../auth/context.js';
-import SignIn from '../logIn/login.js';
+import SignIn from '../signIn/signIn';
 import oAuthApp from '../../App.js';
+import Header from '../Header/Header.js';
+import Footer from '../Footer/Footer.js';
 
 
 
@@ -19,7 +21,7 @@ const SignUp = () => {
 
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [passwordMatch , setPasswordMatch] = useState(true);
+  const [passwordMatch, setPasswordMatch] = useState(true);
 
   useEffect(() => {
 
@@ -34,19 +36,19 @@ const SignUp = () => {
     e.preventDefault();
 
     let data = {
-      username:e.target.username.value,
-      firstName: e.target.firstName.value ,
-      lastName:e.target.lastName.value ,
-      email:e.target.email.value ,
-      password:e.target.password.value,
-      role: e.target.role.value ,
+      username: e.target.username.value,
+      firstName: e.target.firstName.value,
+      lastName: e.target.lastName.value,
+      email: e.target.email.value,
+      password: e.target.password.value,
+      role: e.target.role.value,
     };
 
     useLogger.handleSignUp(data);
   };
-  if (useLogger.logState){
-    console.log('useLogger.logState' , useLogger.logState);
-    return  <Redirect to='/login' component={SignIn} ></Redirect> ;
+  if (useLogger.logState) {
+    console.log('useLogger.logState', useLogger.logState);
+    return <Redirect to='/login' component={SignIn} ></Redirect>;
 
   }
 
@@ -57,37 +59,40 @@ const SignUp = () => {
 
   return (
     <>
+      <Header />
+      <div className="bod">
 
-      <form  onSubmit ={handleSubmit}>
+        <form onSubmit={handleSubmit}>
+          <div className="tittles">Wheel-Me-Up Sign Up</div>
+          <div className="subbtitle">Sign Up Now..!</div>
 
-        <label> User Name: <input required name='username' /></label>
+          <div className="font1"><label> User Name: <input required name='username' /></label>
 
-        <label> First Name: <input name='firstName' /></label>
+            <div > <label> First Name: <input name='firstName' /></label></div>
 
-        <label>  Last Name: <input name='lastName' /></label>
+            <div> <label>  Last Name: <input name='lastName' /></label></div>
 
-        <label> Email: <input name='email' /></label>
+            <div><label> Email: <input name='email' /></label></div>
 
-        <label> Password: <input required type='password' name='password' onChange={e => setPassword(e.target.value)} /></label>
+            <div><label> Password: <input required type='password' name='password' onChange={e => setPassword(e.target.value)} /></label></div>
 
-        <label> Confirm Password: <input required type='password' name='confirmPassword' onChange={e => setConfirmPassword(e.target.value)} /></label>
+            <div><label> Confirm Password: <input required type='password' name='confirmPassword' onChange={e => setConfirmPassword(e.target.value)} /></label></div>
+          </div>
+          <div><label> <h3>Sign As: </h3></label> </div>
 
-        <label> Sign As:
-          <input type="radio" value="guest" name="role" required/> Car user
-          <input type="radio" value="user" name="role" required/> Car rental
-        </label>
+         <div className="caruser"> <input type="radio" value="guest" name="role" required /> Car user</div>
+            <div className="carcompany"><input type="radio" value="user" name="role" required /> Car rental </div>
 
-        <label>
-          I accept the Terms of Use & Privacy Policy
-          <input type="checkbox" required />
+          <div className="checked"><input type="checkbox" required /> <label>
+            I  accept the Terms of Use & Privacy Policy </label></div>
 
-        </label>
 
-        <button  type='submit' name='signUp' class="ghost" id="signUp" disabled={passwordMatch} > SignUp </button>
+          <div><button type='submit' name='signUp' class="btn2" id="signUp" disabled={passwordMatch} > SignUp </button></div>
+        </form>
 
-      </form>
-
-      {/* <Link to='/login'>Login</Link> */}
+        {/* <Link to='/login'>Login</Link> */}
+      </div>
+      <Footer />
     </>
   );
 };

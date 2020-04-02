@@ -8,8 +8,8 @@ import {
 import NavBar from '../navBar/navBar.js';
 import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
-import SignIn from '../signIn/signIn.js';
-import SignUp from '../signUp/signUp.js';
+// import SignIn from '../signIn/signIn.js';
+// import SignUp from '../signUp/signUp.js';
 import MainPage from '../mainPage/mainPage.js';
 import Benefits from '../Benefits/Benefits.js'
 import Video from '../Video/Video.js'
