@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SocialButton from './styled/SocialButton';
 import BrandButton from './styled/BrandButton';
 import SlidingForm from './styled/SlidingForm';
-// import Facebook from '../logIn/Facebook';
-// import Google from '../logIn/Google';
+// import Facebook from '../signIn/facebookSignIn';
+// import Google from '../signIn/googleSignIn';
 
 const FormLogin = () => (
   

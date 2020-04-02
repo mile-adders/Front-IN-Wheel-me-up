@@ -39,7 +39,7 @@ export default class Facebook extends Component {
         <div>
           <img src={this.state.picture} alt={this.state.name} />
           <h2>Welcome {this.state.name}</h2>
-        Email: {this.state.email}
+               Email: {this.state.email}
         </div>
 
 
@@ -49,7 +49,7 @@ export default class Facebook extends Component {
 
     } else {
       fbContent = (
-        <FacebookLogin
+        <FacebookLogin 
           appId="653628268747487"
           autoLoad={false}
           fields="name,email,picture"

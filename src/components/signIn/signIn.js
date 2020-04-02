@@ -1,12 +1,14 @@
-import React, {useContext , component }  from 'react';
+import React, { useContext, component } from 'react';
 // import { loggerContext } from '../auth/context.js';
 import { Redirect } from 'react-router-dom';
-import {loggerContext} from '../auth/context.js'
+import { loggerContext } from '../auth/context.js'
 import Facebook from './facebookSignIn.js';
 import Google from './googleSignIn.js';
 import BookingForm from '../bookingCar/bookingCar'
 import MainPage from '../mainPage/mainPage.js'
 import AllCars from '../allCars/allCars.js';
+import Header from '../Header/Header.js';
+import Footer from '../Footer/Footer.js';
 
 
 const SignIn = () => {
@@ -22,32 +24,42 @@ const SignIn = () => {
     let password = e.target.password.value;
     useLogger.logIn(userName, password);
   };
-  if(useLogger.logState){
+  if (useLogger.logState) {
     console.log(useLogger.logState)
-    return  <Redirect to='/AllCars'  ></Redirect>
-  }else{
+    return <Redirect to='/AllCars'  ></Redirect>
+  } else {
 
-  // let handleLogout = () => {
-  //   useLogger.logOut();
-  // };
+    // let handleLogout = () => {
+    //   useLogger.logOut();
+    // };
 
-  return (
-    <>
-       <legend>Cool LogIn Form
-       <form onSubmit={handleSubmit}>
-         <label  > UserName: <input name='name' required/> </label>
-         <label> Password: <input type='password' name='password' required/></label>
-         <button type='submit' > LogIn </button><br/> <br /> <br />
-         <Facebook /> <br />  <br  />
-         <Google /> <br /> <br />
-       {/* <button onClick={handleLogout}> LogOut </button> */}
-      
-       </form>
-       </legend>
+    return (
+      <div>
+        <Header />
+      <div className="body">
+          <div className="login-div">
+            <div className="loglogo"> </div>
+            <div className="tittle"><h4>Wheel Me Up</h4></div>
+            <div className="sub-title">Sign in</div>
+            <form onSubmit={handleSubmit}>
+              <div className="fields">
+                <div className="username"><label> UserName: <input name='name' required /> </label></div>
+                <div className="password"><label> Password: <input type='password' name='password' required /></label></div>
+              </div>
+              <div className="link"><a href="/login" className="hh">Forgot your Password ?</a></div>
+              <button type='submit' className="signin-button"> Log In </button>
+              {/* <div className="facebook" ><Facebook /> </div>
+              <div className="google"><Google /></div> */}
+              {/* <button onClick={handleLogout}> LogOut </button> */}
 
-      {/* <button onClick={handleLogout}> LogOut </button> */}
-    </>
-  );
+            </form>
+
+          </div>
+
+          {/* <button onClick={handleLogout}> LogOut </button> */}
+        </div>
+      </div>
+    );
   }
 };
 

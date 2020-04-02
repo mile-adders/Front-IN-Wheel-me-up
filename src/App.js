@@ -32,4 +32,3 @@ const oAuthApp = () => {
   );
 };
 
-export default oAuthApp;

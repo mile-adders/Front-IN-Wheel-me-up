@@ -33,6 +33,9 @@ const App = (props) => {
       <LoggerHelp>
         <div className="App">
 
+          <Route exact path='/'>
+            <HomePage />
+          </Route>
           <Route exact path='/login'>
             <SignIn />
           </Route>
@@ -45,9 +48,6 @@ const App = (props) => {
             <SignUp />
           </Route>
 
-          <Route exact path='/'>
-            <HomePage />
-          </Route>
 
           <Route exact path='/AllCars'>
             <AllCars /> 
