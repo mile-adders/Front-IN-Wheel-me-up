@@ -92,7 +92,6 @@ const SignUp = () => {
 
         {/* <Link to='/login'>Login</Link> */}
       </div>
-      <Footer />
     </>
   );
 };

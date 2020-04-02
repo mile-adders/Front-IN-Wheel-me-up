@@ -1,20 +1,17 @@
-* {
-  box-sizing: border-box;
-}
+
 .bod{
   margin-top: 1px;
-	margin-left: 350px;
-	height: 120vh;
-	width: 50vw;
+	height: 100را;
+	width: 100;
 	display: flex;
-	color: #29E7D6;
+	color:  rgba(222,222,222,0.8);
 	font-family: 'Lato', sans-serif;
 	font-weight: 500;
-	border-radius: 20px;
-  background: radial-gradient(circle, #555555, #535353, #505050, #4e4e4e, #4c4c4c);
+  background: #191919;
     text-align: center;
     justify-content: center;
     padding: 10px;
+    margin-bottom: 5vw;
 }
 .tittles{
   text-align: center;
@@ -43,11 +40,12 @@
 	font-family: 'Lato', sans-serif;
 	color: #29E7D6;
   padding: 10px 10px 15px 20px;
-  margin-left: 20px;
+  margin-left: 50px;
+  border-bottom: 1px solid #29E7D6 ;
 }
 
 .btn2{
-margin-top: 25px;
+margin-top: 20px;
   background: black;
 font-size: 20px;
 border: 5px solid rgb(2, 2, 3);

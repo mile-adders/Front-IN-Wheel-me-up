@@ -46,14 +46,13 @@ const SignIn = () => {
                 <div className="username"><label> UserName: <input name='name' required /> </label></div>
                 <div className="password"><label> Password: <input type='password' name='password' required /></label></div>
               </div>
-              <button type='submit' className="signin-button"> Log In </button>
-              <div className="facebook" ><Facebook /> </div>
-              <div className="google"><Google /></div>
               <div className="link"><a href="/login" className="hh">Forgot your Password ?</a></div>
+              <button type='submit' className="signin-button"> Log In </button>
+              {/* <div className="facebook" ><Facebook /> </div>
+              <div className="google"><Google /></div> */}
               {/* <button onClick={handleLogout}> LogOut </button> */}
 
             </form>
-            <Footer />
 
           </div>
 
