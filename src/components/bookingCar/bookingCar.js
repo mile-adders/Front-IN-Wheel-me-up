@@ -4,6 +4,8 @@ import axios from 'axios';
 import { loggerContext } from '../auth/context';
 import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
+import StripeCheckout from 'react-stripe-checkout';
+
 
 const If = props => {
   return props.condition ? props.children : null;
@@ -112,7 +114,12 @@ export default function BookingForm(props) {
   });
 
 
+  const [product, setProduct] = useState({
+    name:'Cars',
+    price: 100,
+    productBy: 'Mile Adders',
 
+  });
   return (
     <>
       <Header />
@@ -165,7 +172,7 @@ export default function BookingForm(props) {
                   <div className='carInfo'>{post.dateAvailable}</div>
                   <div className='carInfo'>{post.priceForRent}</div>
                   <div className='carInfo'>{post.location}</div>
-                  <button className='rentButton' type='submit'> rent car  </button>
+                  <button className='rentButton' type='submit'> <StripeCheckout  stripeKey={process.env.REACT_APP_PKEY} token="" amount={product.price * 100} name="Pay with Card"></StripeCheckout> </button>
                 </div>
               </div>
             </div>;
