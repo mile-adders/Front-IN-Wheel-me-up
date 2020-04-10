@@ -54,7 +54,7 @@ class Cards extends Component {
               console.log(pictures)
               return (
                 <div class='team'>
-                  <h3 class='title'> {team.name} </h3>
+                  {/* <h3 class='title'> {team.name} </h3> */}
                   <div class='members'>
                     {team.members.map(member => {
                       return (
