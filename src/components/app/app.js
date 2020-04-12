@@ -17,16 +17,12 @@ import SignUp from '../signUp/signup.js';
 import MoreQuestions from '../MoreQuestions/MoreQuestions.js';
 
 import Cards from '../contactUs/cards.js';
-// import AskUs from './components/Main/Ask-Us/Ask-Us.js';
 import CarRent from '../rentCar/rentCar.js';
 import LogOut from '../logout/logout.js';
 import Header from '../Header/Header.js';
 
 const App = (props) => {
 
-  // const useLogger = useContext(loggerContext);
-
-  // console.log('app.js' , useLogger.logState);
   return (
     <>
 
@@ -79,26 +75,3 @@ const App = (props) => {
 };
 
 export default App;
-// import React from 'react';
-// import { BrowserRouter , Route } from 'react-router-dom';
-// import LoggerHelp from '../auth/context.js';
-
-// import HomePage from '../HomePage/HomePage/homepage.js';
-
-// import './app.scss';
-// const App = () => {
-//   return (
-//     <>
-//       <LoggerHelp>
-//         <BrowserRouter>
-//           <div className="App">
-//             <Route exact path='/' component={HomePage} />
-//           </div>
-
-//         </BrowserRouter>
-//       </LoggerHelp>
-//     </>
-//   );
-// };
-
-// export default App;

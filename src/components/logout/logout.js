@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { Component , useContext } from 'react';
 import {loggerContext} from '../auth/context.js';
 
- const LogOut = () => {
+const LogOut = () => {
   let useLogger = useContext(loggerContext);
 
   let handleLogout = () => {

@@ -47,7 +47,7 @@ class Cards extends Component {
 
           {
             people.teams.map(team => {
-              console.log(pictures)
+              console.log(pictures);
               return (
                 <div class='team'>
                   <h3 class='title'> {team.name} </h3>
@@ -56,13 +56,14 @@ class Cards extends Component {
                       return (
                         <div class='card'>
 
-                          <img class='portrait' src={pictures[member.picture]} />
+                          <img class='portrait' src={pictures[member.picture]} alt='mile adder' />
                           <div class='name'> {member.name} </div>
                           <div class='icons'>
-                            <a href={gitbase + member.github}> <img class='icon' src={github} /> </a>
-                            <a class='icona' herf={gmailbase + member.gmail}><img class='ok' src={gmail} /> </a>
-                            <img class='icon' src={member.logo === 'js' ? js : c} />
-                            <a href={member.linkedin}><img class='icon' src={linkedin} /></a>
+                            <a href={gitbase + member.github}> <img class='icon' src={github} alt='mile adder'/> </a>
+                            {/* eslint-disable-next-line */}
+                            <a class='icona' herf={gmailbase + member.gmail}><img class='ok' src={gmail} alt='gmail'/> </a>
+                            <img class='icon' src={member.logo === 'js' ? js : c} alt='js'/>
+                            <a href={member.linkedin}><img class='icon' src={linkedin} alt='linkedIn'/></a>
                           </div>
                         </div>
                       );

@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { loggerContext } from '../auth/context.js';
-import header from '../Header/Header';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer.js';
 
 const API = 'https://wheel-me-up-m.herokuapp.com';
 
@@ -20,10 +20,11 @@ const CarCompanyForm = (props) => {
   const [dateAvailable, setDateAvailable] = useState('');
   const [priceForRent, setPriceForRent] = useState('');
   const [carImageUrl, setCarImageUrl] = useState('');
-  const [location, setlocation] = useState('');
+  const [location, setLocation] = useState('');
   const [posts, setPosts] = useState({});
   const [errMsg, setErrMsg] = useState('');
   const [results, setResults] = useState([]);
+  const [showCars, setShowCars] = useState(false);
 
   let handleSubmit = async e => {
     e.preventDefault();
@@ -60,7 +61,7 @@ const CarCompanyForm = (props) => {
     } catch{
       console.error();
     }
-
+    setShowCars(true);
   };
   // let handleUpdate = async e => {
   //   e.preventDefault();
@@ -77,13 +78,40 @@ const CarCompanyForm = (props) => {
   //   setResults([...results, data])
   //   console.log('results', results)
   // }
- 
 
+  let carsAvailable =  <div className='showCars'>
+    <h2 className='allCars' >Cars available</h2>
+    {
+      results.length > 0 && results.map(car => {
+        return <div key={car.id} className='results'>
+      
+          <ul className='cars'>
+            <div className='eachCar'>
+              <img className='carImg' src={car.carImage_URL} alt='car'/>
+              <li className='carInfo'> car {car.carName}</li>
+              <li className='carInfo'> car Brand : {car.brand}</li>
+              <li className='carInfo'> car Type : {car.carType} </li>
+              <li className='carInfo'> year {car.year}</li>
+              <li className='carInfo'> Date Available{car.dateAvailable}</li>
+              <li className='carInfo'> Price for day {car.priceForRent}</li>
+              <li className='carInfo'> Pick up location{car.location}</li>
+              <button className='updateButton' type='submit'>update car information </button>
+              <button className='deleteButton' type='submit'>delete car information </button>
+            </div>
+
+          </ul>
+
+        </div>;
+      })
+    }
+  </div>;
+ 
+  let cars = (showCars) ? carsAvailable : null;
 
   return (
     <div className='bookingDiv'>
       <Header />
-      <div className='rentDiv'>
+      <div className='rentDiv' id='carRent'>
         <h2 className='renting'>Add A Car To Rent</h2>
         <form onSubmit={handleSubmit} className='bookingForm'>
           <div className='form'>
@@ -129,7 +157,7 @@ const CarCompanyForm = (props) => {
           </div>
 
           <div className='form'>
-            <input type='text' className='useInput' name='location' required value={location} onChange={(e) => setlocation(e.target.value)} />
+            <input type='text' className='useInput' name='location' required value={location} onChange={(e) => setLocation(e.target.value)} />
             < label for='location' className='label-name'> <span className='content-name'> Pick Up Location</span>
             </label>
           </div>
@@ -146,35 +174,10 @@ const CarCompanyForm = (props) => {
 
         </form>
         <div>
-          <div className='showCars'>
-            <h2 className='allCars' >Cars available</h2>
-            {
-              results.length > 0 && results.map(car => {
-                return <div key={car.id} className='results'>
-                
-                  <ul className='cars'>
-                    <div className='eachCar'>
-                      <img className='carImg' src={car.carImage_URL} />
-                      <li className='carInfo'> car {car.carName}</li>
-                      <li className='carInfo'> car Brand : {car.brand}</li>
-                      <li className='carInfo'> car Type : {car.carType} </li>
-                      <li className='carInfo'> year {car.year}</li>
-                      <li className='carInfo'> Date Available{car.dateAvailable}</li>
-                      <li className='carInfo'> Price for day {car.priceForRent}</li>
-                      <li className='carInfo'> Pick up location{car.location}</li>
-                      <button className='updateButton' type='submit'>update car information </button>
-                      <button className='deleteButton' type='submit'>delete car information </button>
-                    </div>
-
-                  </ul>
-
-                </div>;
-              })
-            }
-            {/* // { errMsg ? <div>{errMsg}</div> : null} */}
-          </div>
+          {cars}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

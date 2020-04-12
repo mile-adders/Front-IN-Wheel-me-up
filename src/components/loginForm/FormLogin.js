@@ -23,7 +23,7 @@ const FormLogin = () => (
     </div>
     <p>or use your account</p>
     <form>
-      <input placeholder="Email" type="text" />
+      <input placeholder="Username" type="text" />
       <input placeholder="Password" type="password" />
     </form>
     <p>

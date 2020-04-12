@@ -4,7 +4,7 @@ import cookies from 'react-cookies';
 import jwt from 'jsonwebtoken';
 
 
-const API ='https://wheel-me-up-m.herokuapp.com'
+const API ='https://wheel-me-up-m.herokuapp.com';
 const SECRET = 'cool mai';
 
 export const loggerContext = React.createContext();
@@ -44,7 +44,7 @@ function LoggerProvider(props) {
 
       });
       let response = await output.text();
-      console.log('response', response)
+      console.log('response', response);
       await validatorForToken(response, username);
     } catch{
       console.error('can not log In!!!!!!!!!!!!');

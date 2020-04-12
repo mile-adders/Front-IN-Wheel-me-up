@@ -16,7 +16,7 @@ export default function FrequentlyAskedQuestions() {
       <Accordion className='accordion' data-aos='fade-up'>
         <div className='FAQ' data-aos='fade-left'>Frequently Asked Questions</div>
         <div className='blackLine' data-aos='fade-right'></div>
-        <img className='FAQImage' src={require('./faq.svg')} data-aos='fade-up'/>
+        <img className='FAQImage' src={require('./faq.svg')} data-aos='fade-up' alt='FAQ'/>
         <AccordionItem className='item'>
           <AccordionItemHeading className='heading'>
             <AccordionItemButton>

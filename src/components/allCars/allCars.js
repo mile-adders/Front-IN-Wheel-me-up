@@ -1,17 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-// import { BrowserRouter , Route } from 'react-router-dom';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
 } from 'react-router-dom';
-// import FrequentlyAskedQuestions from '../fAQ/fAQ.js'
 import LoggerHelp from '../auth/context.js';
 
 import Cards from '../contactUs/cards.js';
-// import AskUs from './components/Main/Ask-Us/Ask-Us.js';
 import CarRent from '../rentCar/rentCar.js';
 import BookingForm from '../bookingCar/bookingCar.js';
 import NavBar from '../navBar/navBar.js';
@@ -43,21 +40,21 @@ function AllCars() {
   };
   useEffect(() => {
     Shows();
-  }, []);
+  });
 
-
+  
   
   return (
     <>
       <Header />
+      <h2 className='allCars'>All Cars Available</h2>
       <div className='showCars'>
-        <h2 className='allCars'>All Cars Available</h2>
         {
           showCars.length > 0 && showCars.map(car => {
             return (<div key={car.id}>
               <div className='cars'>
                 <div className='eachCar'>
-                  <img className='carImg' src={car.carImage_URL} />
+                  <img className='carImg' src={car.carImage_URL} alt='car'/>
                   <div className='carInfo'>{car.carName}</div>
                   <div className='carInfo'>Brand : {car.brand}</div>
                   <div className='carInfo'>Type : {car.carType} </div>
@@ -72,6 +69,7 @@ function AllCars() {
           })
         }
       </div>
+      <Footer />
     </>
 
   );

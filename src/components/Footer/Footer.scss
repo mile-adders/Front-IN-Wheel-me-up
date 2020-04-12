@@ -1,16 +1,172 @@
   
 footer{
-    background-color: black;
-    height: 50px;
-    position: relative;
+    background-color: #191919;
+    // border-top: 1px solid rgba(222,222,222,0.8);
+    height: 53vw;
     clear: both;
-    // bottom: 0%;
-    opacity: 0%;
-    p{
-        text-align: center;
-        font-family: sans-serif;
-        font-size: 20px;
-        padding-top: 1%;
-        color: white;
+    display: flex;
+    box-sizing: border-box;
+    .sloganFooter{
+        width: 30%;
+        height: 85%;
+        margin-top: 4vw;
+        margin-left: 2vw;
+        .slogan{
+            color: rgba(222,222,222,0.8);
+            margin-left: 10vw;
+            font-family: $videoFont;
+            line-height: 2.5vw;
+            font-size: 1.5vw;
+        }
     }
+    .mainFooter{
+        width: 30%;
+        height: 91%;
+        margin-top: 2vw;
+        margin-left: 3vw;
+        .footerName{
+            color: rgba(222,222,222,0.8);
+            text-align: center;
+            font-size: 3vw;
+            // font-weight: 100;
+            font-family: 'Raleway', sans-serif;
+            margin-bottom: 2vw;
+            padding-top: 5vw;
+        }
+        .footerLogos{
+            display: flex;
+            box-sizing: border-box;
+            width:80%;
+            margin: 0 auto;
+            .twitter{
+                width: 2vw;
+                height: 2vw;
+            }
+            .facebook{
+                width: 2vw;
+                height: 2vw;
+                margin-left: 8.4vw;
+
+            }
+            .instagram{
+                width: 2vw;
+                height: 2vw;
+                margin-left: 8.4vw;
+
+            }
+        }
+        .footerLine{
+            height: 1px;
+            width: 7vw;
+            background-color: rgba(222,222,222,0.8);
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+            margin-left: 11.4vw;
+            margin-top:5vw;
+        }
+        .reportForm{
+            color: rgba(222,222,222,0.8);
+            margin-top: 7vw;
+            text-align: center;
+            margin-bottom: 2vw;
+            font-family: $videoFont;
+            font-size: 2vw;
+        }
+
+        .copyRights{
+            margin-top: 5vw;
+            text-align: center;
+            color: rgba(222,222,222,0.8);
+            font-family: 'Raleway', sans-serif;
+        }
+    }
+    .footerNav{
+        width: 30%;
+        height: 85%;
+        margin-top: 4vw;
+        margin-left: 4vw;    
+        a{
+            color: rgba(222,222,222,0.8);
+            margin-left: 10vw;
+            font-family: $videoFont;
+            line-height: 2vw;
+            font-size: 1.5vw;
+            text-decoration: none;
+        }    
+        .bottomLine{
+            height: 1px;
+            width:5vw;
+            background-color: #29E7D6;
+            margin-left: 10vw;
+            margin-bottom: 2vw;
+        }
+    }
+
+    .topLine{
+        height: 1px;
+        width:25vw;
+        background-color: rgba(222,222,222,0.8);
+        margin-bottom: 5vw;
+        margin-top: 5vw;
+        margin-left: 4vw;
+    }
+    .topLineLeft{
+        height: 1px;
+        width:25vw;
+        background-color: rgba(222,222,222,0.8);
+        margin-bottom: 5vw;
+        margin-top: 5vw;
+        margin-left: -1vw;
+    }
+    .appNameFooter{
+        margin-top: 1vw;
+        .brand-logo{
+            text-decoration: none;
+            color: rgba(222,222,222,0.8);
+            font-family: $videoFont;
+            margin-left: 10vw;
+          }
+          .appName{
+            margin-top: -3.2vw;
+            margin-left: 2.5vw;
+            letter-spacing: -2px;
+            font-weight: 300;
+            font-family: 'Raleway', sans-serif;
+            font-size: 24px;
+            margin-left: 14vw;
+            margin-bottom: 1.5vw;
+          }
+          .logo{
+            width: 3vw;
+            height: 3vw;
+          }
+    }
+    .greenUnderLine{
+        height: 1px;
+        width: 15vw;
+        background-color: #29E7D6;
+        margin-left: 10vw;
+        margin-bottom: 2vw;
+    }
+}
+#test-mailing{
+    width: 81%;
+    height: 7vw;
+    margin-left: 10%;
+    border: 1px solid rgba(222,222,222,0.8);
+    background-color: #191919;
+    text-align: center;
+    color: rgba(222,222,222,0.8);
+}
+.btn-btn--submit{
+ width: 81.7%;
+ height: 3vw;
+ margin-left: 10%;
+ border: 1px solid rgba(222,222,222,0.8);
+ background-color: #191919;
+ color: rgba(222,222,222,0.8);
+ margin-top: -0.5vw;
 }

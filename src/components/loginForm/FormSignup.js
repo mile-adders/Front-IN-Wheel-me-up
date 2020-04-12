@@ -24,9 +24,12 @@ const FormSignup = () => (
     </div>
     <p>or register with your email</p>
     <form>
-      <input placeholder="Name" type="text" />
+      <input placeholder="username" type="text" />
+      <input placeholder="First Name" type="text" />
+      <input placeholder="last Name" type="text" />
       <input placeholder="Email" type="text" />
       <input placeholder="Password" type="password" />
+      <input placeholder="Conform Password" type="password" />
     </form>
     <BrandButton>Sign up</BrandButton>
   </SlidingForm>

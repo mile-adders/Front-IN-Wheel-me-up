@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../Header/Header.js';
+import Footer from '../Footer/Footer.js';
  
 import {
   Accordion,
@@ -88,43 +89,47 @@ export default function Example() {
   
 
   return (
-    <div className='moreQDiv'>
+    <div className='moreQuestions'>
+
       <Header />
-      <div className='moreQ' data-aos='fade-up'>More Questions?</div>
-      <div className='qUnderLine' data-aos='fade-right'></div>
-      <img className='qImg' src={require('./teacher-asking-a-student-about-bad-test-result.svg')} data-aos='fade-up' />
-      <Accordion className='MoreQAccordion' data-aos='fade-up'>
-        {questionForm}
-        <AccordionItem className='moreAccordionItem'>
-          <AccordionItemHeading className='qAccordion'>
-            <AccordionItemButton>
-              {question}
-            </AccordionItemButton>
-          </AccordionItemHeading>
-          <AccordionItemPanel>
-            <div className='answer' data-aos='fade-left'>
-              <div className='answer' >{answer}</div>
-              {answerForm}
-            </div>
-          </AccordionItemPanel>
-        </AccordionItem>
-        {posts.map(data => (
-          <AccordionItem key={data._id}>
-            <AccordionItemHeading>
+      <div className='moreQDiv'>
+        <div className='moreQ' data-aos='fade-up'>More Questions?</div>
+        <div className='qUnderLine' data-aos='fade-right'></div>
+        <img className='qImg' src={require('./result.svg')} data-aos='fade-up' alt='results icon'/>
+        <Accordion className='MoreQAccordion' data-aos='fade-up'>
+          {questionForm}
+          <AccordionItem className='moreAccordionItem'>
+            <AccordionItemHeading className='qAccordion'>
               <AccordionItemButton>
-                {data.question}
+                {question}
               </AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>
-              <div className='answer'>
-                {data.answer}
-                {pastAnswer}
-                {questionAnswers}
+              <div className='answer' data-aos='fade-left'>
+                <div className='answer' >{answer}</div>
+                {answerForm}
               </div>
             </AccordionItemPanel>
           </AccordionItem>
-        ))}
-      </Accordion>
+          {posts.map(data => (
+            <AccordionItem key={data._id}>
+              <AccordionItemHeading>
+                <AccordionItemButton>
+                  {data.question}
+                </AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel>
+                <div className='answer'>
+                  {data.answer}
+                  {pastAnswer}
+                  {questionAnswers}
+                </div>
+              </AccordionItemPanel>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
+      <Footer />
     </div>
   );
 }
