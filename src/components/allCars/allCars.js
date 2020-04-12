@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
+import StripeCheckout from 'react-stripe-checkout';
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
+  Redirect,
 } from 'react-router-dom';
 import LoggerHelp from '../auth/context.js';
 
@@ -19,6 +22,12 @@ import Footer from '../Footer/Footer.js';
 const API = 'https://wheel-me-up-m.herokuapp.com';
 
 function AllCars() {
+  const [product, setProduct] = useState({
+    name:'Cars',
+    price: 100,
+    productBy: 'Mile Adders',
+
+  });
   const [showCars, setShowCar] = useState([]);
 
   let Shows = async () => {
@@ -42,8 +51,6 @@ function AllCars() {
     Shows();
   });
 
-  
-  
   return (
     <>
       <Header />
@@ -62,7 +69,7 @@ function AllCars() {
                   <div className='carInfo'>Date Available :{car.dateAvailable}</div>
                   <div className='carInfo'>Price for day : {car.priceForRent}</div>
                   <div className='carInfo'>Pick up location : {car.pickupLocation}</div>
-                  <button className='rentButton'>Rent!</button>
+                  <button className='rentButton'><StripeCheckout  stripeKey={process.env.REACT_APP_PKEY} token="" amount={product.price * 100} name="Pay with Card"></StripeCheckout></button>
                 </div>
               </div>
             </div>);
