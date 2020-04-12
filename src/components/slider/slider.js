@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 
 import defaultSlides from './defaultSlides.js';
@@ -35,7 +36,7 @@ const Slider = ({ slides }) => {
               <h2>{s.subtitle}</h2>
             </div>
             {i === curr && (
-              <img className="image" src={s.image} alt={`Image for ${s.title}`} />
+              <img className="image" src={s.image} alt={`${s.title}`} />
             )}
           </div>
         ))}

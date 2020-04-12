@@ -1,24 +1,31 @@
+/* eslint-disable no-constant-condition */
+/* eslint-disable no-unused-vars */
 /* App.jsx */
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import './hambrger.scss';
-class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state={
-      menuOpen:false,
-    };
-  }
+import { Link, withRouter , Redirect} from 'react-router-dom';
+import { loggerContext } from '../../auth/context.js';
+
+
+let App = (props) => {
+  const [menuOpen, setMenuOpen] = useState(false);
     
-  handleMenuClick() {
-    this.setState({menuOpen:!this.state.menuOpen});
-  }
+  let handleMenuClick =() => {
+    setMenuOpen(!menuOpen);
+  };
     
-  handleLinkClick() {
-    this.setState({menuOpen: false});
-  }
+  let handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
+  let useLogger = useContext(loggerContext);
+
+  let handleLogout = () => {
+    useLogger.logOut();
+    return  <Redirect to='/'></Redirect>;
+  };
     
-  render(){
-    const styles= 
+  const styles= 
         {
           container:{
             position: 'absolute',
@@ -39,31 +46,61 @@ class App extends React.Component {
             alignItems: 'center',
             width: '10vw',
             height: '10vh',
-            filter: this.state.menuOpen ? 'blur(2px)':null,
+            filter: menuOpen ? 'blur(2px)':null,
             transition: 'filter 0.5s ease',
           },
         };
-    const menu = ['Home','Ask Us','Sign in','Sign up','Contact Us'];
+
+  if(!useLogger.logState){
+        
+    const menu = ['AskUs','login','Signup'];
     const menuItems = menu.map((val,index)=>{
       return (
-        <MenuItem 
+        <MenuItem
           key={index} 
           delay={`${index * 0.1}s`}
-          onClick={()=>{this.handleLinkClick();}}>{val}</MenuItem>);
+          onClick={()=>{handleLinkClick();}}>
+          <Link className='link' to={`/${val}`}>{val}</Link> 
+        </MenuItem>);
     });
       
     return(
       <div>
         <div style={styles.container}>
-          <MenuButton open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='#2B3542'/>
+          <MenuButton open={menuOpen} onClick={()=>handleMenuClick()} color='#2B3542'/>
         </div>
-        <Menu open={this.state.menuOpen}>
+        <Menu open={menuOpen}>
+          {menuItems}
+        </Menu>
+      </div>
+    );
+  } else {
+    const menu = ['AllCars','bookingForm','carRent','askUs','contactUs'];
+    const menuItems = menu.map((val,index)=>{
+      return (
+        <MenuItem
+          key={index} 
+          delay={`${index * 0.1}s`}
+          onClick={()=>{handleLinkClick();}}>
+          <Link className='link' to={`/${val}`}>{val}</Link> 
+        </MenuItem>);
+
+    });
+      
+    return(
+      <div>
+        <div style={styles.container}>
+          <MenuButton open={menuOpen} onClick={()=>handleMenuClick()} color='#2B3542'/>
+        </div>
+        <Link className='logOut' onClick={handleLogout} to="/"> <img className='logoutLogo' src={require('./turn-off.svg')} alt='log out' /> </Link>
+        <Menu open={menuOpen}>
           {menuItems}
         </Menu>
       </div>
     );
   }
-}
+};
+
   
 /* MenuItem.jsx*/
 class MenuItem extends React.Component{
@@ -91,7 +128,7 @@ class MenuItem extends React.Component{
         padding: '1rem 0',
         margin: '0 5%',
         cursor: 'pointer',
-        color: this.state.hover? 'gray':'#fafafa',
+        color: this.state.hover? 'rgba(222,222,222,0.8)':'#fafafa',
         transition: 'color 0.2s ease-in-out',
         animation: '0.5s slideIn forwards',
         animationDelay:this.props.delay,

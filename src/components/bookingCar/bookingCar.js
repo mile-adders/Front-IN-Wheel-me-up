@@ -21,6 +21,7 @@ export default function BookingForm(props) {
   const [posts, setPosts] = useState([]);
   const [errMsg, setErrMsg] = useState('');
   const [results , setResults] = useState([]);
+  const [showCars, setShowCars] = useState(false);
 
   let handleSubmit = async e => {
     e.preventDefault();
@@ -77,17 +78,7 @@ export default function BookingForm(props) {
       let data = JSON.parse(await getData.text());
       console.log('data', data);
 
-      ///////////////////
-      // arrayOfAllowed 
-      // (3) [{…}, {…}, {…}]
-      // 0: {pickupLocation: "amman"}
-      // 1: {dateAvailable: "2020-05-07T00:00:00.000Z"}
-      // 2: {carType: "car"}
-
-
-
-      // const filtered = Object.entries(data)
-      // console.log('filtered', filtered)
+      // eslint-disable-next-line
       let results = data.filter(key =>{
         console.log('hi');
         if(
@@ -97,29 +88,52 @@ export default function BookingForm(props) {
 
           return key ;
         }
-         
-        // setResults([...results, data])
-        //  console.log ('filtered =>>>>>..' , filtered)
-        // console.log('data', data)
       });
+
       setResults(results);
       console.log ('results', results);
 
     } catch{
       console.error();
     }
+    setShowCars(true);
   };
   useEffect (()=>{
 
   });
 
+  let carsAvailable =   
+  <div>
+    <h2 className='allCars'>Cars available</h2>
+    <div className='showCars'>
+      {
+        results.length > 0 && results.map(post => {
+          return <div key={post.id}>
+            <div className='cars'>
+              <div className='eachCar'>
+                <img className='carImg' src={post.carImage_URL} alt='car available'/>
+                <div className='carInfo'>{post.carName}</div>
+                <div className='carInfo'>{post.brand}</div>
+                <div className='carInfo'>{post.year}</div>
+                <div className='carInfo'>{post.dateAvailable}</div>
+                <div className='carInfo'>{post.priceForRent}</div>
+                <div className='carInfo'>{post.location}</div>
+                <button className='rentButton' type='submit'> <StripeCheckout  stripeKey={process.env.REACT_APP_PKEY} token="" amount={product.price * 100} name="Pay with Card"></StripeCheckout> </button>
+              </div>
+            </div>
+          </div>;
+        })
+      }
+    </div>;
+  </div>;
 
   const [product, setProduct] = useState({
     name:'Cars',
     price: 100,
     productBy: 'Mile Adders',
-
   });
+  let cars = (showCars) ? carsAvailable : null;
+
   return (
     <>
       <Header />
@@ -156,29 +170,7 @@ export default function BookingForm(props) {
           </div> 
         </form>
       </div>
-
-      
-      <div className='showCars'>
-        <h2 className='allCars'>Cars available</h2>
-        {
-          results.length > 0 && results.map(post => {
-            return <div key={post.id}>
-              <div className='cars'>
-                <div className='eachCar'>
-                  <img className='carImg' src={post.carImage_URL} />
-                  <div className='carInfo'>{post.carName}</div>
-                  <div className='carInfo'>{post.brand}</div>
-                  <div className='carInfo'>{post.year}</div>
-                  <div className='carInfo'>{post.dateAvailable}</div>
-                  <div className='carInfo'>{post.priceForRent}</div>
-                  <div className='carInfo'>{post.location}</div>
-                  <button className='rentButton' type='submit'> <StripeCheckout  stripeKey={process.env.REACT_APP_PKEY} token="" amount={product.price * 100} name="Pay with Card"></StripeCheckout> </button>
-                </div>
-              </div>
-            </div>;
-          })
-        }
-      </div>
+      {cars}      
       <Footer />
     </>
   );

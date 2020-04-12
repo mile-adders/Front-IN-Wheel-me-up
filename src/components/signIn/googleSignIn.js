@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import GoogleLogin from 'react-google-login';
 import { Redirect } from 'react-router-dom';
@@ -44,7 +45,7 @@ export default class Google extends Component {
         </div>
 
       );
-    //   return <Redirect to='/bookingform' component={BookingForm} ></Redirect>;
+      //   return <Redirect to='/bookingform' component={BookingForm} ></Redirect>;
 
 
     } else {

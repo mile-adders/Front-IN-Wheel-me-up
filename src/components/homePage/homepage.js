@@ -39,10 +39,7 @@ const HomePage = () => {
       <Testimonials />
       <FAQ />
       <Why />
-
-      {/* </Route>  */}
-
-      {/* <NavBar /> */}
+      <Footer />
       <div>
 
 
