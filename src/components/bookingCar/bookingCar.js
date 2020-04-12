@@ -118,8 +118,19 @@ export default function BookingForm(props) {
                 <div className='carInfo'>{post.dateAvailable}</div>
                 <div className='carInfo'>{post.priceForRent}</div>
                 <div className='carInfo'>{post.location}</div>
-                <button className='rentButton' type='submit'> <StripeCheckout  stripeKey={process.env.REACT_APP_PKEY} token="" amount={product.price * 100} name="Pay with Card"></StripeCheckout> </button>
-              </div>
+                <StripeCheckout  stripeKey={process.env.REACT_APP_PKEY} token="" amount={100 * car.priceForRent} name="Pay with Card"><button className='strip' 
+                  style={{
+                    color: '#191919',
+                    background: 'rgba(222,222,222,0.8)',
+                    marginTop: '2vw',
+                    marginBottom: '2vw',
+                    border: 'none',
+                    height: '2vw',
+                    width: '10vw',
+                    fontFamily: 'Open Sans Condensed',
+                    fontSize: '1.2vw',
+                    fontWeight: 'bold',
+                  }}>Pay With Card</button></StripeCheckout>              </div>
             </div>
           </div>;
         })

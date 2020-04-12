@@ -26,7 +26,6 @@ function LoggerProvider(props) {
       setLogState(false);
       console.log('catch jwt');
       console.error('token Invalid!!!');
-
     }
   };
 
